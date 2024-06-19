@@ -1,0 +1,46 @@
+.tower-health .unity-progress-bar__progress {
+    background-color: rgba(113, 255, 140, 0.73);
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.tower-health .unity-progress-bar__background {
+    background-color: rgba(27, 72, 37, 0.6);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+
+Label {
+    -unity-font-definition: url("project://database/Assets/PixelFont.TTF?fileID=12800000&guid=53cfef4d882b6a144905a48a9ffda3f9&type=3#PixelFont");
+    -unity-font-style: normal;
+}
+
+.selection-box {
+    background-color: rgba(229, 151, 0, 0.3);
+    border-left-color: rgba(255, 176, 0, 0.63);
+    border-right-color: rgba(255, 176, 0, 0.63);
+    border-top-color: rgba(255, 176, 0, 0.63);
+    border-bottom-color: rgba(255, 176, 0, 0.63);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.stat {
+    padding-left: 20px;
+    padding-right: 20px;
+}
