@@ -2,7 +2,7 @@
 
 namespace Quinn.CardSystem.Effect
 {
-	public class TargetSpellEffect : SpellEffect
+	public class TargetEffect : SpellEffect
 	{
 		[Tooltip("This can be negative to deal damage.")]
 		public float Health;

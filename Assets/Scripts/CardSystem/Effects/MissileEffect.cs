@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Quinn.CardSystem.Effect
 {
-	public class MissileSpellEffect : SpellEffect
+	public class MissileEffect : SpellEffect
 	{
 		[AssetsOnly]
 		public Sprite Sprite;

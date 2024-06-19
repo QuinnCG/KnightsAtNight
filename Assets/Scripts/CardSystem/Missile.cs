@@ -9,7 +9,7 @@ namespace Quinn.CardSystem
 	{
 		public event Action OnHit;
 
-		public void Launch(Vector2 target, MissileSpellEffect settings)
+		public void Launch(Vector2 target, MissileEffect settings)
 		{
 			float dst = transform.position.DistanceTo(target);
 			float h = Mathf.Sqrt(dst.Squared() + settings.ArchHeight.Squared());

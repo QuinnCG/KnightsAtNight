@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 namespace Quinn.Common
@@ -16,6 +17,12 @@ namespace Quinn.Common
 			health.TakeDamage(damage, direction, knockbackSpeed);
 		}
 
+		public static Health[] GetHealthInRadius(Vector2 center, float radius, LayerMask mask)
+		{
+			var colliders = Physics2D.OverlapCircleAll(center, radius, mask);
+			return colliders.Select(x => x.GetComponent<Health>()).ToArray();
+		}
+
 		public static void DamageAll(Vector2 center, float radius, LayerMask mask, float damage, float knockbackSpeed)
 		{
 			var colliders = Physics2D.OverlapCircleAll(center, radius, mask);
@@ -27,14 +34,6 @@ namespace Quinn.Common
 
 				var health = collider.GetComponent<Health>();
 				health.TakeDamage(damage, dir, knockbackSpeed);
-			}
-		}
-
-		public static void Damage(this GameObject gameObject, float damage, Vector2 direction, float knockbackSpeed)
-		{
-			if (gameObject.TryGetComponent(out Health health))
-			{
-				health.TakeDamage(damage, direction, knockbackSpeed);
 			}
 		}
 	}

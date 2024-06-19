@@ -4,10 +4,10 @@ using UnityEngine.VFX;
 
 namespace Quinn.CardSystem.Effect
 {
-	public class AOESpellEffect : SpellEffect
+	public class FieldEffect : SpellEffect
 	{
 		[AssetsOnly]
-		public VisualEffect VFX;
+		public VisualEffectAsset VFX;
 
 		public float Radius;
 
