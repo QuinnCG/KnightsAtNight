@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor.Experimental.GraphView;
@@ -18,10 +19,7 @@ namespace Quinn
 		private Tile PathTile;
 
 		[SerializeField]
-		private Vector2Int SegmentLength = new(1, 3);
-
-		[SerializeField]
-		private Vector2Int InitialSegmentLength = new(5, 6);
+		private Vector2Int InitialSegmentLength = new(5, 6), SegmentLength = new(1, 3);
 
 		[SerializeField]
 		private int MaxPathGeneration = 3;
@@ -35,14 +33,19 @@ namespace Quinn
 		[SerializeField]
 		private int MaxGenerationToBranch = 4;
 
-		public IEnumerable<PathNode> PathEnds => _ends;
+		[Tooltip("Nodes of this generation will act as spawn points. This should be higher than MaxGenerationToBranch.")]
+		[SerializeField, ValidateInput("@SpawnGeneration > MaxGenerationToBranch")]
+		private int SpawnGeneration = 10;
+
+		[Tooltip("Generating after this generation is spread over multiple frames for performance. This should be higher than SpawnGeneration.")]
+		[SerializeField, ValidateInput("@InstantlyGenerateUpToGen > SpawnGeneration")]
+		private int InstantlyGenerateUpToGen = 15;
+
+		public IEnumerable<PathNode> PathSpawns => _spawns;
 
 		private readonly List<PathNode> _open = new();
 		private PathNode _origin;
-		private readonly List<PathNode> _ends = new();
-
-		// TODO: End tiles should be after some generation; tiles should continue generating past that so that they're not visible.
-		// TODO: Make tiles after a certain generation spawn over frames to avoid hitches for large generations.
+		private readonly List<PathNode> _spawns = new();
 
 		private void Awake()
 		{
@@ -58,21 +61,25 @@ namespace Quinn
 			_open.Add(CreateNode(_origin, Vector3Int.right));
 
 			// Loop open list.
+			var thresholdNodes = new List<PathNode>();
+
 			while (_open.Count > 0)
 			{
 				var newNodes = new List<PathNode>();
 
 				foreach (var parent in _open)
 				{
-					if (parent.Generation < MaxPathGeneration)
+					// Only generate up to LowerPriorityGenerationTheshold.
+					// The rest is deferred to Start().
+					if (parent.Generation < InstantlyGenerateUpToGen)
 					{
 						var dir = GetRandomDirection(parent);
 						var node = CreateNode(parent, dir);
 
 						newNodes.Add(node);
-						if (node.Generation == MaxPathGeneration)
+						if (node.Generation == SpawnGeneration)
 						{
-							_ends.Add(node);
+							_spawns.Add(node);
 						}
 
 						if (parent.Generation <= MaxGenerationToBranch && Random.value < PathBranchChance)
@@ -80,6 +87,46 @@ namespace Quinn
 							newNodes.Add(parent);
 						}
 					}
+					else
+					{
+						thresholdNodes.Add(parent);
+					}
+				}
+
+				_open.Clear();
+				_open.AddRange(newNodes);
+			}
+
+			_open.AddRange(thresholdNodes);
+		}
+
+		private IEnumerator Start()
+		{
+			while (_open.Count > 0)
+			{
+				var newNodes = new List<PathNode>();
+
+				foreach (var parent in _open)
+				{
+					// Generate remainig nodes up to max generation.
+					if (parent.Generation < MaxPathGeneration)
+					{
+						var dir = GetRandomDirection(parent);
+						var node = CreateNode(parent, dir);
+
+						newNodes.Add(node);
+						if (node.Generation == SpawnGeneration)
+						{
+							_spawns.Add(node);
+						}
+
+						if (parent.Generation <= MaxGenerationToBranch && Random.value < PathBranchChance)
+						{
+							newNodes.Add(parent);
+						}
+					}
+
+					yield return null;
 				}
 
 				_open.Clear();

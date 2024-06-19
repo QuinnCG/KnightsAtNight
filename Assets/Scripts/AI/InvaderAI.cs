@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Quinn.AI
 {
+	[RequireComponent(typeof(Collider2D))]
 	public class InvaderAI : AgentAI
 	{
 		[SerializeField]
@@ -17,6 +18,7 @@ namespace Quinn.AI
 		[SerializeField]
 		private float DisengageRange = 5f;
 
+		private Collider2D _collider;
 		private Transform _target;
 		private PathNode _next;
 		private Health _targetHealth;
@@ -24,6 +26,8 @@ namespace Quinn.AI
 		protected override void Awake()
 		{
 			base.Awake();
+
+			_collider = GetComponent<Collider2D>();
 			TransitionTo(OnCharge);
 		}
 
@@ -98,7 +102,7 @@ namespace Quinn.AI
 				return;
 			}
 
-			float dstToTarget = transform.position.DistanceTo(_target.position);
+			float dstToTarget = _collider.bounds.center.DistanceTo(_target.position);
 
 			if (dstToTarget > DisengageRange)
 			{
@@ -130,7 +134,7 @@ namespace Quinn.AI
 		private float GetDistanceToTower()
 		{
 			var pos = Tower.Instance.GetClosestPoint(transform.position);
-			return transform.position.DistanceTo(pos);
+			return _collider.bounds.center.DistanceTo(pos);
 		}
 	}
 }

@@ -52,7 +52,7 @@ namespace Quinn
 
 		private void Start()
 		{
-			_spawnPoints = PathManager.Instance.PathEnds;
+			_spawnPoints = PathManager.Instance.PathSpawns;
 		}
 
 		private void FixedUpdate()

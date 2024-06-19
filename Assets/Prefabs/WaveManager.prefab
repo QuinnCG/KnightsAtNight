@@ -46,9 +46,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SafeZone: 18
   GroupSpawnInterval: {x: 0.5, y: 3}
+  PerInvaderSpawnInterval: 0.5
+  WaveDowntime: 10
+  WaveSpawnCountFactor: 0.2
   Waves:
   - DebutWave: 1
     SubwaveCount: {x: 1, y: 1}
+    GroupSize: {x: 3, y: 5}
     Enemies:
     - Prefab: {fileID: 7339016931583088528, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
-      Count: {x: 2, y: 5}
+      Count: {x: 2, y: 3}

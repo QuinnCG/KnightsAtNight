@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 565350186517445377}
   - component: {fileID: 3036660914474540414}
   - component: {fileID: 8630711829623366695}
-  - component: {fileID: 2619910200034001492}
   m_Layer: 3
   m_Name: Tower
   m_TagString: Untagged
@@ -178,26 +177,6 @@ MonoBehaviour:
   EnableRegen: 0
   RegenCombatDelay: 3
   RegenRate: 10
---- !u!114 &2619910200034001492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4370231646880930097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31242b33a7f386d48bf80d35067da4f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PathMap: {fileID: 0}
-  PathTile: {fileID: 11400000, guid: c84f997e1f834804a8e647e5944e1ca9, type: 2}
-  SegmentLength: {x: 3, y: 5}
-  InitialSegmentLength: {x: 5, y: 7}
-  MaxPathGeneration: 10
-  PathTurnChance: 0.5
-  PathBranchChance: 0.15
-  MaxGenerationToBranch: 2
 --- !u!1 &8004424468125880314
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 121702423009856028, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
       propertyPath: <Speed>k__BackingField
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 121702423009856028, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
       propertyPath: AvoidanceTarget.m_Bits
@@ -232,6 +232,6 @@ MonoBehaviour:
   TargetMask:
     serializedVersion: 2
     m_Bits: 64
-  AttackRange: 0.6
+  AttackRange: 0.7
   EngageRadius: 3
   DisengageRange: 4
