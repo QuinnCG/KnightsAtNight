@@ -6,14 +6,18 @@ namespace Quinn.CardSystem
 	[CreateAssetMenu(menuName = "Cards/Unit Card")]
 	public class UnitCard : Card
 	{
-		[AssetsOnly]
+		[Space, AssetsOnly]
 		public GameObject Prefab;
+		public int Count = 1;
 
 		// TODO: Spawn effects?
 
 		public override void Cast()
 		{
-			Prefab.Clone(Player.MousePos);
+			for (int i = 0; i < Count; i++)
+			{
+				Prefab.Clone(Player.MousePos);
+			}
 		}
 	}
 }

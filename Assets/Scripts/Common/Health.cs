@@ -5,7 +5,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Quinn.Common
+namespace Quinn
 {
 	public class Health : MonoBehaviour
 	{

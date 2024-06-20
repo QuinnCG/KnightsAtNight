@@ -1,5 +1,4 @@
 ﻿using Quinn.AI;
-using Quinn.Common;
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;

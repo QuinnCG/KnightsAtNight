@@ -1,13 +1,9 @@
-using System.Linq;
 using UnityEngine;
 
-namespace Quinn.Common
+namespace Quinn
 {
 	public static class DamageUtility
 	{
-		public static LayerMask FriendlyMask = LayerMask.GetMask("Friendly");
-		public static LayerMask HostileMask = LayerMask.GetMask("Hostile");
-
 		public static void DamageClosest(Vector2 center, float radius, LayerMask mask, float damage, Vector2 direction, float knockbackSpeed)
 		{
 			var colliders = Physics2D.OverlapCircleAll(center, radius, mask);
@@ -15,12 +11,6 @@ namespace Quinn.Common
 
 			var health = collider.GetComponent<Health>();
 			health.TakeDamage(damage, direction, knockbackSpeed);
-		}
-
-		public static Health[] GetHealthInRadius(Vector2 center, float radius, LayerMask mask)
-		{
-			var colliders = Physics2D.OverlapCircleAll(center, radius, mask);
-			return colliders.Select(x => x.GetComponent<Health>()).ToArray();
 		}
 
 		public static void DamageAll(Vector2 center, float radius, LayerMask mask, float damage, float knockbackSpeed)

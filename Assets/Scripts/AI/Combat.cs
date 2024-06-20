@@ -1,5 +1,4 @@
-﻿using Quinn.Common;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Quinn.AI
 {

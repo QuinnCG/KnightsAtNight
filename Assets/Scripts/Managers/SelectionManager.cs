@@ -1,5 +1,4 @@
 ﻿using Quinn.AI;
-using Quinn.Common;
 using Quinn.UI;
 using System.Collections.Generic;
 using UnityEngine;
@@ -134,7 +133,7 @@ namespace Quinn
 			Vector2 center = lower + (delta / 2f);
 			Vector2 size = delta;
 
-			var colliders = Physics2D.OverlapBoxAll(center, size, 0f, DamageUtility.FriendlyMask);
+			var colliders = Physics2D.OverlapBoxAll(center, size, 0f, CollisionUtility.FriendlyMask);
 
 			// Get all units in selection box, currently.
 			var inSelectionBox = new HashSet<UnitAI>();

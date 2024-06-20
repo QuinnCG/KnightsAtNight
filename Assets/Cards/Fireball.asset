@@ -17,7 +17,6 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-    - {fileID: 8926484042661614526, guid: 84c6d567f8bf2c040b28b30d36bc4cc3, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -32,54 +31,90 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 1|Quinn.CardSystem.Effect.MissileEffect, Assembly-CSharp
+    - Name: ChainEffect
+      Entry: 6
+      Data: 
     - Name: Sprite
       Entry: 10
       Data: 0
-    - Name: OnHitEffects
+    - Name: HitEffect
+      Entry: 6
+      Data: 
+    - Name: SpawnSound
       Entry: 7
-      Data: 2|Quinn.CardSystem.Effect.SpellEffect[], Assembly-CSharp
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
+      Data: FMODUnity.EventReference, FMODUnity
+    - Name: Guid
       Entry: 7
-      Data: 3|Quinn.CardSystem.Effect.AOEEffect, Assembly-CSharp
-    - Name: CenterVFX
-      Entry: 10
-      Data: 1
-    - Name: PerTargetVFX
-      Entry: 10
-      Data: 1
-    - Name: VFXLifespan
-      Entry: 4
-      Data: 3
-    - Name: Mask
-      Entry: 7
-      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
-    - Name: 
+      Data: FMOD.GUID, FMODUnity
+    - Name: Data1
       Entry: 3
-      Data: 128
+      Data: 0
+    - Name: Data2
+      Entry: 3
+      Data: 0
+    - Name: Data3
+      Entry: 3
+      Data: 0
+    - Name: Data4
+      Entry: 3
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
-    - Name: Radius
-      Entry: 4
-      Data: 3
-    - Name: Damage
-      Entry: 4
-      Data: 30
-    - Name: Knockback
-      Entry: 4
-      Data: 10
-    - Name: Health
+    - Name: Path
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: SpawnVFX
+      Entry: 7
+      Data: Quinn.VFX, Assembly-CSharp
+    - Name: Asset
+      Entry: 6
+      Data: 
+    - Name: Lifespan
       Entry: 4
       Data: 0
     - Name: 
       Entry: 8
       Data: 
+    - Name: HitSound
+      Entry: 7
+      Data: FMODUnity.EventReference, FMODUnity
+    - Name: Guid
+      Entry: 7
+      Data: FMOD.GUID, FMODUnity
+    - Name: Data1
+      Entry: 3
+      Data: 0
+    - Name: Data2
+      Entry: 3
+      Data: 0
+    - Name: Data3
+      Entry: 3
+      Data: 0
+    - Name: Data4
+      Entry: 3
+      Data: 0
     - Name: 
-      Entry: 13
+      Entry: 8
       Data: 
+    - Name: Path
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: HitVFX
+      Entry: 7
+      Data: Quinn.VFX, Assembly-CSharp
+    - Name: Asset
+      Entry: 6
+      Data: 
+    - Name: Lifespan
+      Entry: 4
+      Data: 0
     - Name: 
       Entry: 8
       Data: 

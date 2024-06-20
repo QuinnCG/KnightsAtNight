@@ -1,5 +1,4 @@
-﻿using Quinn.Common;
-using Sirenix.OdinInspector;
+﻿using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 

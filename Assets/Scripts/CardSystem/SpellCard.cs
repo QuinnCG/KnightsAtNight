@@ -7,17 +7,16 @@ namespace Quinn.CardSystem
 	[CreateAssetMenu(menuName = "Cards/Spell Card")]
 	public class SpellCard : Card
 	{
-		[InlineProperty]
+		[Space, InlineProperty]
 		public SpellEffect[] OnCast;
 
 		public override void Cast()
 		{
-			//Tower.Instance.CastSpell();
-			// TODO: Uncommenting causes issues when dragging cards.
+			Tower.Instance.CastSpell();
 
 			foreach (var effect in OnCast)
 			{
-				effect.Activate(Player.MousePos);
+				effect.Activate(new(Player.MousePos, null, this, null));
 			}
 		}
 	}

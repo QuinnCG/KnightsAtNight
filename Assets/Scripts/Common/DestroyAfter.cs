@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Quinn.Common
+namespace Quinn
 {
 	public class DestroyAfter : MonoBehaviour
 	{

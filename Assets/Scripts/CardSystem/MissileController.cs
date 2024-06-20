@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Quinn.CardSystem
 {
-	public class Missile : MonoBehaviour
+	public class MissileController : MonoBehaviour
 	{
 		public event Action OnHit;
 
