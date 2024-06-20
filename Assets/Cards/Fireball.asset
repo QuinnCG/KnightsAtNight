@@ -16,7 +16,8 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+    - {fileID: 8926484042661614526, guid: 8bbe16719b6fa3f468d842c4c9e41a36, type: 3}
+    - {fileID: 8926484042661614526, guid: 3941584d4540793419df5241b39dfa69, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -35,10 +36,97 @@ MonoBehaviour:
       Entry: 6
       Data: 
     - Name: Sprite
+      Entry: 6
+      Data: 
+    - Name: Trail
       Entry: 10
       Data: 0
     - Name: HitEffect
+      Entry: 7
+      Data: 2|Quinn.CardSystem.Effect.TargetAreaEffect, Assembly-CSharp
+    - Name: ChainEffect
       Entry: 6
+      Data: 
+    - Name: Effect
+      Entry: 7
+      Data: 3|Quinn.CardSystem.Effect.DamageEffect, Assembly-CSharp
+    - Name: ChainEffect
+      Entry: 6
+      Data: 
+    - Name: InstaKill
+      Entry: 5
+      Data: false
+    - Name: Damage
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 30
+    - Name: 
+      Entry: 4
+      Data: 35
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Knockback
+      Entry: 4
+      Data: 20
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Radius
+      Entry: 4
+      Data: 2
+    - Name: Mask
+      Entry: 7
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 128
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: VFX
+      Entry: 7
+      Data: Quinn.VFX, Assembly-CSharp
+    - Name: Asset
+      Entry: 6
+      Data: 
+    - Name: Lifespan
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Sound
+      Entry: 7
+      Data: FMODUnity.EventReference, FMODUnity
+    - Name: Guid
+      Entry: 7
+      Data: FMOD.GUID, FMODUnity
+    - Name: Data1
+      Entry: 3
+      Data: 0
+    - Name: Data2
+      Entry: 3
+      Data: 0
+    - Name: Data3
+      Entry: 3
+      Data: 0
+    - Name: Data4
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Path
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: SpawnSound
       Entry: 7
@@ -110,11 +198,11 @@ MonoBehaviour:
       Entry: 7
       Data: Quinn.VFX, Assembly-CSharp
     - Name: Asset
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: Lifespan
       Entry: 4
-      Data: 0
+      Data: 3
     - Name: 
       Entry: 8
       Data: 
@@ -134,6 +222,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   Title: Fireball
-  Description: A standard fireball spell.
+  Description: Hurl a small but potent ball of fire at your enemies.
   Art: {fileID: 0}
   Cost: 1

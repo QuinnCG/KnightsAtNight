@@ -39,6 +39,9 @@ namespace Quinn.UI
 		[SerializeField]
 		private Vector2 CardDrawSpawn = new(20f, -200f);
 
+		[SerializeField]
+		private float CardHoveredYOffset = 6f;
+
 		public bool IsHoveringOnCard => _raiseCards;
 
 		private readonly List<(Card card, VisualElement element)> _cards = new();
@@ -281,6 +284,7 @@ namespace Quinn.UI
 
 		private void SetLarge(VisualElement element, bool large)
 		{
+			element.transform.position = new Vector2(0f, large ? -CardHoveredYOffset : 0f);
 			element.transform.scale = Vector2.one * (large ? CardHoverScaleFactor : 1f);
 			element.BringToFront();
 		}

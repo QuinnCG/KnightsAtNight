@@ -102,6 +102,7 @@ MonoBehaviour:
   CancelCastScreenZone: 0.1
   CardHoverScaleFactor: 1.2
   CardDrawSpawn: {x: -200, y: 500}
+  CardHoveredYOffset: 35
 --- !u!114 &1089358694419329463
 MonoBehaviour:
   m_ObjectHideFlags: 0

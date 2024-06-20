@@ -1,4 +1,5 @@
-﻿using Sirenix.OdinInspector;
+﻿using Quinn.CardSystem.Effect;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Quinn.CardSystem
@@ -10,13 +11,23 @@ namespace Quinn.CardSystem
 		public GameObject Prefab;
 		public int Count = 1;
 
-		// TODO: Spawn effects?
+		[InlineProperty]
+		public SpellEffect[] SpawnEffects;
 
 		public override void Cast()
 		{
 			for (int i = 0; i < Count; i++)
 			{
-				Prefab.Clone(Player.MousePos);
+				Vector2 pos = Player.MousePos;
+				var health = Prefab.Clone<Health>(pos);
+
+				if (SpawnEffects != null)
+				{
+					foreach (var effect in SpawnEffects)
+					{
+						effect.Activate(new(pos, health, this, null));
+					}
+				}
 			}
 		}
 	}

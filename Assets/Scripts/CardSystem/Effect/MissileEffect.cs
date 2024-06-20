@@ -1,6 +1,7 @@
 ﻿using FMODUnity;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.VFX;
 
 namespace Quinn.CardSystem.Effect
 {
@@ -8,6 +9,7 @@ namespace Quinn.CardSystem.Effect
 	{
 		[AssetsOnly]
 		public Sprite Sprite;
+		public VisualEffectAsset Trail;
 		[InlineProperty]
 		public SpellEffect HitEffect;
 
@@ -28,12 +30,25 @@ namespace Quinn.CardSystem.Effect
 		{
 			var missile = "Missile.prefab".Clone<MissileController>(Tower.Instance.SpellSpawnPoint);
 			missile.GetComponentInChildren<SpriteRenderer>().sprite = Sprite;
+
+			GameObject trail = null;
+			if (Trail)
+			{
+				trail = Trail.Clone(new(), parent: missile.transform).gameObject;
+			}
+
 			missile.OnHit += () =>
 			{
-				HitEffect.Activate(new(missile.transform.position, null, context.Source, this));
+				HitEffect?.Activate(new(missile.transform.position, null, context.Source, this));
 
-				if (SpawnVFX.IsValid) HitVFX.Spawn(context.Position);
+				if (HitVFX.IsValid) HitVFX.Spawn(context.Position);
 				HitSound.PlayOnce(context.Position);
+
+				if (trail)
+				{
+					trail.transform.parent = null;
+					Object.Destroy(trail, 3f);
+				}
 			};
 
 			missile.Launch(Player.MousePos, this);

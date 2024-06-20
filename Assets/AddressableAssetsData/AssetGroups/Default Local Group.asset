@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 1116d469133662d48a5458b30742a4e0
   m_SerializeEntries:
+  - m_GUID: 2f2ce4e8be25db9428628bfe7317f8e0
+    m_Address: VFX.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 61fb9f4311cfa1c4b9aa5a0600a05d40
     m_Address: Selection.prefab
     m_ReadOnly: 0

@@ -18,7 +18,7 @@ namespace Quinn
 		/// Clones the game object and returns the first instance of a component of type T.
 		/// </summary>
 		public static T Clone<T>(this GameObject gameObject, Vector2 position, Transform parent = null, string name = null)
-			where T : MonoBehaviour
+			where T : Behaviour
 		{
 			var instance = Clone(gameObject, position, parent, name);
 			return instance.GetComponentInChildren<T>();
@@ -27,7 +27,7 @@ namespace Quinn
 		/// Clones the game object and returns the first instance of a component of type T.
 		/// </summary>
 		public static T Clone<T>(this GameObject gameObject, Transform parent = null, string name = null)
-			where T : MonoBehaviour
+			where T : Behaviour
 		{
 			var instance = Object.Instantiate(gameObject, parent);
 			if (name != null) instance.name = name;
@@ -46,7 +46,7 @@ namespace Quinn
 		/// Clones the game object and returns the first instance of a component of type T.
 		/// </summary>
 		public static T Clone<T>(this string key, Vector2 position, Transform parent = null, string name = null)
-			where T : MonoBehaviour
+			where T : Behaviour
 		{
 			var instance = Clone(key, position, parent, name);
 			return instance.GetComponentInChildren<T>();
@@ -59,15 +59,11 @@ namespace Quinn
 			return instance;
 		}
 
-		public static GameObject Clone(this VisualEffectAsset vfx, Vector2 position, Transform parent = null, float lifespan = float.PositiveInfinity)
+		public static VisualEffect Clone(this VisualEffectAsset vfx, Vector2 position, Transform parent = null, float lifespan = float.PositiveInfinity)
 		{
-			var instance = new GameObject(vfx.name);
-			instance.transform.position = position;
-			instance.transform.parent = parent;
-
-			var v = instance.AddComponent<VisualEffect>();
-			v.visualEffectAsset = vfx;
-			v.Play();
+			var instance = "VFX.prefab".Clone<VisualEffect>(position, parent, vfx.name);
+			instance.visualEffectAsset = vfx;
+			instance.Play();
 
 			if (lifespan is >= 0f and < float.PositiveInfinity)
 			{
