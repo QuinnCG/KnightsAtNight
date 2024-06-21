@@ -35,6 +35,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: da888149166f5c54da125848eed87be3
+    m_Address: BurningStatus.vfx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dfba179f6b667e7409b12d303846b975
     m_Address: Missile.prefab
     m_ReadOnly: 0

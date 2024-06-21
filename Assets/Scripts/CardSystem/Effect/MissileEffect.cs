@@ -10,7 +10,7 @@ namespace Quinn.CardSystem.Effect
 		[AssetsOnly]
 		public Sprite Sprite;
 		public VisualEffectAsset Trail;
-		[InlineProperty]
+		[InlineProperty, LabelWidth(80f)]
 		public SpellEffect HitEffect;
 		[AssetsOnly]
 		public GameObject Prefab;

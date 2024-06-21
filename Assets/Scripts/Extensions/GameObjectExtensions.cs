@@ -16,5 +16,10 @@ namespace Quinn
 		{
 			return gameObject.GetComponent<Collider2D>().bounds.center;
 		}
+
+		public static Vector2 GetColliderSize(this GameObject gameObject)
+		{
+			return gameObject.GetComponent<Collider2D>().bounds.size;
+		}
 	}
 }

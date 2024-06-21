@@ -4,7 +4,7 @@ using UnityEngine.VFX;
 
 namespace Quinn
 {
-	[System.Serializable]
+	[System.Serializable, InlineProperty]
 	public struct VFX
 	{
 		[HorizontalGroup, HideLabel]

@@ -1,10 +1,12 @@
 ﻿using FMODUnity;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Quinn.CardSystem.Effect
 {
 	public class TargetAreaEffect : SpellEffect
 	{
+		[InlineProperty]
 		public SpellEffect Effect;
 		public float Radius = 3f;
 		public LayerMask Mask = CollisionUtility.HostileMask;

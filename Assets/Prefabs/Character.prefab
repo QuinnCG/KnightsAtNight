@@ -572,6 +572,7 @@ GameObject:
   - component: {fileID: 1139329235936232632}
   - component: {fileID: 121702423009856028}
   - component: {fileID: 8793846808353503904}
+  - component: {fileID: 5657732489058951385}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -751,6 +752,22 @@ MonoBehaviour:
   <Interval>k__BackingField: 0.5
   <Damage>k__BackingField: 30
   KnockbackSpeed: 8
+--- !u!114 &5657732489058951385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8592096676613882320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f39469fc660ab9a469195bbeb85c1b11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BurningVFX: {fileID: 8926484042661614526, guid: da888149166f5c54da125848eed87be3, type: 3}
+  WeakenedVFX: {fileID: 8926484042661614526, guid: da888149166f5c54da125848eed87be3, type: 3}
+  SlowedVFX: {fileID: 8926484042661614526, guid: da888149166f5c54da125848eed87be3, type: 3}
+  ShockedVFX: {fileID: 8926484042661614526, guid: da888149166f5c54da125848eed87be3, type: 3}
 --- !u!1 &8678720508959413236
 GameObject:
   m_ObjectHideFlags: 0

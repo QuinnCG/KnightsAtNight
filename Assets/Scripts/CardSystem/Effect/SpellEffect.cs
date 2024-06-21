@@ -4,7 +4,7 @@ namespace Quinn.CardSystem.Effect
 {
 	public abstract class SpellEffect
 	{
-		[BoxGroup(Order = float.PositiveInfinity)]
+		[BoxGroup(Order = float.PositiveInfinity), InlineProperty, LabelWidth(80f)]
 		public SpellEffect ChainEffect;
 
 		public void Activate(EffectContext context)
