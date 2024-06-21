@@ -12,6 +12,8 @@ namespace Quinn.CardSystem.Effect
 		public VisualEffectAsset Trail;
 		[InlineProperty]
 		public SpellEffect HitEffect;
+		[AssetsOnly]
+		public GameObject Prefab;
 
 		[Space]
 		public EventReference SpawnSound;
@@ -35,6 +37,11 @@ namespace Quinn.CardSystem.Effect
 			if (Trail)
 			{
 				trail = Trail.Clone(new(), parent: missile.transform).gameObject;
+			}
+
+			if (Prefab)
+			{
+				Prefab.Clone(missile.transform);
 			}
 
 			missile.OnHit += () =>

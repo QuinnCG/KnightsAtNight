@@ -14,6 +14,13 @@ namespace Quinn
 
 			return instance;
 		}
+		public static GameObject Clone(this GameObject gameObject, Transform parent, string name = null)
+		{
+			var instance = Object.Instantiate(gameObject, parent);
+			if (name != null) instance.name = name;
+
+			return instance;
+		}
 		/// <summary>
 		/// Clones the game object and returns the first instance of a component of type T.
 		/// </summary>
@@ -26,7 +33,7 @@ namespace Quinn
 		/// <summary>
 		/// Clones the game object and returns the first instance of a component of type T.
 		/// </summary>
-		public static T Clone<T>(this GameObject gameObject, Transform parent = null, string name = null)
+		public static T Clone<T>(this GameObject gameObject, Transform parent, string name = null)
 			where T : Behaviour
 		{
 			var instance = Object.Instantiate(gameObject, parent);
@@ -51,7 +58,7 @@ namespace Quinn
 			var instance = Clone(key, position, parent, name);
 			return instance.GetComponentInChildren<T>();
 		}
-		public static GameObject Clone(this string key, Transform parent = null, string name = null)
+		public static GameObject Clone(this string key, Transform parent, string name = null)
 		{
 			var instance = Addressables.InstantiateAsync(key, parent).WaitForCompletion();
 			if (name != null) instance.name = name;
