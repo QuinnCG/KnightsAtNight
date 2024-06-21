@@ -1,5 +1,4 @@
-﻿using Quinn.AI;
-using Quinn.CardSystem;
+﻿using Quinn.CardSystem;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -33,7 +32,7 @@ namespace Quinn.UI
 			_towerHealth.value = Tower.Instance.Health.Percent;
 			_mana.text = $"Mana: {_manager.Mana}/{_manager.MaxMana}";
 			_wave.text = $"Wave: {WaveManager.Instance.WaveNumber}";
-			_alive.text = $"Alive: {WaveManager.Instance.AliveCount}x";
+			_alive.text = $"Hostiles: {WaveManager.Instance.AliveCount}x";
 		}
 	}
 }
