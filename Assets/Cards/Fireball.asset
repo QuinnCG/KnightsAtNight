@@ -64,7 +64,7 @@ MonoBehaviour:
       Data: Quinn.StatusEffectEntry, Assembly-CSharp
     - Name: Type
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: IsInfinite
       Entry: 5
       Data: false

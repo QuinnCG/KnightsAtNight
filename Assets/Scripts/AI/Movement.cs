@@ -4,42 +4,35 @@ using UnityEngine;
 
 namespace Quinn.AI
 {
-	[RequireComponent(typeof(Rigidbody2D))]
+	[RequireComponent(typeof(Rigidbody2D), typeof(StatusEffectManager))]
 	public class Movement : MonoBehaviour
 	{
 		[field: SerializeField, BoxGroup("Basic", ShowLabel = false)]
 		public float Speed { get; set; } = 2f;
-
 		[field: SerializeField, BoxGroup("Basic", ShowLabel = false)]
 		public float StoppingDistance { get; private set; } = 0.1f;
-
 		[field: SerializeField, BoxGroup("Basic", ShowLabel = false)]
 		private bool FaceRandomOnSpawn = false;
-
 		[field: SerializeField, BoxGroup("Basic", ShowLabel = false), Required, Tooltip("The transform to flip towards movement direction.")]
 		private Transform FacingTransform;
+		[SerializeField, BoxGroup("Basic", ShowLabel = false)]
+		private float SlowedStatusSpeedFactor = 0.35f;
 
 		[SerializeField, BoxGroup("Avoidance", Order = 1f)]
 		private bool EnableAvoidance = true;
-
 		[SerializeField, BoxGroup("Avoidance", Order = 1f), ShowIf(nameof(EnableAvoidance))]
 		private LayerMask AvoidanceTarget;
-
 		[SerializeField, BoxGroup("Avoidance", Order = 1f), ShowIf(nameof(EnableAvoidance))]
 		private float AvoidanceRadius = 3f;
-
 		[SerializeField, BoxGroup("Avoidance", Order = 1f), ShowIf(nameof(EnableAvoidance))]
 		private float AvoidanceFactor = 0.3f;
 
 		[SerializeField, BoxGroup("Knockback", Order = 2f)]
 		private bool EnableKnockback = true;
-
 		[SerializeField, BoxGroup("Knockback", Order = 2f), ShowIf(nameof(EnableKnockback))]
 		private float KnockbackDuration = 0.3f;
-
 		[SerializeField, BoxGroup("Knockback", Order = 2f), ShowIf(nameof(EnableKnockback))]
 		private AnimationCurve KnockbackDecayCurve;
-
 		[SerializeField, BoxGroup("Knockback", Order = 2f), ShowIf(nameof(EnableKnockback))]
 		private float KnockbackSpeedFactor = 1f;
 
@@ -48,6 +41,8 @@ namespace Quinn.AI
 		public float AngleDeg => Angle * Mathf.Rad2Deg;
 
 		private Rigidbody2D _rb;
+		private StatusEffectManager _statusManager;
+
 		private Vector2 _vel;
 
 		private Vector2 _knockbackDir;
@@ -61,6 +56,7 @@ namespace Quinn.AI
 		private void Awake()
 		{
 			_rb = GetComponent<Rigidbody2D>();
+			_statusManager = GetComponent<StatusEffectManager>();
 
 			// Spawn facing a random direction (left or right).
 			if (FaceRandomOnSpawn)
@@ -91,7 +87,10 @@ namespace Quinn.AI
 				FacingTransform.localScale = new Vector3(Mathf.Sign(_vel.x), 1f, 1f);
 			}
 
-			_rb.velocity = _vel + _knockbackVel;
+			float vel = _vel.magnitude;
+			if (_statusManager.Has(StatusEffectType.Slowed)) vel *= SlowedStatusSpeedFactor;
+
+			_rb.velocity = (vel * _vel.normalized) + _knockbackVel;
 			_vel = Vector2.zero;
 			_knockbackVel = Vector2.zero;
 		}

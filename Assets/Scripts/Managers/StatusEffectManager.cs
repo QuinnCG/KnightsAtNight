@@ -15,8 +15,16 @@ namespace Quinn
 		[SerializeField]
 		private float BurningDamage = 10f;
 
+		[Space, SerializeField]
+		private float YOffset = 0.3f;
+
+		[Space, SerializeField, Required]
+		private Transform Body;
+
+		[Space, SerializeField, Required]
+		private VisualEffectAsset BurningVFX;
 		[SerializeField, Required]
-		private VisualEffectAsset BurningVFX, WeakenedVFX, SlowedVFX, ShockedVFX;
+		private VisualEffectAsset WeakenedVFX, SlowedVFX, ShockedVFX;
 
 		private readonly Dictionary<StatusEffectType, float> _statuses = new();
 		private readonly Dictionary<StatusEffectType, VisualEffect> _vfx = new();
@@ -104,15 +112,16 @@ namespace Quinn
 			{
 				var vfx = type switch
 				{
-					StatusEffectType.Burning => BurningVFX.Clone(transform),
-					StatusEffectType.Weakened => WeakenedVFX.Clone(transform),
-					StatusEffectType.Slowed => SlowedVFX.Clone(transform),
-					StatusEffectType.Shocked => ShockedVFX.Clone(transform),
+					StatusEffectType.Burning => BurningVFX.Clone(Body),
+					StatusEffectType.Weakened => WeakenedVFX.Clone(Body),
+					StatusEffectType.Slowed => SlowedVFX.Clone(Body),
+					StatusEffectType.Shocked => ShockedVFX.Clone(Body),
 					_ => throw new System.NotImplementedException(),
 				};
 
 				_vfx.Add(type, vfx);
 				vfx.transform.localPosition += 0.5f * gameObject.GetColliderSize().y * Vector3.up;
+				vfx.transform.localPosition += YOffset * Vector3.up;
 				vfx.gameObject.name = $"Status ({type})";
 			}
 		}
@@ -121,8 +130,11 @@ namespace Quinn
 		{
 			if (_vfx.TryGetValue(type, out VisualEffect vfx))
 			{
-				vfx.SetBool("Enabled", false);
-				Destroy(vfx.gameObject, DestroyVFXDelay);
+				if (vfx != null)
+				{
+					vfx.SetBool("Enabled", false);
+					Destroy(vfx.gameObject, DestroyVFXDelay);
+				}
 			}
 		}
 	}

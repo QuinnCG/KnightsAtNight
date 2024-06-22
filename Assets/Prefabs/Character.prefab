@@ -704,6 +704,7 @@ MonoBehaviour:
   <StoppingDistance>k__BackingField: 0.1
   FaceRandomOnSpawn: 0
   FacingTransform: {fileID: 2590345924205399577}
+  SlowedStatusSpeedFactor: 0.35
   EnableAvoidance: 0
   AvoidanceTarget:
     serializedVersion: 2
@@ -764,9 +765,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39469fc660ab9a469195bbeb85c1b11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BurningDamageInterval: 2
+  BurningDamage: 10
+  YOffset: 0.1
+  Body: {fileID: 2444592231519714556}
   BurningVFX: {fileID: 8926484042661614526, guid: da888149166f5c54da125848eed87be3, type: 3}
   WeakenedVFX: {fileID: 8926484042661614526, guid: da888149166f5c54da125848eed87be3, type: 3}
-  SlowedVFX: {fileID: 8926484042661614526, guid: da888149166f5c54da125848eed87be3, type: 3}
+  SlowedVFX: {fileID: 8926484042661614526, guid: b7460052911722e4aa308ef153e8ec93, type: 3}
   ShockedVFX: {fileID: 8926484042661614526, guid: da888149166f5c54da125848eed87be3, type: 3}
 --- !u!1 &8678720508959413236
 GameObject:
