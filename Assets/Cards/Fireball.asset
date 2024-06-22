@@ -58,7 +58,22 @@ MonoBehaviour:
       Data: 4|Quinn.StatusEffectEntry[], Assembly-CSharp
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: Quinn.StatusEffectEntry, Assembly-CSharp
+    - Name: Type
+      Entry: 3
+      Data: 0
+    - Name: IsInfinite
+      Entry: 5
+      Data: false
+    - Name: Duration
+      Entry: 4
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 7
       Data: Quinn.StatusEffectEntry, Assembly-CSharp
@@ -70,7 +85,7 @@ MonoBehaviour:
       Data: false
     - Name: Duration
       Entry: 4
-      Data: 5
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -91,16 +106,16 @@ MonoBehaviour:
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 30
+      Data: 20
     - Name: 
       Entry: 4
-      Data: 35
+      Data: 25
     - Name: 
       Entry: 8
       Data: 
     - Name: Knockback
       Entry: 4
-      Data: 20
+      Data: 15
     - Name: 
       Entry: 8
       Data: 

@@ -752,6 +752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Interval>k__BackingField: 0.5
   <Damage>k__BackingField: 30
+  WeakenedStatusDamageFactor: 0.3
   KnockbackSpeed: 8
 --- !u!114 &5657732489058951385
 MonoBehaviour:
@@ -767,12 +768,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BurningDamageInterval: 2
   BurningDamage: 10
-  YOffset: 0.1
+  YOffset: -0.1
   Body: {fileID: 2444592231519714556}
   BurningVFX: {fileID: 8926484042661614526, guid: da888149166f5c54da125848eed87be3, type: 3}
-  WeakenedVFX: {fileID: 8926484042661614526, guid: da888149166f5c54da125848eed87be3, type: 3}
+  WeakenedVFX: {fileID: 8926484042661614526, guid: 50f84e34ce6e3c740bb579ead5faf519, type: 3}
   SlowedVFX: {fileID: 8926484042661614526, guid: b7460052911722e4aa308ef153e8ec93, type: 3}
   ShockedVFX: {fileID: 8926484042661614526, guid: da888149166f5c54da125848eed87be3, type: 3}
+  GhostFireBurningVFX: {fileID: 8926484042661614526, guid: 16c56e61d43ba3a45b282525a1a48408, type: 3}
+  BlessingVFX: {fileID: 8926484042661614526, guid: da888149166f5c54da125848eed87be3, type: 3}
 --- !u!1 &8678720508959413236
 GameObject:
   m_ObjectHideFlags: 0

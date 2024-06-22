@@ -20,9 +20,22 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: SpawnEffects
+      Entry: 7
+      Data: 0|Quinn.CardSystem.Effect.SpellEffect[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   Title: Dummy
   Description: A dummy character, for testing purposes.
   Art: {fileID: 2726694746111945042, guid: 859d6c533ada4a242b76d6760912744c, type: 3}
   Cost: 3
   Prefab: {fileID: 5658015958919108461, guid: 8bf184d75c107b04396100f634042d80, type: 3}
+  Count: 1
