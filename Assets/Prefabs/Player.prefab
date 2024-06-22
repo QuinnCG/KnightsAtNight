@@ -139,15 +139,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c62ba71c326f6b4db81da0f68706f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: PanSpeed
-      Entry: 4
-      Data: 4
+  BasePanSpeed: 6
+  ZoomSpeedFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.5
+      outSlope: -0.5
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.5
+      inSlope: -0.5
+      outSlope: -0.5
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  ZoomSpeed: 5
+  MinOrthoScale: 5
+  MaxOrthoScale: 8
+  ZoomDamping: 0.07
+  BoundsSize: {x: 12, y: 14}

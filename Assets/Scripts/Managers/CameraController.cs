@@ -1,16 +1,34 @@
-using Sirenix.OdinInspector;
-using Sirenix.Serialization;
+using Unity.Cinemachine;
 using UnityEngine;
 
 namespace Quinn
 {
-	public class CameraController : SerializedMonoBehaviour
+	public class CameraController : MonoBehaviour
 	{
-		[OdinSerialize]
-		public float PanSpeed { get; set; } = 4f;
+		[SerializeField]
+		private float BasePanSpeed = 4f;
+		[SerializeField]
+		private AnimationCurve ZoomSpeedFactor;
 
-		// TODO: Add camera zooming.
-		// TODO: Add camera bounds.
+		[Space, SerializeField]
+		private float ZoomSpeed = 5f;
+		[SerializeField]
+		private float MinOrthoScale = 5f, MaxOrthoScale = 8f;
+		[SerializeField]
+		private float ZoomDamping = 0.3f;
+
+		[Space, SerializeField]
+		private Vector2 BoundsSize = new(16, 12f);
+
+		private CinemachineCamera _vcam;
+		private float _zoomVel;
+		private float _targetZoomScale;
+		
+		private void Start()
+		{
+			_vcam = CinemachineBrain.GetActiveBrain(0).ActiveVirtualCamera as CinemachineCamera;
+			_targetZoomScale = _vcam.Lens.OrthographicSize;
+		}
 
 		void Update()
 		{
@@ -20,8 +38,24 @@ namespace Quinn
 				y = Input.GetAxisRaw("Vertical")
 			}.normalized;
 
-			float speed = PanSpeed;
+			float t = (_vcam.Lens.OrthographicSize - MinOrthoScale) / (MaxOrthoScale - MinOrthoScale);
+			t = 1f - Mathf.Clamp01(t);
+
+			float speed = BasePanSpeed * ZoomSpeedFactor.Evaluate(t);
 			transform.position += speed * Time.deltaTime * inputDir;
+
+			var half = BoundsSize / 2f;
+			var pos = new Vector2()
+			{
+				x = Mathf.Clamp(transform.position.x, -half.x, half.x),
+				y = Mathf.Clamp(transform.position.y, -half.y, half.y)
+			};
+			transform.position = pos;
+			
+			float deltaScroll = Input.GetAxisRaw("Mouse ScrollWheel");
+			_targetZoomScale = Mathf.Clamp(_targetZoomScale - (deltaScroll * ZoomSpeed), 3f, 10f);
+
+			_vcam.Lens.OrthographicSize = Mathf.SmoothDamp(_vcam.Lens.OrthographicSize, _targetZoomScale, ref _zoomVel, ZoomDamping);
 		}
 	}
 }
