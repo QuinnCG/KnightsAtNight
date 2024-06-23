@@ -17,5 +17,12 @@ namespace Quinn.CardSystem
 			Source = source;
 			ParentEffect = parent;
 		}
+		public EffectContext(EffectContext parentContext, SpellEffect parentEffect)
+		{
+			Position = parentContext.Position;
+			Target = parentContext.Target;
+			Source = parentContext.Source;
+			ParentEffect = parentEffect;
+		}
 	}
 }

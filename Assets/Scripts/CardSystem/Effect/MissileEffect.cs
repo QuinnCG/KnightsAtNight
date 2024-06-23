@@ -14,6 +14,7 @@ namespace Quinn.CardSystem.Effect
 		public SpellEffect HitEffect;
 		[AssetsOnly]
 		public GameObject Prefab;
+		public float TargetRadius = 0f;
 
 		[Space]
 		public EventReference SpawnSound;
@@ -58,7 +59,10 @@ namespace Quinn.CardSystem.Effect
 				}
 			};
 
-			missile.Launch(Player.MousePos, this);
+
+			Vector2 targetPos = context.Position + (Random.insideUnitCircle * TargetRadius);
+			missile.Launch(targetPos, this);
+
 			if (SpawnVFX.IsValid) SpawnVFX.Spawn(context.Position);
 			SpawnSound.PlayOnce(context.Position);
 		}

@@ -1,5 +1,5 @@
 .tower-health .unity-progress-bar__progress {
-    background-color: rgba(113, 255, 140, 0.73);
+    background-color: rgb(255, 59, 59);
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;
@@ -7,7 +7,7 @@
 }
 
 .tower-health .unity-progress-bar__background {
-    background-color: rgba(27, 72, 37, 0.6);
+    background-color: rgba(72, 38, 38, 0.53);
     border-left-width: 0;
     border-right-width: 0;
     border-top-width: 0;
@@ -15,7 +15,7 @@
 }
 
 Label {
-    -unity-font-definition: url("project://database/Assets/PixelFont.TTF?fileID=12800000&guid=53cfef4d882b6a144905a48a9ffda3f9&type=3#PixelFont");
+    -unity-font-definition: url("project://database/Assets/Font/PixelFont.TTF?fileID=12800000&guid=53cfef4d882b6a144905a48a9ffda3f9&type=3#PixelFont");
     -unity-font-style: normal;
 }
 

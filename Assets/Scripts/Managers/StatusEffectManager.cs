@@ -24,7 +24,7 @@ namespace Quinn
 		[Space, SerializeField, Required]
 		private VisualEffectAsset BurningVFX;
 		[SerializeField, Required]
-		private VisualEffectAsset WeakenedVFX, SlowedVFX, ShockedVFX, GhostFireBurningVFX, BlessingVFX;
+		private VisualEffectAsset WeakenedVFX, SlowedVFX, ShockedVFX, GhostFireBurningVFX;
 
 		private readonly Dictionary<StatusEffectType, float> _statuses = new();
 		private readonly Dictionary<StatusEffectType, VisualEffect> _vfx = new();
@@ -117,7 +117,6 @@ namespace Quinn
 					StatusEffectType.Slowed => SlowedVFX.Clone(Body),
 					StatusEffectType.Shocked => ShockedVFX.Clone(Body),
 					StatusEffectType.GhostFireBurning => GhostFireBurningVFX.Clone(Body),
-					StatusEffectType.Blessing => BlessingVFX.Clone(Body),
 					_ => throw new System.NotImplementedException(),
 				};
 

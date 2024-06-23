@@ -12,7 +12,13 @@
 		Shocked,
 		// Like Burning, but meant to last longer.
 		GhostFireBurning,
-		// Take reduced damage and move faster.
-		Blessing
+		// Take less damage.
+		Resistance,
+		// Deal more damage.
+		Strength,
+		// Move faster.
+		Haste,
+		// Same as shocked but with different VFX.
+		Frozen
 	}
 }

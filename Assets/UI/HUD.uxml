@@ -1,11 +1,11 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/Style%20Sheets/HUDStyleSheet.uss?fileID=7433441132597879392&amp;guid=81a33ae2843cc4d4d907a2f1cfdd6aae&amp;type=3#HUDStyleSheet" />
     <engine:VisualElement style="flex-grow: 1; align-items: center;">
-        <engine:ProgressBar value="0.7" high-value="1" name="tower-health" class="tower-health" style="width: 70%; margin-top: 33px;" />
+        <engine:ProgressBar value="0.7" high-value="1" name="tower-health" class="tower-health" style="width: 70%; margin-top: 44px;" />
     </engine:VisualElement>
-    <engine:VisualElement style="flex-grow: 1; position: absolute; width: 100%; background-color: rgb(35, 44, 61); flex-direction: row;">
-        <engine:Label text="Mana: 10/10" name="mana" focusable="true" class="stat" style="color: rgb(255, 255, 255); position: relative;" />
-        <engine:Label text="Wave: 99" name="wave" focusable="true" class="stat" style="color: rgb(255, 255, 255); position: relative;" />
-        <engine:Label text="Hostiles: 300x" name="alive" focusable="true" class="stat" style="color: rgb(255, 255, 255); position: relative;" />
+    <engine:VisualElement enabled="true" style="flex-grow: 1; position: absolute; width: 100%; background-color: rgb(32, 34, 35); flex-direction: row; color: rgb(255, 255, 255); font-size: 20px;">
+        <engine:Label text="Mana: 10/10" name="mana" focusable="true" class="stat" style="position: relative;" />
+        <engine:Label text="Wave: 99" name="wave" focusable="true" class="stat" style="position: relative;" />
+        <engine:Label text="Hostiles: 300x" name="alive" focusable="true" class="stat" style="position: relative;" />
     </engine:VisualElement>
 </engine:UXML>
