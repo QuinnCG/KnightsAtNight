@@ -94,11 +94,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 121702423009856028, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
       propertyPath: AvoidanceFactor
-      value: 0.15
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 121702423009856028, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
       propertyPath: AvoidanceRadius
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 121702423009856028, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
       propertyPath: EnableAvoidance
@@ -109,12 +109,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 121702423009856028, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
+      propertyPath: AvoidanceTurnDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 121702423009856028, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
       propertyPath: <Speed>k__BackingField
       value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 121702423009856028, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
       propertyPath: AvoidanceTarget.m_Bits
-      value: 72
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 121702423009856028, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
       propertyPath: serializationData.Prefab

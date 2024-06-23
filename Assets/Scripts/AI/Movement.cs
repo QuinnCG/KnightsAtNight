@@ -26,6 +26,8 @@ namespace Quinn.AI
 		private float AvoidanceRadius = 3f;
 		[SerializeField, BoxGroup("Avoidance", Order = 1f), ShowIf(nameof(EnableAvoidance))]
 		private float AvoidanceFactor = 0.3f;
+		[SerializeField, BoxGroup("Avoidance", Order = 1f), ShowIf(nameof(EnableAvoidance))]
+		private float AvoidanceTurnDuration = 0.3f;
 
 		[SerializeField, BoxGroup("Knockback", Order = 2f)]
 		private bool EnableKnockback = true;
@@ -49,6 +51,9 @@ namespace Quinn.AI
 		private float _knockbackInitialSpeed;
 		private float _knockbackSpeed;
 		private float _knockbackStartTime;
+
+		private float _avoidanceTargetAngle;
+		private float _avoidanceTargetAngleVel;
 
 		// Zeroed out every frame.
 		private Vector2 _knockbackVel;
@@ -90,6 +95,13 @@ namespace Quinn.AI
 			float vel = _vel.magnitude;
 			if (_statusManager.Has(StatusEffectType.Slowed)) vel *= SlowedStatusSpeedFactor;
 
+			// Moving this frame but idle last.
+			if (_vel.sqrMagnitude > 0f && _rb.velocity.sqrMagnitude == 0f)
+			{
+				var dir = _vel.normalized;
+				_avoidanceTargetAngle = Mathf.Atan2(dir.y, dir.x);
+			}
+
 			_rb.velocity = (vel * _vel.normalized) + _knockbackVel;
 			_vel = Vector2.zero;
 			_knockbackVel = Vector2.zero;
@@ -111,9 +123,10 @@ namespace Quinn.AI
 					Vector2 obstacleDir = transform.position.DirectionTo(obstacle);
 					float obstacleAngle = Mathf.Atan2(obstacleDir.y, obstacleDir.x);
 
-					float deltaAngle = Angle - (obstacleAngle * AvoidanceFactor);
-					var avoidDir = new Vector2(Mathf.Cos(deltaAngle), Mathf.Sin(deltaAngle));
+					float desiredAngle = (Angle - obstacleAngle) * AvoidanceFactor;
+					_avoidanceTargetAngle = Mathf.SmoothDampAngle(_avoidanceTargetAngle, desiredAngle, ref _avoidanceTargetAngleVel, AvoidanceTurnDuration);
 
+					var avoidDir = new Vector2(Mathf.Cos(_avoidanceTargetAngle), Mathf.Sin(_avoidanceTargetAngle));
 					dirToTarget = avoidDir;
 
 					float dstToObstacle = transform.position.DistanceTo(obstacle);
