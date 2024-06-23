@@ -145,11 +145,11 @@ namespace Quinn.UI
 				// Ignore right and middle mouse presses.
 				if (evnt.button != 0) return;
 
+				// Can't afford, so we can't drag.
+				if (card.Cost > _manager.Mana) return;
+
 				// Incase something breaks.
-				if (_dragged != null)
-				{
-					_dragged = null;
-				}
+				_dragged = null;
 
 				_dragged = element;
 				_dragged.style.opacity = DraggedCardOpacity;
@@ -190,13 +190,15 @@ namespace Quinn.UI
 			float yOffset = (_raiseCards && (_dragged == null)) ? 0f : CardYOffset;
 
 			int i = 0;
-			foreach (var (_, element) in _cards)
+			foreach (var (card, element) in _cards)
 			{
 				if (element == _dragged) continue;
 
 				element.style.opacity = 1f;
 				element.style.rotate = new Rotate(0f);
 				float curveYOffset = 0f;
+
+				SetActive(element, _manager.Mana >= card.Cost);
 
 				if (!_raiseCards)
 				{
@@ -287,6 +289,11 @@ namespace Quinn.UI
 			element.transform.position = new Vector2(0f, large ? -CardHoveredYOffset : 0f);
 			element.transform.scale = Vector2.one * (large ? CardHoverScaleFactor : 1f);
 			element.BringToFront();
+		}
+
+		private void SetActive(VisualElement element, bool active)
+		{
+			element.style.opacity = active ? 1f : 0.5f;
 		}
 	}
 }
