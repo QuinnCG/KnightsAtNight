@@ -8,6 +8,9 @@ namespace Quinn.UI
 	[RequireComponent(typeof(CardManager))]
 	public class HUD : MonoBehaviour
 	{
+		[SerializeField]
+		private Gradient ManaColor;
+
 		private CardManager _manager;
 		private VisualElement _root;
 
@@ -33,6 +36,8 @@ namespace Quinn.UI
 			_mana.text = $"Mana: {_manager.Mana}/{_manager.MaxMana}";
 			_wave.text = $"Wave: {WaveManager.Instance.WaveNumber}";
 			_alive.text = $"Hostiles: {WaveManager.Instance.AliveCount}x";
+
+			_mana.style.color = ManaColor.Evaluate(1f - ((float)_manager.Mana / _manager.MaxMana));
 		}
 	}
 }

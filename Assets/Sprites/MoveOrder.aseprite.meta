@@ -332,27 +332,6 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 87}
-  - name: MoveOrder_Frame_10
-    originalName: 
-    pivot: {x: 0.50000006, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 26
-      y: 87
-      width: 5
-      height: 28
-    spriteID: 53561d202e99cae419100bc6044f5f9b
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 26, y: 87}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -452,15 +431,6 @@ ScriptedImporter:
         width: 14
         height: 24
       spriteId: 70eb21207c7dbe645ae19f92fc4c6834
-    - name: MoveOrder_Frame_10
-      frameIndex: 10
-      additiveSortOrder: 0
-      cellRect:
-        x: 13
-        y: 8
-        width: 5
-        height: 28
-      spriteId: 53561d202e99cae419100bc6044f5f9b
     linkedCells: []
     parentIndex: -1
   platformSettings:

@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Quinn.AI
@@ -28,12 +29,12 @@ namespace Quinn.AI
 
 		private Vector2 _rallyPoint;
 		private Vector2 _wanderPos;
-		private Vector2 _orderPos;
 		private Transform _targetTransform;
 		private Health _targetHealth;
 		private float _nextWanderTime;
 
-		// TODO: Stop units from getting stuck on tower sometimes.
+		//private readonly List<Vector2> _orderTargetPositions = new();
+		private Vector2 _orderTargetPos;
 
 		protected override void Awake()
 		{
@@ -61,8 +62,19 @@ namespace Quinn.AI
 
 		public void Order(Vector2 target)
 		{
-			_orderPos = target;
-			TransitionTo(OnOrder);
+			_orderTargetPos = target;
+
+			//_orderTargetPositions.Add(target);
+
+			//if (_orderTargetPositions.Count > 2)
+			//{
+			//	_orderTargetPositions.RemoveAt(0);
+			//}
+
+			if (ActiveState != OnOrder)
+			{
+				TransitionTo(OnOrder);
+			}
 		}
 
 		private void OnPatrol(bool isStart)
@@ -106,14 +118,27 @@ namespace Quinn.AI
 		{
 			if (isStart)
 			{
-				_rallyPoint = _orderPos;
+				_rallyPoint = _orderTargetPos;
+
+				//_orderTargetPos = _orderTargetPositions[0];
+				//_orderTargetPositions.RemoveAt(0);
 			}
 
-			Movement.MoveTo(_orderPos);
+			Movement.MoveTo(_orderTargetPos);
 
-			if (transform.position.DistanceTo(_orderPos) < Movement.StoppingDistance)
+			if (transform.position.DistanceTo(_orderTargetPos) < Movement.StoppingDistance)
 			{
 				TransitionTo(OnPatrol);
+
+				//if (_orderTargetPositions.Count == 0)
+				//{
+				//	TransitionTo(OnPatrol);
+				//}
+				//else
+				//{
+				//	_orderTargetPos = _orderTargetPositions[0];
+				//	_orderTargetPositions.RemoveAt(0);
+				//}
 			}
 		}
 

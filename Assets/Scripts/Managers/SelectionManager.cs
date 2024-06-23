@@ -1,5 +1,6 @@
 ﻿using Quinn.AI;
 using Quinn.UI;
+using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -10,6 +11,9 @@ namespace Quinn
 	public class SelectionManager : MonoBehaviour
 	{
 		public static SelectionManager Instance { get; private set; }
+
+		[SerializeField]
+		private float UnitBaseRadius = 1f;
 
 		public bool IsSelecting => _box != null;
 		public bool AnySelected => _selected.Count > 0;
@@ -65,9 +69,14 @@ namespace Quinn
 				// The MoveOrder prefab will handle its own lifecycle.
 				"MoveOrder.prefab".Clone(cursorPos);
 
+				int i = 0;
 				foreach (var unit in _selected)
 				{
-					unit.Order(cursorPos);
+					float radius = UnitBaseRadius;
+					Vector2 pos = GetTargetPos(cursorPos, i, _selected.Count, radius);
+
+					unit.Order(pos);
+					i++;
 				}
 			}
 
@@ -185,6 +194,19 @@ namespace Quinn
 				var instance = "Selection.prefab".Clone(unit.transform);
 				_outlines.Add(unit, instance);
 			}
+		}
+
+		private Vector2 GetTargetPos(Vector2 center, int index, int count, float radius)
+		{
+			if (count == 1) return center;
+
+			float total = Mathf.PI * 2f;
+			float part = total / count;
+
+			float angle = part * index;
+			var pos = new Vector2(Mathf.Cos(angle) * radius, Mathf.Sin(angle) * radius);
+
+			return center + pos;
 		}
 	}
 }
