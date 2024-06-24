@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{969740a0-0a7f-4440-a660-f0c755fc4537}">
+		<property name="assetPath">
+			<value>Ambience/Ambience Night Crickets And A Bullfrog.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>90.174693877551022</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f9968c7f-1232-4667-a112-eb9310f8d1a8}</destination>
+		</relationship>
+	</object>
+</objects>

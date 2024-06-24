@@ -197,6 +197,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   ZoomSpeed: 5
   MinOrthoScale: 5
-  MaxOrthoScale: 11
+  MaxOrthoScale: 12.5
   ZoomDamping: 0.07
-  BoundsSize: {x: 14, y: 16}
+  BoundsSize: {x: 14, y: 18}

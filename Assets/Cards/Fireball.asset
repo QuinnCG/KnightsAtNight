@@ -153,10 +153,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 20
+      Data: 30
     - Name: 
       Entry: 4
-      Data: 25
+      Data: 35
     - Name: 
       Entry: 8
       Data: 
