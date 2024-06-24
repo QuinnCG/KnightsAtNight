@@ -53,7 +53,7 @@ namespace Quinn
 			transform.position = pos;
 			
 			float deltaScroll = Input.GetAxisRaw("Mouse ScrollWheel");
-			_targetZoomScale = Mathf.Clamp(_targetZoomScale - (deltaScroll * ZoomSpeed), 3f, 10f);
+			_targetZoomScale = Mathf.Clamp(_targetZoomScale - (deltaScroll * ZoomSpeed), MinOrthoScale, MaxOrthoScale);
 
 			_vcam.Lens.OrthographicSize = Mathf.SmoothDamp(_vcam.Lens.OrthographicSize, _targetZoomScale, ref _zoomVel, ZoomDamping);
 		}

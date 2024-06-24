@@ -124,7 +124,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Tower
     originalName: 
-    pivot: {x: 0.47058824, y: 0.27272728}
+    pivot: {x: 0.47142857, y: 0.28089887}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -132,8 +132,8 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 68
-      height: 88
+      width: 70
+      height: 89
     spriteID: 802861a114ecec64783b2a26b5a99b8e
     spriteBone: []
     spriteOutline: []
@@ -156,10 +156,10 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 32
-        y: 24
-        width: 68
-        height: 88
+        x: 31
+        y: 23
+        width: 70
+        height: 89
       spriteId: 802861a114ecec64783b2a26b5a99b8e
     linkedCells: []
     parentIndex: -1

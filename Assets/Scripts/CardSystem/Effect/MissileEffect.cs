@@ -7,27 +7,28 @@ namespace Quinn.CardSystem.Effect
 {
 	public class MissileEffect : SpellEffect
 	{
-		[AssetsOnly]
+		public float ArchHeight = 4f;
+		public float Speed = 10f;
+
+		[Space, AssetsOnly]
 		public Sprite Sprite;
 		public VisualEffectAsset Trail;
-		[InlineProperty, LabelWidth(80f)]
+
+		[Space, LabelWidth(80f)]
 		public SpellEffect HitEffect;
 		[AssetsOnly]
 		public GameObject Prefab;
 		public float TargetRadius = 0f;
 
-		[Space]
-		public EventReference SpawnSound;
-		[InlineProperty]
+		[InlineProperty, BoxGroup("Spawn", ShowLabel = false)]
 		public VFX SpawnVFX = new();
+		[BoxGroup("Spawn", ShowLabel = false)]
+		public EventReference SpawnSound;
 
-		[Space]
-		public EventReference HitSound;
-		[InlineProperty]
+		[InlineProperty, BoxGroup("Hit", ShowLabel = false)]
 		public VFX HitVFX = new();
-
-		public float ArchHeight = 4f;
-		public float Speed = 10f;
+		[BoxGroup("Hit", ShowLabel = false)]
+		public EventReference HitSound;
 
 		protected override void OnActivate(EffectContext context)
 		{
