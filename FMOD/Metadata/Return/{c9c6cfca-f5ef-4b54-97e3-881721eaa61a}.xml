@@ -25,6 +25,9 @@
 	</object>
 	<object class="MixerBusPanner" id="{09a5467f-70d3-42db-a69d-95eadd244c40}" />
 	<object class="SFXReverbEffect" id="{9ef01a1b-ad67-4523-bacf-19cef6f979ad}">
+		<property name="decayTime">
+			<value>2300</value>
+		</property>
 		<property name="wetLevel">
 			<value>0</value>
 		</property>

@@ -1,3 +1,4 @@
+using FMODUnity;
 using Unity.Cinemachine;
 using UnityEngine;
 
@@ -38,10 +39,12 @@ namespace Quinn
 				y = Input.GetAxisRaw("Vertical")
 			}.normalized;
 
-			float t = (_vcam.Lens.OrthographicSize - MinOrthoScale) / (MaxOrthoScale - MinOrthoScale);
-			t = 1f - Mathf.Clamp01(t);
+			float zoomPercent = (_vcam.Lens.OrthographicSize - MinOrthoScale) / (MaxOrthoScale - MinOrthoScale);
+			zoomPercent = 1f - Mathf.Clamp01(zoomPercent);
 
-			float speed = BasePanSpeed * ZoomSpeedFactor.Evaluate(t);
+			RuntimeManager.StudioSystem.setParameterByName("zoom", zoomPercent);
+
+			float speed = BasePanSpeed * ZoomSpeedFactor.Evaluate(zoomPercent);
 			transform.position += speed * Time.deltaTime * inputDir;
 
 			var half = BoundsSize / 2f;

@@ -52,9 +52,17 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -7021036504707450620, guid: 40fa31ecfd0008a4c9bac79a1a788038, type: 3}
+    - target: {fileID: 1698474992320851086, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2221333610841638523, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: m_Name
       value: Spearman
+      objectReference: {fileID: 0}
+    - target: {fileID: 2221333610841638523, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2299612989415224056, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -162,6 +170,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5555112253600730363, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555112253600730363, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
+      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5840733363533548884, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
