@@ -523,7 +523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8793846808353503904, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
       propertyPath: <Damage>k__BackingField
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8793846808353503904, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
       propertyPath: serializationData.Prefab
