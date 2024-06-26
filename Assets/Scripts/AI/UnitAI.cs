@@ -1,5 +1,3 @@
-using Sirenix.OdinInspector;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Quinn.AI
@@ -13,25 +11,28 @@ namespace Quinn.AI
 		[SerializeField]
 		private LayerMask TargetMask;
 
-		[SerializeField]
+		[SerializeField, Tooltip("The range in which to attack and damage in.")]
 		private float AttackRange = 0.8f;
 
-		[SerializeField]
-		private float PatrolSightRadius = 3f, AttackSightRadius = 5f;
+		[SerializeField, Tooltip("The range in which to spot enemies.")]
+		private float PatrolSightRadius = 3f;
 
-		[SerializeField]
-		private float WanderDistance = 1f;
+		[SerializeField, Tooltip("The range in which to keep aggro on a target.")]
+		private float AttackSightRadius = 5f;
 
-		[SerializeField, MinMaxSlider(0f, 10f, ShowFields = true)]
-		private Vector2 WanderInterval = new(0.5f, 4f);
+		//[SerializeField]
+		//private float WanderDistance = 1f;
+
+		//[SerializeField, MinMaxSlider(0f, 10f, ShowFields = true)]
+		//private Vector2 WanderInterval = new(0.5f, 4f);
 
 		private Collider2D _collider;
 
-		private Vector2 _rallyPoint;
-		private Vector2 _wanderPos;
+		//private Vector2 _rallyPoint;
+		//private Vector2 _wanderPos;
 		private Transform _targetTransform;
 		private Health _targetHealth;
-		private float _nextWanderTime;
+		//private float _nextWanderTime;
 
 		//private readonly List<Vector2> _orderTargetPositions = new();
 		private Vector2 _orderTargetPos;
@@ -44,11 +45,11 @@ namespace Quinn.AI
 			TransitionTo(OnPatrol);
 		}
 
-		private void Start()
-		{
-			_rallyPoint = transform.position;
-			_wanderPos = transform.position;
-		}
+		//private void Start()
+		//{
+		//	_rallyPoint = transform.position;
+		//	_wanderPos = transform.position;
+		//}
 
 		protected override void Update()
 		{
@@ -81,8 +82,8 @@ namespace Quinn.AI
 		{
 			if (isStart)
 			{
-				_wanderPos = _rallyPoint + (Random.insideUnitCircle * WanderDistance);
-				_nextWanderTime = Time.time + Random.Range(WanderInterval.x, WanderInterval.y);
+				//_wanderPos = _rallyPoint + (Random.insideUnitCircle * WanderDistance);
+				//_nextWanderTime = Time.time + Random.Range(WanderInterval.x, WanderInterval.y);
 			}
 
 			// Look for enemies, goto attack if found
@@ -97,28 +98,28 @@ namespace Quinn.AI
 			}
 
 			// Move to wander target position.
-			float dst = Vector2.Distance(transform.position, _wanderPos);
+			//float dst = Vector2.Distance(transform.position, _wanderPos);
 
-			if (Time.time > _nextWanderTime)
-			{
-				if (dst > Movement.StoppingDistance)
-				{
-					// Disabling wandering.
-					//Movement.MoveTo(_wanderPos);
-				}
-				else
-				{
-					_nextWanderTime = Time.time + Random.Range(WanderInterval.x, WanderInterval.y);
-					TransitionTo(OnPatrol);
-				}
-			}
+			//if (Time.time > _nextWanderTime)
+			//{
+			//	if (/*dst > Movement.StoppingDistance*/false)
+			//	{
+			//		// Disabling wandering.
+			//		Movement.MoveTo(_wanderPos);
+			//	}
+			//	else
+			//	{
+			//		_nextWanderTime = Time.time + Random.Range(WanderInterval.x, WanderInterval.y);
+			//		TransitionTo(OnPatrol);
+			//	}
+			//}
 		}
 
 		private void OnOrder(bool isStart)
 		{
 			if (isStart)
 			{
-				_rallyPoint = _orderTargetPos;
+				//_rallyPoint = _orderTargetPos;
 
 				//_orderTargetPos = _orderTargetPositions[0];
 				//_orderTargetPositions.RemoveAt(0);
@@ -144,15 +145,16 @@ namespace Quinn.AI
 
 		private void OnAttack(bool isStart)
 		{
-			_rallyPoint = transform.position;
+			//_rallyPoint = transform.position;
 
-			if (_targetTransform == null || _targetHealth.Current == 0f)
+			if (_targetTransform == null || _targetHealth.IsDead)
 			{
 				TransitionTo(OnPatrol);
 				return;
 			}
 
 			float dstToTarget = transform.position.DistanceTo(_targetTransform.position);
+
 			if (dstToTarget < AttackRange)
 			{
 				Combat.Attack(_targetTransform.gameObject);

@@ -447,6 +447,18 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 1139329235936232632, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
+    - target: {fileID: 1139329235936232632, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
+      propertyPath: HideDuringFadeOut.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139329235936232632, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
+      propertyPath: 'HideDuringFadeOut.Array.data[0]'
+      value: 
+      objectReference: {fileID: 7680094450770019764}
+    - target: {fileID: 1139329235936232632, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
+      propertyPath: 'HideDuringFadeOut.Array.data[1]'
+      value: 
+      objectReference: {fileID: 4788178642571158756}
     - target: {fileID: 1600807891656160801, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -654,3 +666,8 @@ MonoBehaviour:
   AttackRange: 0.7
   EngageRadius: 3
   DisengageRange: 4
+--- !u!1 &7680094450770019764 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8678720508959413236, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
+  m_PrefabInstance: {fileID: 1361265095978833472}
+  m_PrefabAsset: {fileID: 0}

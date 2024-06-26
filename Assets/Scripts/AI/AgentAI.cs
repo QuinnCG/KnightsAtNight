@@ -16,6 +16,7 @@ namespace Quinn.AI
 		protected Movement Movement { get; private set; }
 		protected Combat Combat { get; private set; }
 		protected State ActiveState { get; private set; }
+		protected virtual bool UpdateOnDeath => false;
 
 		private bool _isStart = true;
 
@@ -34,7 +35,7 @@ namespace Quinn.AI
 		{
 			HealthBar.value = Health.Percent;
 
-			if (ActiveState != null)
+			if (ActiveState != null && (UpdateOnDeath || !Health.IsDead))
 			{
 				if (_isStart)
 				{

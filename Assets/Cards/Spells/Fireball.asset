@@ -316,4 +316,4 @@ MonoBehaviour:
   Title: Fireball
   Description: Hurl a small, but potent, ball of fire at your enemies.
   Art: {fileID: 0}
-  Cost: 1
+  Cost: 2

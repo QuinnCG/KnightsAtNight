@@ -5,6 +5,7 @@ using UnityEngine;
 namespace Quinn.AI
 {
 	[RequireComponent(typeof(Rigidbody2D), typeof(StatusEffectManager))]
+	[RequireComponent(typeof(Movement))]
 	public class Movement : MonoBehaviour
 	{
 		[field: SerializeField, BoxGroup("Basic", ShowLabel = false)]
@@ -17,6 +18,8 @@ namespace Quinn.AI
 		private Transform FacingTransform;
 		[SerializeField, BoxGroup("Basic", ShowLabel = false)]
 		private float SlowedStatusSpeedFactor = 0.35f;
+		[SerializeField, BoxGroup("Basic", ShowLabel = false), Space]
+		private string MovingKey = "IsMoving";
 
 		[SerializeField, BoxGroup("Avoidance", Order = 1f)]
 		private bool EnableAvoidance = true;
@@ -43,6 +46,8 @@ namespace Quinn.AI
 		public float AngleDeg => Angle * Mathf.Rad2Deg;
 
 		private Rigidbody2D _rb;
+		private Animator _animator;
+		private Movement _movement;
 		private StatusEffectManager _statusManager;
 
 		private Vector2 _vel;
@@ -61,6 +66,8 @@ namespace Quinn.AI
 		private void Awake()
 		{
 			_rb = GetComponent<Rigidbody2D>();
+			_animator = GetComponent<Animator>();
+			_movement = GetComponent<Movement>();
 			_statusManager = GetComponent<StatusEffectManager>();
 
 			// Spawn facing a random direction (left or right).
@@ -101,6 +108,8 @@ namespace Quinn.AI
 				var dir = _vel.normalized;
 				_avoidanceTargetAngle = Mathf.Atan2(dir.y, dir.x);
 			}
+
+			_animator.SetBool(MovingKey, _vel.sqrMagnitude > 0f);
 
 			_rb.velocity = (vel * _vel.normalized) + _knockbackVel;
 			_vel = Vector2.zero;

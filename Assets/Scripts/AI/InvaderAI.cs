@@ -107,7 +107,7 @@ namespace Quinn.AI
 			{
 				TransitionTo(OnCharge);
 			}
-			else if (_targetHealth.Current == 0f)
+			else if (_targetHealth.IsDead)
 			{
 				if (_target == Tower.Instance.transform)
 				{

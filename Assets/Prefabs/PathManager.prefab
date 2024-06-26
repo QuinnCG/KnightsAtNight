@@ -52,5 +52,5 @@ MonoBehaviour:
   PathTurnChance: 0.4
   PathBranchChance: 0.1
   MaxGenerationToBranch: 5
-  SpawnGeneration: 20
+  SpawnGeneration: 12
   InstantlyGenerateUpToGen: 25

@@ -18,6 +18,7 @@ namespace Quinn.CardSystem.Effect
 		public SpellEffect HitEffect;
 		[AssetsOnly]
 		public GameObject Prefab;
+		[Tooltip("The target will be a random point within this radius. Set to 0 for pinpoint accuracy.")]
 		public float TargetRadius = 0f;
 
 		[InlineProperty, BoxGroup("Spawn", ShowLabel = false)]

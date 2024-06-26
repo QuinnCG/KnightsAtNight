@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Quinn.AI;
 using Sirenix.OdinInspector;
 using System;
@@ -15,8 +16,17 @@ namespace Quinn
 		[field: SerializeField, BoxGroup("General", ShowLabel = false)]
 		public float Max { get; set; } = 100f;
 
-		[SerializeField, BoxGroup("General", ShowLabel = false)]
+		[SerializeField, BoxGroup("General/FX", ShowLabel = false), DisableIf(nameof(FadeOut))]
 		private bool DestroyOnDeath = true;
+
+		[SerializeField, BoxGroup("General/FX", ShowLabel = false), Space]
+		private bool FadeOut = false;
+		[SerializeField, BoxGroup("General/FX", ShowLabel = false), ShowIf(nameof(FadeOut))]
+		private float FadeOutDuration = 3f;
+		[SerializeField, BoxGroup("General/FX", ShowLabel = false), ShowIf(nameof(FadeOut))]
+		private float FadeOutDelay = 3f;
+		[SerializeField, BoxGroup("General/FX", ShowLabel = false), ShowIf(nameof(FadeOut))]
+		private GameObject[] HideDuringFadeOut;
 
 		[SerializeField, BoxGroup("Events")]
 		private UnityEvent OnDamagedEvent, OnHealedEvent;
@@ -36,6 +46,13 @@ namespace Quinn
 		[SerializeField, BoxGroup("Regeneration"), ShowIf(nameof(EnableRegen))]
 		private float RegenRate = 10f;
 
+		[SerializeField, BoxGroup("Animator")]
+		private bool HasAnimator;
+		[SerializeField, BoxGroup("Animator"), ShowIf(nameof(HasAnimator))]
+		private string HurtTrigger = "Hurt";
+		[SerializeField, BoxGroup("Animator"), ShowIf(nameof(HasAnimator))]
+		private string DeathTrigger = "Death";
+
 		public bool IsDead => Current == 0f;
 		public float Percent => Current / Max;
 		public event Action OnDamaged, OnHealed;
@@ -43,11 +60,13 @@ namespace Quinn
 		public event Action OnFullHealed;
 
 		private Movement _movement;
+		private Animator _animator;
 		private float _nextRegenTime;
 
 		private void Awake()
 		{
 			TryGetComponent(out _movement);
+			TryGetComponent(out _animator);
 		}
 
 		private void Start()
@@ -67,6 +86,7 @@ namespace Quinn
 		{
 			// TODO: Directional affects?
 
+			if (IsDead) return;
 			_nextRegenTime = Time.time + RegenCombatDelay;
 
 			Current = Mathf.Max(0f, Current - amount);
@@ -83,10 +103,23 @@ namespace Quinn
 			{
 				OnDeath?.Invoke();
 
-				if (DestroyOnDeath)
+				if (_animator)
 				{
-					Destroy(gameObject);
+					_animator.SetBool(DeathTrigger, true);
+					
+					if (FadeOut)
+					{
+						StartCoroutine(DeathSequence());
+					}
+					else if (DestroyOnDeath)
+					{
+						Destroy(gameObject);
+					}
 				}
+			}
+			else if (_animator)
+			{
+				_animator.SetTrigger(HurtTrigger);
 			}
 
 			if (_movement != null)
@@ -111,6 +144,7 @@ namespace Quinn
 			}
 		}
 
+		// Flash white.
 		private IEnumerator HurtSequence()
 		{
 			for (float f = 0f; f < 1f; f += Time.deltaTime / FlashDuration / 2f)
@@ -137,6 +171,31 @@ namespace Quinn
 			{
 				renderer.material.SetFloat("_Flash", 0f);
 			}
+		}
+
+		// Fade out.
+		private IEnumerator DeathSequence()
+		{
+			foreach (var gameObject in HideDuringFadeOut)
+			{
+				gameObject.SetActive(false);
+			}
+
+			yield return new WaitForSeconds(FadeOutDelay);
+			var renderers = GetComponentsInChildren<SpriteRenderer>();
+
+			Tween firstFade = null;
+
+			foreach (var renderer in renderers)
+			{
+				var tween = renderer.DOFade(0f, FadeOutDuration);
+				firstFade ??= tween;
+			}
+
+			firstFade.onComplete += () =>
+			{
+				Destroy(gameObject);
+			};
 		}
 	}
 }
