@@ -47,11 +47,7 @@ namespace Quinn
 		[SerializeField, BoxGroup("Regeneration"), ShowIf(nameof(EnableRegen))]
 		private float RegenRate = 10f;
 
-		[SerializeField, BoxGroup("Animator")]
-		private bool HasAnimator;
-		[SerializeField, BoxGroup("Animator"), ShowIf(nameof(HasAnimator))]
-		private string HurtTrigger = "Hurt";
-		[SerializeField, BoxGroup("Animator"), ShowIf(nameof(HasAnimator))]
+		[SerializeField, BoxGroup("Animator", ShowLabel = false)]
 		private string DeathTrigger = "Death";
 
 		[SerializeField, BoxGroup("FX")]
@@ -123,9 +119,8 @@ namespace Quinn
 
 				DeathSound.PlayOnce(transform.position);
 			}
-			else if (_animator)
+			else
 			{
-				_animator.SetTrigger(HurtTrigger);
 				HurtSound.PlayOnce(transform.position);
 			}
 

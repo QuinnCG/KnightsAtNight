@@ -71,6 +71,8 @@ namespace Quinn
 				// The MoveOrder prefab will handle its own lifecycle.
 				"MoveOrder.prefab".Clone(cursorPos);
 
+				SelectSound.PlayOnce(cursorPos);
+
 				int i = 0;
 				foreach (var unit in _selected)
 				{
