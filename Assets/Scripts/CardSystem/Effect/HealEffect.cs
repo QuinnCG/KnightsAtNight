@@ -1,4 +1,5 @@
 ﻿using Sirenix.OdinInspector;
+using System;
 using UnityEngine;
 
 namespace Quinn.CardSystem.Effect
@@ -6,9 +7,9 @@ namespace Quinn.CardSystem.Effect
 	public class HealEffect : SpellEffect
 	{
 		[InlineProperty]
-		public StatusEffectEntry[] ApplyStatusEffects;
+		public StatusEffectEntry[] ApplyStatusEffects = Array.Empty<StatusEffectEntry>();
 		[InlineProperty]
-		public StatusEffectEntry[] RemoveStatusEffects;
+		public StatusEffectEntry[] RemoveStatusEffects = Array.Empty<StatusEffectEntry>();
 
 		[Space]
 		public bool HealFull = false;

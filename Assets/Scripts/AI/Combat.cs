@@ -1,4 +1,5 @@
 ﻿using Sirenix.OdinInspector;
+using System;
 using UnityEngine;
 
 namespace Quinn.AI
@@ -19,6 +20,10 @@ namespace Quinn.AI
 
 		[SerializeField]
 		private string AttackTrigger = "Attack";
+
+		public event Action<Health> OnAttack;
+		public event Action<Health> OnDamage;
+		public event Action<Health> OnKill;
 
 		private StatusEffectManager _statusManager;
 		private Animator _animator;
@@ -49,6 +54,8 @@ namespace Quinn.AI
 
 				_target = health;
 				_animator.SetTrigger(AttackTrigger);
+
+				OnAttack?.Invoke(health);
 			}
 		}
 
@@ -67,6 +74,10 @@ namespace Quinn.AI
 
 				// Apply damage.
 				_target.TakeDamage(dmg, dir, KnockbackSpeed);
+
+				// Events.
+				OnDamage?.Invoke(_target);
+				if (_target.IsDead) OnKill?.Invoke(_target);
 
 				// Reset target.
 				_target = null;

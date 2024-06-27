@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 200694a079bbe634d8a96be748a13a6f, type: 3}
+  m_Name: LesserKnight
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: OnSpawnEffects
+      Entry: 7
+      Data: 0|Quinn.CardSystem.Effect.SpellEffect[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnKillEffects
+      Entry: 7
+      Data: 1|Quinn.CardSystem.Effect.SpellEffect[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnDeathEffects
+      Entry: 7
+      Data: 2|Quinn.CardSystem.Effect.SpellEffect[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  Title: Lesser Knight
+  Description: Tankier than other knights, but it seems they skipped arm day?
+  Art: {fileID: -5142373760954687624, guid: d3681732e4e923746975dcc17dd481aa, type: 3}
+  Cost: 3
+  Prefab: {fileID: 4226974111421944553, guid: c9509e51abb104240959fc3122cab550, type: 3}
+  Count: 1

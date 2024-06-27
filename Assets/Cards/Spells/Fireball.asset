@@ -315,5 +315,5 @@ MonoBehaviour:
       Data: 
   Title: Fireball
   Description: Hurl a small, but potent, ball of fire at your enemies.
-  Art: {fileID: 0}
+  Art: {fileID: 3083048843646029594, guid: fa7e988655a1865479a2bfff05b78947, type: 3}
   Cost: 2

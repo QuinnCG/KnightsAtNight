@@ -122,6 +122,27 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
+  - name: Head
+    originalName: 
+    pivot: {x: 0.4, y: 0.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 20
+      y: 4
+      width: 5
+      height: 5
+    spriteID: e570301f4b06ad845973a0865d93f71e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 20, y: 4}
   - name: Body
     originalName: 
     pivot: {x: 0.5, y: 0.53846157}
@@ -134,7 +155,7 @@ ScriptedImporter:
       y: 4
       width: 8
       height: 13
-    spriteID: a6544ceda2440cb4fa0106b523f272dd
+    spriteID: b082375d00842604f8dd8461f6995b1c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -143,27 +164,6 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Head
-    originalName: 
-    pivot: {x: 0.5, y: 0.2}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 20
-      y: 4
-      width: 4
-      height: 5
-    spriteID: e570301f4b06ad845973a0865d93f71e
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 20, y: 4}
   - name: Spear
     originalName: 
     pivot: {x: 0.42857146, y: 0.33333334}
@@ -176,7 +176,7 @@ ScriptedImporter:
       y: 25
       width: 14
       height: 3
-    spriteID: f72542f8b678bfc45924c6dfdf2a1019
+    spriteID: 5c0a23b0d90c11249a0cf5185c28db52
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -187,6 +187,24 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 25}
   spriteSheetImportData: []
   asepriteLayers:
+  - layerIndex: 1
+    guid: 1403077921
+    name: Head
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Head
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 14
+        y: 15
+        width: 5
+        height: 5
+      spriteId: e570301f4b06ad845973a0865d93f71e
+    linkedCells: []
+    parentIndex: -1
   - layerIndex: 0
     guid: -1029820646
     name: Body
@@ -202,25 +220,7 @@ ScriptedImporter:
         y: 9
         width: 8
         height: 13
-      spriteId: a6544ceda2440cb4fa0106b523f272dd
-    linkedCells: []
-    parentIndex: -1
-  - layerIndex: 1
-    guid: 1403077921
-    name: Head
-    layerFlags: 3
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: Head
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 14
-        y: 15
-        width: 4
-        height: 5
-      spriteId: e570301f4b06ad845973a0865d93f71e
+      spriteId: b082375d00842604f8dd8461f6995b1c
     linkedCells: []
     parentIndex: -1
   - layerIndex: 2
@@ -238,7 +238,7 @@ ScriptedImporter:
         y: 15
         width: 14
         height: 3
-      spriteId: f72542f8b678bfc45924c6dfdf2a1019
+      spriteId: 5c0a23b0d90c11249a0cf5185c28db52
     linkedCells: []
     parentIndex: -1
   platformSettings:

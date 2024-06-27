@@ -1,12 +1,13 @@
 ﻿using Sirenix.OdinInspector;
+using System;
 using UnityEngine;
 
 namespace Quinn.CardSystem.Effect
 {
 	public class DamageEffect : SpellEffect
 	{
-		public StatusEffectEntry[] ApplyStatusEffects;
-		public StatusEffectEntry[] RemoveStatusEffects;
+		public StatusEffectEntry[] ApplyStatusEffects = Array.Empty<StatusEffectEntry>();
+		public StatusEffectEntry[] RemoveStatusEffects = Array.Empty<StatusEffectEntry>();
 
 		[Space]
 		public bool InstaKill = false;

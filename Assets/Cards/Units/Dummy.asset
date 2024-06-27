@@ -21,9 +21,33 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: SpawnEffects
+    - Name: OnSpawnEffects
       Entry: 7
       Data: 0|Quinn.CardSystem.Effect.SpellEffect[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnKillEffects
+      Entry: 7
+      Data: 1|Quinn.CardSystem.Effect.SpellEffect[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnDeathEffects
+      Entry: 7
+      Data: 2|Quinn.CardSystem.Effect.SpellEffect[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 0

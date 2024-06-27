@@ -49,9 +49,21 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1527822020480601988, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
+      propertyPath: m_Size.x
+      value: 0.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527822020480601988, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
+      propertyPath: m_Size.y
+      value: 0.1875
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527822020480601988, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -7021036504707450620, guid: 40fa31ecfd0008a4c9bac79a1a788038, type: 3}
+      objectReference: {fileID: 8685013034137254384, guid: 40fa31ecfd0008a4c9bac79a1a788038, type: 3}
+    - target: {fileID: 1527822020480601988, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1698474992320851086, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -187,7 +199,7 @@ PrefabInstance:
     - target: {fileID: 5840733363533548884, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -7896645932652874095, guid: 40fa31ecfd0008a4c9bac79a1a788038, type: 3}
+      objectReference: {fileID: -3807239423719100578, guid: 40fa31ecfd0008a4c9bac79a1a788038, type: 3}
     - target: {fileID: 5840733363533548884, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -214,7 +226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7520693569849789879, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: <Speed>k__BackingField
-      value: 3
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7520693569849789879, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: <StoppingDistance>k__BackingField
@@ -222,7 +234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7916567470741519597, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: m_Name
-      value: Spear
+      value: Weapon
       objectReference: {fileID: 0}
     - target: {fileID: 8612907664376472538, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: m_HasRenderer

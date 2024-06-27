@@ -1,5 +1,6 @@
 ﻿using Quinn.CardSystem.Effect;
 using Sirenix.OdinInspector;
+using System;
 using UnityEngine;
 
 namespace Quinn.CardSystem
@@ -8,7 +9,7 @@ namespace Quinn.CardSystem
 	public class SpellCard : Card
 	{
 		[Space, InlineProperty]
-		public SpellEffect[] OnCast;
+		public SpellEffect[] OnCast = Array.Empty<SpellEffect>();
 
 		public override void Cast()
 		{
