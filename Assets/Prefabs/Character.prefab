@@ -820,6 +820,20 @@ MonoBehaviour:
   HasAnimator: 0
   HurtTrigger: Hurt
   DeathTrigger: Death
+  HurtSound:
+    Guid:
+      Data1: -1722774768
+      Data2: 1321021552
+      Data3: -492983371
+      Data4: 1147357274
+    Path: event:/SFX/Hurt
+  DeathSound:
+    Guid:
+      Data1: -1722774768
+      Data2: 1321021552
+      Data3: -492983371
+      Data4: 1147357274
+    Path: event:/SFX/Hurt
 --- !u!114 &121702423009856028
 MonoBehaviour:
   m_ObjectHideFlags: 0

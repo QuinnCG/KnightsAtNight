@@ -157,6 +157,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UnitBaseRadius: 0.6
+  SelectSound:
+    Guid:
+      Data1: 486181274
+      Data2: 1176304430
+      Data3: -2093005159
+      Data4: -653547250
+    Path: event:/SFX/Select
 --- !u!114 &4724069341923423421
 MonoBehaviour:
   m_ObjectHideFlags: 0

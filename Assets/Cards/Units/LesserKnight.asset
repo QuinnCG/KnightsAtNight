@@ -60,6 +60,6 @@ MonoBehaviour:
   Title: Lesser Knight
   Description: Tankier than other knights, but it seems they skipped arm day?
   Art: {fileID: -5142373760954687624, guid: d3681732e4e923746975dcc17dd481aa, type: 3}
-  Cost: 3
+  Cost: 5
   Prefab: {fileID: 4226974111421944553, guid: c9509e51abb104240959fc3122cab550, type: 3}
   Count: 1

@@ -417,7 +417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 121702423009856028, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
       propertyPath: <Speed>k__BackingField
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 121702423009856028, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
       propertyPath: AvoidanceTarget.m_Bits

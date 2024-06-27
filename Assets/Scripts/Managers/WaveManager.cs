@@ -10,9 +10,6 @@ namespace Quinn
 	{
 		public static WaveManager Instance { get; private set; }
 
-		[SerializeField, Tooltip("Invaders will spawn outside of this zone.")]
-		private float SafeZone = 10f;
-
 		[SerializeField]
 		private Vector2 GroupSpawnInterval = new(2f, 3f);
 
@@ -81,14 +78,8 @@ namespace Quinn
 				_inWave = true;
 				WaveNumber++;
 
-				Debug.Log($"New wave spawn factor: {WaveNumber * WaveSpawnCountFactor:0.00}.");
+				Debug.Log($"New wave spawn factor: {WaveNumber * (WaveSpawnCountFactor + 1f):0.00}.");
 			}
-		}
-
-		private void OnDrawGizmosSelected()
-		{
-			Gizmos.color = Color.red;
-			Gizmos.DrawWireSphere(transform.position, SafeZone);
 		}
 
 		// TODO: Finish wave system.
@@ -138,7 +129,7 @@ namespace Quinn
 			foreach (var entry in wave.Enemies)
 			{
 				int count = entry.Count.GetRandom(false);
-				count *= Mathf.CeilToInt(WaveNumber * WaveSpawnCountFactor);
+				count *= Mathf.RoundToInt(WaveNumber * (WaveSpawnCountFactor + 1f));
 
 				for (int i = 0; i < count; i++)
 				{

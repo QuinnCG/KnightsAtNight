@@ -285,22 +285,22 @@ MonoBehaviour:
       Data: FMOD.GUID, FMODUnity
     - Name: Data1
       Entry: 3
-      Data: 0
+      Data: -1948945835
     - Name: Data2
       Entry: 3
-      Data: 0
+      Data: 1235412665
     - Name: Data3
       Entry: 3
-      Data: 0
+      Data: 442955707
     - Name: Data4
       Entry: 3
-      Data: 0
+      Data: -1489448717
     - Name: 
       Entry: 8
       Data: 
     - Name: Path
-      Entry: 6
-      Data: 
+      Entry: 1
+      Data: event:/SFX/FireballHit
     - Name: 
       Entry: 8
       Data: 
@@ -316,4 +316,11 @@ MonoBehaviour:
   Title: Fireball
   Description: Hurl a small, but potent, ball of fire at your enemies.
   Art: {fileID: 3083048843646029594, guid: fa7e988655a1865479a2bfff05b78947, type: 3}
-  Cost: 2
+  Cost: 3
+  SpawnSound:
+    Guid:
+      Data1: 284535382
+      Data2: 1206773485
+      Data3: -1998611030
+      Data4: -1192346572
+    Path: event:/SFX/FireballCast

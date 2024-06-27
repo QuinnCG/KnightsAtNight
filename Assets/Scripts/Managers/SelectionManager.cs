@@ -1,6 +1,6 @@
-﻿using Quinn.AI;
+﻿using FMODUnity;
+using Quinn.AI;
 using Quinn.UI;
-using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -14,6 +14,8 @@ namespace Quinn
 
 		[SerializeField]
 		private float UnitBaseRadius = 1f;
+		[SerializeField]
+		private EventReference SelectSound;
 
 		public bool IsSelecting => _box != null;
 		public bool AnySelected => _selected.Count > 0;
@@ -186,6 +188,8 @@ namespace Quinn
 			{
 				_selected.Add(unit);
 				SetOutline(unit, true);
+
+				SelectSound.PlayOnce(unit.transform.position);
 			}
 		}
 

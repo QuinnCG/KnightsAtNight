@@ -202,6 +202,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Max>k__BackingField: 650
   DestroyOnDeath: 0
+  FadeOut: 0
+  FadeOutDuration: 3
+  FadeOutDelay: 3
+  HideDuringFadeOut: []
   OnDamagedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -213,6 +217,23 @@ MonoBehaviour:
   EnableRegen: 0
   RegenCombatDelay: 3
   RegenRate: 10
+  HasAnimator: 0
+  HurtTrigger: Hurt
+  DeathTrigger: Death
+  HurtSound:
+    Guid:
+      Data1: 599253424
+      Data2: 1286370435
+      Data3: 902640523
+      Data4: -754919863
+    Path: event:/SFX/TowerHit
+  DeathSound:
+    Guid:
+      Data1: 2127490276
+      Data2: 1086595855
+      Data3: 1065919104
+      Data4: -1055741444
+    Path: event:/SFX/TowerCrumble
 --- !u!114 &4855131923436317841
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -44,15 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c416563824499454e9c3c1aab0c8aaed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SafeZone: 18
   GroupSpawnInterval: {x: 0.5, y: 3}
   PerInvaderSpawnInterval: 0.5
-  WaveDowntime: 10
-  WaveSpawnCountFactor: 0.2
+  WaveDowntime: 2
+  WaveSpawnCountFactor: 0.3
   Waves:
   - DebutWave: 1
     SubwaveCount: {x: 1, y: 1}
-    GroupSize: {x: 3, y: 5}
+    GroupSize: {x: 4, y: 5}
     Enemies:
-    - Prefab: {fileID: 7339016931583088528, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
+    - Prefab: {fileID: 3957162170070279015, guid: 8e0f230de7aef204497d6e075fa0af2a, type: 3}
       Count: {x: 2, y: 3}

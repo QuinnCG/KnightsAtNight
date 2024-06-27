@@ -1,4 +1,5 @@
 using DG.Tweening;
+using FMODUnity;
 using Quinn.AI;
 using Sirenix.OdinInspector;
 using System;
@@ -52,6 +53,9 @@ namespace Quinn
 		private string HurtTrigger = "Hurt";
 		[SerializeField, BoxGroup("Animator"), ShowIf(nameof(HasAnimator))]
 		private string DeathTrigger = "Death";
+
+		[SerializeField, BoxGroup("FX")]
+		private EventReference HurtSound, DeathSound;
 
 		public bool IsDead => Current == 0f;
 		public float Percent => Current / Max;
@@ -116,10 +120,13 @@ namespace Quinn
 						Destroy(gameObject);
 					}
 				}
+
+				DeathSound.PlayOnce(transform.position);
 			}
 			else if (_animator)
 			{
 				_animator.SetTrigger(HurtTrigger);
+				HurtSound.PlayOnce(transform.position);
 			}
 
 			if (_movement != null)

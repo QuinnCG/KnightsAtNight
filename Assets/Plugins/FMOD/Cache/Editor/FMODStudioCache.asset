@@ -51,6 +51,60 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-7819765674764486467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Hurt
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Hurt
+  Guid:
+    Data1: -1722774768
+    Data2: 1321021552
+    Data3: -492983371
+    Data4: 1147357274
+  Banks:
+  - {fileID: 28880121474852252}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7544962954328215735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/FireballCast
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/FireballCast
+  Guid:
+    Data1: 284535382
+    Data2: 1206773485
+    Data3: -1998611030
+    Data4: -1192346572
+  Banks:
+  - {fileID: 28880121474852252}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7544873920134070109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,10 +120,10 @@ MonoBehaviour:
   Path: FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638550281732643089
+  lastModified: 638550937733963884
   FileSizes:
   - Name: Desktop
-    Value: 1158
+    Value: 1510
   Exists: 1
 --- !u!114 &-5668839635777578663
 MonoBehaviour:
@@ -91,6 +145,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 3409088
   Exists: 1
+--- !u!114 &-5538694703253440089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/FireballHit
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/FireballHit
+  Guid:
+    Data1: -1948945835
+    Data2: 1235412665
+    Data3: 442955707
+    Data4: -1489448717
+  Banks:
+  - {fileID: 28880121474852252}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3912188668713540078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,11 +187,117 @@ MonoBehaviour:
   Path: FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638550281732623003
+  lastModified: 638550937733948821
   FileSizes:
   - Name: Desktop
     Value: 1960
   Exists: 1
+--- !u!114 &-3184130707865149716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Select
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Select
+  Guid:
+    Data1: 486181274
+    Data2: 1176304430
+    Data3: -2093005159
+    Data4: -653547250
+  Banks:
+  - {fileID: 28880121474852252}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2767303995978612942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/FireballLoop
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/FireballLoop
+  Guid:
+    Data1: -197018193
+    Data2: 1319868929
+    Data3: 96795288
+    Data4: 1398270214
+  Banks:
+  - {fileID: 28880121474852252}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1848018057935566013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ArmorFootstep/zoom
+  m_EditorClassIdentifier: 
+  Name: zoom
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3744262696
+    data2: 1002767048
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-1727544332717159623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/ArmorFootstep
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/ArmorFootstep
+  Guid:
+    Data1: 121299450
+    Data2: 1327911224
+    Data3: 198785698
+    Data4: -1327504073
+  Banks:
+  - {fileID: 28880121474852252}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -1848018057935566013}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,13 +320,21 @@ MonoBehaviour:
   - {fileID: 7344161862007798861}
   - {fileID: 6804865605539101775}
   - {fileID: -8086352994890306725}
+  - {fileID: -7819765674764486467}
+  - {fileID: -5538694703253440089}
+  - {fileID: -7544962954328215735}
+  - {fileID: -3184130707865149716}
+  - {fileID: -2767303995978612942}
+  - {fileID: -1727544332717159623}
+  - {fileID: 9107986349849056245}
+  - {fileID: 349533043506541187}
   EditorParameters:
   - {fileID: -8081114680735564957}
   MasterBanks:
   - {fileID: -3912188668713540078}
   StringsBanks:
   - {fileID: -7544873920134070109}
-  cacheTime: 638550305875231882
+  cacheTime: 638550954105658158
   cacheVersion: 131618
 --- !u!114 &28880121474852252
 MonoBehaviour:
@@ -156,11 +351,38 @@ MonoBehaviour:
   Path: FMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638549611712008753
+  lastModified: 638550954105658158
   FileSizes:
   - Name: Desktop
-    Value: 29536
+    Value: 273728
   Exists: 1
+--- !u!114 &349533043506541187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/TowerCrumble
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/TowerCrumble
+  Guid:
+    Data1: 2127490276
+    Data2: 1086595855
+    Data3: 1065919104
+    Data4: -1055741444
+  Banks:
+  - {fileID: 28880121474852252}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1185
 --- !u!114 &2831837935212494322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,3 +482,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 66000
+--- !u!114 &9107986349849056245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/TowerHit
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/TowerHit
+  Guid:
+    Data1: 599253424
+    Data2: 1286370435
+    Data3: 902640523
+    Data4: -754919863
+  Banks:
+  - {fileID: 28880121474852252}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0

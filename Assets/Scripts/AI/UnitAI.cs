@@ -130,7 +130,7 @@ namespace Quinn.AI
 			if (transform.position.DistanceTo(_orderTargetPos) < Movement.StoppingDistance)
 			{
 				TransitionTo(OnPatrol);
-				SelectionManager.Instance.Deselect(this);
+				//SelectionManager.Instance.Deselect(this);
 
 				//if (_orderTargetPositions.Count == 0)
 				//{

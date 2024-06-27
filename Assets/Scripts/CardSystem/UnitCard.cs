@@ -1,4 +1,5 @@
-﻿using Quinn.AI;
+﻿using FMODUnity;
+using Quinn.AI;
 using Quinn.CardSystem.Effect;
 using Sirenix.OdinInspector;
 using System;
@@ -12,6 +13,7 @@ namespace Quinn.CardSystem
 		[Space, AssetsOnly]
 		public GameObject Prefab;
 		public int Count = 1;
+		public EventReference SpawnSound;
 
 		[InlineProperty]
 		public SpellEffect[] OnSpawnEffects = Array.Empty<SpellEffect>();
@@ -22,6 +24,8 @@ namespace Quinn.CardSystem
 
 		public override void Cast()
 		{
+			SpawnSound.PlayOnce(Player.MousePos);
+
 			for (int i = 0; i < Count; i++)
 			{
 				Vector2 pos = Player.MousePos;
