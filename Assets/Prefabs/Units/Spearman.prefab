@@ -14,11 +14,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1109258981407886340, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: AttackSightRadius
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1109258981407886340, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: PatrolSightRadius
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1196491141776477871, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: m_Size.x
@@ -46,7 +46,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433416084058569995, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: <Interval>k__BackingField
-      value: 1.167
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1527822020480601988, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: m_Sprite

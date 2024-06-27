@@ -590,10 +590,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   AttackRange: 0.8
-  PatrolSightRadius: 5
-  AttackSightRadius: 6
-  WanderDistance: 1.5
-  WanderInterval: {x: 2, y: 5}
+  PatrolSightRadius: 8
+  AttackSightRadius: 9
 --- !u!61 &8762275617503097364
 BoxCollider2D:
   m_ObjectHideFlags: 0

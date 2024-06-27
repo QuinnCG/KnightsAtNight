@@ -72,5 +72,21 @@ namespace Quinn.AI
 				_target = null;
 			}
 		}
+
+		[Button]
+		public void SetIntervalToAttackAnim()
+		{
+			var animator = GetComponent<Animator>();
+			var clipInfos = animator.GetCurrentAnimatorClipInfo(0);
+
+			foreach (var info in clipInfos)
+			{
+				if (info.clip.name == "Attack")
+				{
+					Interval = info.clip.length;
+					return;
+				}
+			}
+		}
 	}
 }

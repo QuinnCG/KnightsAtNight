@@ -167,8 +167,7 @@ namespace Quinn
 			// Remove missing units and disable their outlines.
 			foreach (var unit in missingFromSelectionBox)
 			{
-				_selected.Remove(unit);
-				SetOutline(unit, false);
+				Deselect(unit);
 			}
 
 			// Save units currently in selection box and enable their outlines.
@@ -176,9 +175,25 @@ namespace Quinn
 			{
 				if (!_selected.Contains(unit))
 				{
-					_selected.Add(unit);
-					SetOutline(unit, true);
+					Select(unit);
 				}
+			}
+		}
+
+		public void Select(UnitAI unit)
+		{
+			if (!_selected.Contains(unit))
+			{
+				_selected.Add(unit);
+				SetOutline(unit, true);
+			}
+		}
+
+		public void Deselect(UnitAI unit)
+		{
+			if (_selected.Remove(unit))
+			{
+				SetOutline(unit, false);
 			}
 		}
 

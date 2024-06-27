@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="MixerGroup" id="{309fd35d-a685-456d-a57f-762b8cc31843}">
+		<property name="volume">
+			<value>-17.5</value>
+		</property>
 		<property name="name">
 			<value>Music</value>
 		</property>
@@ -27,7 +30,7 @@
 			<value>-47</value>
 		</property>
 		<property name="inputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="mixerReturn">
 			<destination>{c9c6cfca-f5ef-4b54-97e3-881721eaa61a}</destination>

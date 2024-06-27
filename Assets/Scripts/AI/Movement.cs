@@ -5,7 +5,6 @@ using UnityEngine;
 namespace Quinn.AI
 {
 	[RequireComponent(typeof(Rigidbody2D), typeof(StatusEffectManager))]
-	[RequireComponent(typeof(Movement))]
 	public class Movement : MonoBehaviour
 	{
 		[field: SerializeField, BoxGroup("Basic", ShowLabel = false)]
@@ -47,7 +46,6 @@ namespace Quinn.AI
 
 		private Rigidbody2D _rb;
 		private Animator _animator;
-		private Movement _movement;
 		private StatusEffectManager _statusManager;
 
 		private Vector2 _vel;
@@ -67,7 +65,6 @@ namespace Quinn.AI
 		{
 			_rb = GetComponent<Rigidbody2D>();
 			_animator = GetComponent<Animator>();
-			_movement = GetComponent<Movement>();
 			_statusManager = GetComponent<StatusEffectManager>();
 
 			// Spawn facing a random direction (left or right).

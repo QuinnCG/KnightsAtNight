@@ -87,7 +87,7 @@ namespace Quinn.AI
 			}
 
 			// Look for enemies, goto attack if found
-			var hostile = FindTarget(PatrolSightRadius);
+			GameObject hostile = FindTarget(PatrolSightRadius);
 
 			if (hostile)
 			{
@@ -130,6 +130,7 @@ namespace Quinn.AI
 			if (transform.position.DistanceTo(_orderTargetPos) < Movement.StoppingDistance)
 			{
 				TransitionTo(OnPatrol);
+				SelectionManager.Instance.Deselect(this);
 
 				//if (_orderTargetPositions.Count == 0)
 				//{
@@ -146,6 +147,11 @@ namespace Quinn.AI
 		private void OnAttack(bool isStart)
 		{
 			//_rallyPoint = transform.position;
+
+			if (isStart)
+			{
+				SelectionManager.Instance.Deselect(this);
+			}
 
 			if (_targetTransform == null || _targetHealth.IsDead)
 			{
@@ -172,9 +178,19 @@ namespace Quinn.AI
 		private GameObject FindTarget(float radius)
 		{
 			Vector2 origin = _collider.bounds.center;
-			var hit = Physics2D.OverlapCircle(origin, radius, TargetMask);
+			var hits = Physics2D.OverlapCircleAll(origin, radius, TargetMask);
 
-			if (hit) return hit.gameObject;
+			foreach (Collider2D hit in hits)
+			{
+				if (hit.gameObject == gameObject) continue;
+				if (hit.TryGetComponent(out Health health))
+				{
+					if (health.IsDead) continue;
+				}
+
+				return hit.gameObject;
+			}
+
 			return null;
 		}
 	}
