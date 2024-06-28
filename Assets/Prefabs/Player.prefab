@@ -68,9 +68,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2499e78b46e7200459859509a2ef3c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MaxHandSize>k__BackingField: 7
+  <MaxHandSize>k__BackingField: 5
   <MaxMana>k__BackingField: 10
-  ManaRegenInterval: 5
+  ManaRegenInterval: 4
   CardDrawInterval: 10
   StartingHand:
   - {fileID: 11400000, guid: 0f9caad9a00bf1247a8b10b5dba5f5ee, type: 2}

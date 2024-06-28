@@ -1,7 +1,9 @@
-﻿using Quinn.AI;
+﻿using FMODUnity;
+using Quinn.AI;
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Quinn
@@ -21,6 +23,9 @@ namespace Quinn
 
 		[SerializeField]
 		private float WaveSpawnCountFactor = 0.2f;
+
+		[SerializeField]
+		private EventReference GroupSpawnSound;
 
 		[SerializeField, InlineProperty]
 		private Wave[] Waves;
@@ -57,7 +62,7 @@ namespace Quinn
 
 			if (_inWave)
 			{
-				if (Time.time > _nextGroupSpawn)
+				if (Time.time > _nextGroupSpawn && _toSpawn.Count >= _activeWave.GroupSize.x)
 				{
 					_nextGroupSpawn = Time.time + GroupSpawnInterval.GetRandom();
 					StartCoroutine(SpawnGroup());
@@ -119,7 +124,8 @@ namespace Quinn
 
 		private Wave GetRandomWave()
 		{
-			return Waves.GetRandom();
+			var waves = Waves.Where(x => x.DebutWave >= WaveNumber);
+			return waves.GetRandom();
 		}
 
 		private void GenerateToSpawnQueue(Wave wave)
@@ -141,6 +147,7 @@ namespace Quinn
 		private IEnumerator SpawnGroup()
 		{
 			var node = GetRandomSpawn();
+			GroupSpawnSound.PlayOnce(node.Position);
 
 			for (int i = 0; _toSpawn.Count != 0 && i < _activeWave.GroupSize.GetRandom(); i++)
 			{

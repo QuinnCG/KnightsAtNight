@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001DA8DB8C3A8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000001DAE2F18AA8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -19,109 +19,6 @@
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
-[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambience.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001DA200693F8, queue head = 000001DADEADACC8, queue count = 0
-[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Ambience.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001DA200684C8, queue head = 000001DADEADACC8, queue count = 1
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DA200693F8
-[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambience.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1994816
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2112
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001D998BD5460
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 5000
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='zapsplat_science_fiction_ambience_planet_windy_landscape_short_68585', format=5, channels=2, frequency=48000, lengthbytes=772736, lengthpcm=3840000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.707000.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DA200693F8
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001DA200684C8
-[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Ambience.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1994816
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2112
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001D998BD5820
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 6000
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Ambience Night Crickets And A Bullfrog', format=5, channels=2, frequency=48000, lengthbytes=1220480, lengthpcm=4328385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.055328.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001DA200684C8
-[LOG] SoundI::release                          : Ambience Night Crickets And A Bullfrog (000001D9987474D8)
-[LOG] SoundI::release                          :     Ambience Night Crickets And A Bullfrog (000001DADE9C3088)
-[LOG] SoundI::release                          :     Ambience Night Crickets And A Bullfrog (000001D999B2E908)
-[LOG] SoundI::release                          : zapsplat_science_fiction_ambience_planet_windy_landscape_short_68585 (000001D998747D48)
-[LOG] SoundI::release                          :     zapsplat_science_fiction_ambience_planet_windy_landscape_short_68585 (000001D99A313488)
-[LOG] SoundI::release                          :     zapsplat_science_fiction_ambience_planet_windy_landscape_short_68585 (000001DA20067C58)
-[LOG] SoundI::release                          : MainTheme (000001D998744088)
-[LOG] SoundI::release                          :     MainTheme (000001DADE9C3228)
-[LOG] SoundI::release                          :     MainTheme (000001D999B2E248)
-[LOG] SoundI::release                          : Ambience Night Crickets And A Bullfrog (000001DA200684C8)
-[LOG] SoundI::release                          :     Ambience Night Crickets And A Bullfrog (000001D98F80D418)
-[LOG] SoundI::release                          :     Ambience Night Crickets And A Bullfrog (000001D998744C58)
-[LOG] SoundI::release                          : zapsplat_science_fiction_ambience_planet_windy_landscape_short_68585 (000001DA200693F8)
-[LOG] SoundI::release                          :     zapsplat_science_fiction_ambience_planet_windy_landscape_short_68585 (000001D98F80E798)
-[LOG] SoundI::release                          :     zapsplat_science_fiction_ambience_planet_windy_landscape_short_68585 (000001D998744238)
-[LOG] SoundI::release                          :  (000001D741882578)
-[LOG] SoundI::release                          :     Pop_01 (000001D98B6288F8)
-[LOG] SoundI::release                          :  (000001D99A8C64D8)
-[LOG] SoundI::release                          :     Pop_02 (000001D98B6259D8)
-[LOG] SoundI::release                          :  (000001D741882128)
-[LOG] SoundI::release                          :     Pop_03 (000001D98B626878)
-[LOG] SoundI::release                          :  (000001D99A8C6648)
-[LOG] SoundI::release                          :     Pop_04 (000001D98B6278B8)
-[LOG] SoundI::release                          :  (000001D7411812B8)
-[LOG] SoundI::release                          :     Armor Footstep (1) (000001D9997D2FF8)
-[LOG] SoundI::release                          :  (000001D741181148)
-[LOG] SoundI::release                          :     Armor Footstep (2) (000001D9997D3678)
-[LOG] SoundI::release                          :  (000001D741181B58)
-[LOG] SoundI::release                          :     Armor Footstep (3) (000001D9997D3338)
-[LOG] SoundI::release                          :  (000001D99B097948)
-[LOG] SoundI::release                          :     Armor Footstep (4) (000001D7415B2268)
-[LOG] SoundI::release                          :  (000001D741181708)
-[LOG] SoundI::release                          :     Armor Footstep (5) (000001D9997D2CB8)
-[LOG] SoundI::release                          :  (000001D99B098638)
-[LOG] SoundI::release                          :     Armor Footstep (6) (000001D7415B28E8)
-[LOG] SoundI::release                          :  (000001D99B097AB8)
-[LOG] SoundI::release                          :     Armor Footstep (7) (000001DA96CE72F8)
-[LOG] SoundI::release                          :  (000001D99B0984C8)
-[LOG] SoundI::release                          :     Footsteps, Human, Grass, Run SND62074 1 (000001D9983B3A28)
-[LOG] SoundI::release                          :  (000001D99B098358)
-[LOG] SoundI::release                          :     Footsteps, Human, Grass, Run SND62074 2 (000001D9983C1288)
-[LOG] SoundI::release                          :  (000001D99B0981E8)
-[LOG] SoundI::release                          :     Footsteps, Human, Grass, Run SND62074 3 (000001D9983B36E8)
-[LOG] SoundI::release                          :  (000001D99B097D98)
-[LOG] SoundI::release                          :     Footsteps, Human, Grass, Run SND62074 4 (000001D9983C0F48)
-[LOG] SoundI::release                          :  (000001D99B097F08)
-[LOG] SoundI::release                          :     Footsteps, Human, Grass, Run SND62074 5 (000001D9983C0DA8)
-[LOG] SoundI::release                          :  (000001D99B098078)
-[LOG] SoundI::release                          :     Footsteps, Human, Grass, Run SND62074 6 (000001D9983B2EC8)
-[LOG] SoundI::release                          :  (000001D741882408)
-[LOG] SoundI::release                          :     Hurt_04 (000001D98B626A18)
-[LOG] SoundI::release                          :  (000001D741882B38)
-[LOG] SoundI::release                          :     Hurt_06 (000001D98B6266D8)
-[LOG] SoundI::release                          :  (000001D741881FB8)
-[LOG] SoundI::release                          :     Hurt_03 (000001D98B6273D8)
-[LOG] SoundI::release                          :  (000001D741881E48)
-[LOG] SoundI::release                          :     Hurt_02 (000001D98B627D98)
-[LOG] SoundI::release                          :  (000001D7418829C8)
-[LOG] SoundI::release                          :     Hurt_05 (000001D98B628F78)
-[LOG] SoundI::release                          :  (000001D741882858)
-[LOG] SoundI::release                          :     Hurt_01 (000001D98B628C38)
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] SystemI::close                           : Closed.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
@@ -129,5 +26,3 @@
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] SystemI::close                           : Closed.
-[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
-[LOG] Thread::callback                         : FMOD file thread finished.

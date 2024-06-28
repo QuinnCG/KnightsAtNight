@@ -79,7 +79,7 @@ namespace Quinn
 
 		private void Update()
 		{
-			if (Time.time > _nextRegenTime && EnableRegen)
+			if (Time.time > _nextRegenTime && EnableRegen && !IsDead)
 			{
 				Heal(Time.deltaTime * RegenRate);
 			}
@@ -87,6 +87,7 @@ namespace Quinn
 			if (HealthBar)
 			{
 				HealthBar.value = Percent;
+				HealthBar.enabled = Percent < 1f && !IsDead;
 			}
 		}
 

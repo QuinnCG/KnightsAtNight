@@ -45,6 +45,7 @@ namespace Quinn
 
 		public static T GetRandom<T>(this IEnumerable<T> collection)
 		{
+			if (collection.Count() == 0) return default;
 			return collection.ElementAt(UnityEngine.Random.Range(0, collection.Count()));
 		}
 

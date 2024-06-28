@@ -48,8 +48,21 @@ MonoBehaviour:
   PerInvaderSpawnInterval: 0.5
   WaveDowntime: 2
   WaveSpawnCountFactor: 0.3
+  GroupSpawnSound:
+    Guid:
+      Data1: 1138268099
+      Data2: 1162168209
+      Data3: -1097606479
+      Data4: 1257512417
+    Path: event:/SFX/GroupSpawn
   Waves:
   - DebutWave: 1
+    SubwaveCount: {x: 1, y: 1}
+    GroupSize: {x: 2, y: 2}
+    Enemies:
+    - Prefab: {fileID: 4748862935719454584, guid: 9a97fe0e94f78474fbb82aec1a47c2b6, type: 3}
+      Count: {x: 2, y: 2}
+  - DebutWave: 2
     SubwaveCount: {x: 1, y: 1}
     GroupSize: {x: 4, y: 5}
     Enemies:

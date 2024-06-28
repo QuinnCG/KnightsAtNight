@@ -492,6 +492,22 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5515307210978429490, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
+      propertyPath: m_Size.x
+      value: 0.3125
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515307210978429490, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
+      propertyPath: m_Size.y
+      value: 0.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515307210978429490, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 499762952944638777, guid: 5810a0866128b5547a2c3cde4b3e21d1, type: 3}
+    - target: {fileID: 5515307210978429490, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515307210978429490, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 0d44352ab3db6df48838f3dfa667d05b, type: 2}
@@ -586,6 +602,22 @@ PrefabInstance:
     - target: {fileID: 8974190956956173743, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997465594089211951, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
+      propertyPath: m_Size.x
+      value: 0.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997465594089211951, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
+      propertyPath: m_Size.y
+      value: 0.9375
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997465594089211951, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4773328785439063361, guid: 5810a0866128b5547a2c3cde4b3e21d1, type: 3}
+    - target: {fileID: 8997465594089211951, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8997465594089211951, guid: 82d591721d3a0eb48a1540bfeffcca26, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

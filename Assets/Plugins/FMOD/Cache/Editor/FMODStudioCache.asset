@@ -120,10 +120,10 @@ MonoBehaviour:
   Path: FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638550937733963884
+  lastModified: 638551170182111526
   FileSizes:
   - Name: Desktop
-    Value: 1510
+    Value: 1552
   Exists: 1
 --- !u!114 &-5668839635777578663
 MonoBehaviour:
@@ -187,7 +187,7 @@ MonoBehaviour:
   Path: FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638550937733948821
+  lastModified: 638551170182106481
   FileSizes:
   - Name: Desktop
     Value: 1960
@@ -328,13 +328,14 @@ MonoBehaviour:
   - {fileID: -1727544332717159623}
   - {fileID: 9107986349849056245}
   - {fileID: 349533043506541187}
+  - {fileID: 6442178268148392867}
   EditorParameters:
   - {fileID: -8081114680735564957}
   MasterBanks:
   - {fileID: -3912188668713540078}
   StringsBanks:
   - {fileID: -7544873920134070109}
-  cacheTime: 638550954105658158
+  cacheTime: 638551172461152721
   cacheVersion: 131618
 --- !u!114 &28880121474852252
 MonoBehaviour:
@@ -351,10 +352,10 @@ MonoBehaviour:
   Path: FMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638550954105658158
+  lastModified: 638551172461152721
   FileSizes:
   - Name: Desktop
-    Value: 273728
+    Value: 452864
   Exists: 1
 --- !u!114 &349533043506541187
 MonoBehaviour:
@@ -427,6 +428,33 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &6442178268148392867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/GroupSpawn
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/GroupSpawn
+  Guid:
+    Data1: 1138268099
+    Data2: 1162168209
+    Data3: -1097606479
+    Data4: 1257512417
+  Banks:
+  - {fileID: 28880121474852252}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &6804865605539101775
 MonoBehaviour:
   m_ObjectHideFlags: 0
