@@ -2,10 +2,10 @@
     <Style src="project://database/Assets/UI/Style%20Sheets/HUDStyleSheet.uss?fileID=7433441132597879392&amp;guid=81a33ae2843cc4d4d907a2f1cfdd6aae&amp;type=3#HUDStyleSheet" />
     <engine:VisualElement style="flex-grow: 1; align-items: center;">
         <engine:VisualElement enabled="true" style="flex-grow: 0; width: 100%; background-color: rgb(32, 34, 35); flex-direction: row; color: rgb(255, 255, 255); font-size: 22px;">
-            <engine:Label text="Mana: 10/10" name="mana" focusable="true" class="stat" style="position: relative;" />
             <engine:Label text="Wave: 99" name="wave" focusable="true" class="stat" style="position: relative;" />
             <engine:Label text="Hostiles: 300x" name="alive" focusable="true" class="stat" style="position: relative;" />
         </engine:VisualElement>
-        <engine:ProgressBar value="0.7" high-value="1" name="tower-health" title="TOWER HEALTH" class="tower-health" style="width: 100%; color: rgb(255, 255, 255); font-size: 12px; -unity-text-align: middle-center; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
+        <engine:ProgressBar value="0.7" high-value="1" name="tower-health" title="TOWER HEALTH" class="tower-health" style="width: 60%; color: rgb(255, 255, 255); font-size: 12px; -unity-text-align: middle-center; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 30px; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
     </engine:VisualElement>
+    <engine:Label text="Mana: 10/10" name="mana" style="position: absolute; color: rgb(255, 255, 255); font-size: 30px; bottom: 20px; left: 20px;" />
 </engine:UXML>

@@ -604,7 +604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 048137bef4c6c814f945a26a4a6fe7d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthBar: {fileID: 3176126258564567499}
+  <HealthBar>k__BackingField: {fileID: 3176126258564567499}
   DebugLog: 0
   TargetMask:
     serializedVersion: 2

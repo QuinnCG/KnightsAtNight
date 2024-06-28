@@ -106,7 +106,10 @@ namespace Quinn.AI
 				_avoidanceTargetAngle = Mathf.Atan2(dir.y, dir.x);
 			}
 
-			_animator.SetBool(MovingKey, _vel.sqrMagnitude > 0f);
+			if (_animator.runtimeAnimatorController != null)
+			{
+				_animator.SetBool(MovingKey, _vel.sqrMagnitude > 0f);
+			}
 
 			_rb.velocity = (vel * _vel.normalized) + _knockbackVel;
 			_vel = Vector2.zero;

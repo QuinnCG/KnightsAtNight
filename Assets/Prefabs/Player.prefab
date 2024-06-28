@@ -70,13 +70,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MaxHandSize>k__BackingField: 7
   <MaxMana>k__BackingField: 10
-  ManaRegenInterval: 6
-  CardDrawInterval: 5
+  ManaRegenInterval: 5
+  CardDrawInterval: 10
   StartingHand:
-  - {fileID: 11400000, guid: 2ac4775d5f8130441983401083fd390c, type: 2}
   - {fileID: 11400000, guid: 0f9caad9a00bf1247a8b10b5dba5f5ee, type: 2}
   - {fileID: 11400000, guid: 2ac4775d5f8130441983401083fd390c, type: 2}
+  DeckPool:
+  - {fileID: 11400000, guid: 0f9caad9a00bf1247a8b10b5dba5f5ee, type: 2}
+  - {fileID: 11400000, guid: 0f9caad9a00bf1247a8b10b5dba5f5ee, type: 2}
   - {fileID: 11400000, guid: 8eebcf393f89e124dbcc968b53505202, type: 2}
+  - {fileID: 11400000, guid: 2ac4775d5f8130441983401083fd390c, type: 2}
+  - {fileID: 11400000, guid: 2ac4775d5f8130441983401083fd390c, type: 2}
 --- !u!114 &4732733328046194764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,6 +148,7 @@ MonoBehaviour:
     m_ColorSpace: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+  LowManaScaleFactor: 1.1
 --- !u!114 &7469785114729935636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,4 +219,4 @@ MonoBehaviour:
   MinOrthoScale: 5
   MaxOrthoScale: 12.5
   ZoomDamping: 0.07
-  BoundsSize: {x: 16, y: 20}
+  BoundsSize: {x: 20, y: 24}

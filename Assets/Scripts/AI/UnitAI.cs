@@ -43,6 +43,12 @@ namespace Quinn.AI
 
 			_collider = GetComponent<Collider2D>();
 			TransitionTo(OnPatrol);
+
+			Health.OnDeath += () =>
+			{
+				HealthBar.enabled = false;
+				SelectionManager.Instance.Deselect(this);
+			};
 		}
 
 		//private void Start()
@@ -80,6 +86,8 @@ namespace Quinn.AI
 
 		private void OnPatrol(bool isStart)
 		{
+			if (Health.IsDead) return;
+
 			if (isStart)
 			{
 				//_wanderPos = _rallyPoint + (Random.insideUnitCircle * WanderDistance);
@@ -117,6 +125,8 @@ namespace Quinn.AI
 
 		private void OnOrder(bool isStart)
 		{
+			if (Health.IsDead) return;
+
 			if (isStart)
 			{
 				//_rallyPoint = _orderTargetPos;
@@ -146,6 +156,8 @@ namespace Quinn.AI
 
 		private void OnAttack(bool isStart)
 		{
+			if (Health.IsDead) return;
+
 			//_rallyPoint = transform.position;
 
 			if (isStart)

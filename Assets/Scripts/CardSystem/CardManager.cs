@@ -20,22 +20,24 @@ namespace Quinn.CardSystem
 		private float CardDrawInterval = 5f;
 
 		[SerializeField]
-		private Card[] StartingHand;
+		private Card[] StartingHand, DeckPool;
 
 		public IEnumerable<Card> Hand => _hand;
 		public int HandSize => _hand.Count;
 
 		public int Mana { get; private set; }
+		public float ManaPercent => (float)Mana / MaxMana;
 		public event Action<Card> OnCardAdded, OnCardRemoved;
 
 		private readonly List<Card> _hand = new();
-		private float _nextManaRegenTime;
 
+		private float _nextManaRegenTime;
 		private float _nextCardDraw;
 
 		private void Awake()
 		{
 			Mana = MaxMana;
+			_nextCardDraw = CardDrawInterval;
 		}
 
 		private IEnumerator Start()
@@ -49,7 +51,7 @@ namespace Quinn.CardSystem
 			}
 		}
 
-		private void Update()
+		private void FixedUpdate()
 		{
 			if (Time.time > _nextManaRegenTime && Mana < MaxMana)
 			{
@@ -60,7 +62,7 @@ namespace Quinn.CardSystem
 			if (Time.time > _nextCardDraw && HandSize < MaxHandSize)
 			{
 				_nextCardDraw = Time.time + CardDrawInterval;
-				AddCard(StartingHand[UnityEngine.Random.Range(0, StartingHand.Length)]);
+				AddCard(DeckPool[UnityEngine.Random.Range(0, DeckPool.Length)]);
 			}
 		}
 

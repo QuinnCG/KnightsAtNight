@@ -76,6 +76,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scarecrow
       objectReference: {fileID: 0}
+    - target: {fileID: 7561027488951315680, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
+      propertyPath: ApplyStatuses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7561027488951315680, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
+      propertyPath: ApplyStatuses.Array.data[0].Duration
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7649273975536489535, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
       propertyPath: m_Controller
       value: 

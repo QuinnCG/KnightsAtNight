@@ -6,16 +6,19 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 namespace Quinn
 {
 	public class Health : MonoBehaviour
 	{
-		[ShowInInspector, ReadOnly]
+		[ShowInInspector, ReadOnly, BoxGroup("General", ShowLabel = false)]
 		public float Current { get; private set; }
 
 		[field: SerializeField, BoxGroup("General", ShowLabel = false)]
 		public float Max { get; set; } = 100f;
+		[field: SerializeField, BoxGroup("General", ShowLabel = false), Tooltip("Optional.")]
+		private Slider HealthBar;
 
 		[SerializeField, BoxGroup("General/FX", ShowLabel = false), DisableIf(nameof(FadeOut))]
 		private bool DestroyOnDeath = true;
@@ -79,6 +82,11 @@ namespace Quinn
 			if (Time.time > _nextRegenTime && EnableRegen)
 			{
 				Heal(Time.deltaTime * RegenRate);
+			}
+
+			if (HealthBar)
+			{
+				HealthBar.value = Percent;
 			}
 		}
 

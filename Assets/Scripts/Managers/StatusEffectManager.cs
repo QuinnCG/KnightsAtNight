@@ -35,6 +35,7 @@ namespace Quinn
 		private void Awake()
 		{
 			_health = GetComponent<Health>();
+			_health.OnDeath += () => Clear();
 		}
 
 		private void FixedUpdate()
@@ -104,6 +105,16 @@ namespace Quinn
 			{
 				DestroyVFX(type);
 			}
+		}
+
+		public void Clear()
+		{
+			foreach (var status in _statuses.Keys)
+			{
+				DestroyVFX(status);
+			}
+
+			_statuses.Clear();
 		}
 
 		private void CreateVFX(StatusEffectType type)

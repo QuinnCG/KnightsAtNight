@@ -635,11 +635,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3e79be02b6317c449d5ca402b2746d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthBar: {fileID: 6276170858017079328}
+  <HealthBar>k__BackingField: {fileID: 6276170858017079328}
   TargetMask:
     serializedVersion: 2
     m_Bits: 64
-  AttackRange: 0.7
+  AttackRange: 1
   EngageRadius: 3
   DisengageRange: 4
 --- !u!1 &7680094450770019764 stripped

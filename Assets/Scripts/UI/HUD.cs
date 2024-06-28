@@ -1,4 +1,5 @@
-﻿using Quinn.CardSystem;
+﻿using DG.Tweening;
+using Quinn.CardSystem;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -10,6 +11,8 @@ namespace Quinn.UI
 	{
 		[SerializeField]
 		private Gradient ManaColor;
+		[SerializeField]
+		private float LowManaScaleFactor = 1.1f;
 
 		private CardManager _manager;
 		private VisualElement _root;
@@ -18,6 +21,8 @@ namespace Quinn.UI
 		private Label _mana;
 		private Label _wave;
 		private Label _alive;
+
+		private Tween _manaLowTween;
 
 		private void Awake()
 		{
@@ -38,6 +43,20 @@ namespace Quinn.UI
 			_alive.text = $"Hostiles: {WaveManager.Instance.AliveCount}x";
 
 			_mana.style.color = ManaColor.Evaluate(1f - ((float)_manager.Mana / _manager.MaxMana));
+
+			// Tweening.
+			float manaPercent = (float)_manager.Mana / _manager.MaxMana;
+
+			if (manaPercent <= 0.3f && _manaLowTween == null)
+			{
+				_manaLowTween = DOTween.To(() => _mana.transform.scale, x => _mana.transform.scale = x, Vector3.one * LowManaScaleFactor, 1f)
+					.SetLoops(-1, LoopType.Yoyo)
+					.SetEase(Ease.InOutCubic);
+			}
+			else if (manaPercent > 0.3f && _manaLowTween != null)
+			{
+				_manaLowTween.Kill(true);
+			}
 		}
 	}
 }

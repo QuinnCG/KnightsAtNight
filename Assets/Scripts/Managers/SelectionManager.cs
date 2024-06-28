@@ -186,7 +186,7 @@ namespace Quinn
 
 		public void Select(UnitAI unit)
 		{
-			if (!_selected.Contains(unit))
+			if (!_selected.Contains(unit) && !unit.GetComponent<Health>().IsDead)
 			{
 				_selected.Add(unit);
 				SetOutline(unit, true);

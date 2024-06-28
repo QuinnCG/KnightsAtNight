@@ -21,6 +21,9 @@ namespace Quinn.AI
 		[SerializeField]
 		private string AttackTrigger = "Attack";
 
+		[SerializeField]
+		private StatusEffectEntry[] ApplyStatuses;
+
 		public event Action<Health> OnAttack;
 		public event Action<Health> OnDamage;
 		public event Action<Health> OnKill;
@@ -72,6 +75,17 @@ namespace Quinn.AI
 				// Calculate direction of attack.
 				var dir = transform.position.DirectionTo(_target.transform.position);
 
+				// Status effects.
+				var statusManager = _target.GetComponent<StatusEffectManager>();
+
+				if (ApplyStatuses != null)
+				{
+					foreach (var entry in ApplyStatuses)
+					{
+						statusManager.Apply(entry.Type, entry.Duration);
+					}
+				}
+
 				// Apply damage.
 				_target.TakeDamage(dmg, dir, KnockbackSpeed);
 
@@ -81,22 +95,6 @@ namespace Quinn.AI
 
 				// Reset target.
 				_target = null;
-			}
-		}
-
-		[Button]
-		public void SetIntervalToAttackAnim()
-		{
-			var animator = GetComponent<Animator>();
-			var clipInfos = animator.GetCurrentAnimatorClipInfo(0);
-
-			foreach (var info in clipInfos)
-			{
-				if (info.clip.name == "Attack")
-				{
-					Interval = info.clip.length;
-					return;
-				}
 			}
 		}
 	}

@@ -9,8 +9,8 @@ namespace Quinn.AI
 	[RequireComponent(typeof(Combat))]
 	public class AgentAI : MonoBehaviour
 	{
-		[SerializeField, Required]
-		private Slider HealthBar;
+		[field: SerializeField, Required]
+		protected Slider HealthBar { get; private set; }
 
 		protected Health Health { get; private set; }
 		protected Movement Movement { get; private set; }
@@ -25,7 +25,7 @@ namespace Quinn.AI
 			Health = GetComponent<Health>();
 			Health.OnDamaged += () => HealthBar.gameObject.SetActive(true);
 			Health.OnFullHealed += () => HealthBar.gameObject.SetActive(false);
-			HealthBar.gameObject.SetActive(false);
+			HealthBar.enabled = false;
 
 			Movement = GetComponent<Movement>();
 			Combat = GetComponent<Combat>();
