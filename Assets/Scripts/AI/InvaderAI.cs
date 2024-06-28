@@ -9,7 +9,7 @@ namespace Quinn.AI
 		private LayerMask TargetMask;
 
 		[SerializeField]
-		private float AttackRange = 1f;
+		private float AttackRange = 1f, TowerAttackRange = 2f;
 
 		[SerializeField]
 		private float EngageRadius = 3f;
@@ -70,7 +70,7 @@ namespace Quinn.AI
 			}
 
 			// Attack if close to tower.
-			if (GetDistanceToTower() < AttackRange)
+			if (GetDistanceToTower() < TowerAttackRange)
 			{
 				_target = Tower.Instance.transform;
 				_targetHealth = _target.GetComponent<Health>();
@@ -81,7 +81,7 @@ namespace Quinn.AI
 			var colliders = Physics2D.OverlapCircleAll(transform.position, EngageRadius, TargetMask);
 			foreach (var collider in colliders)
 			{
-				if (collider.TryGetComponent(out Health health))
+				if (collider.TryGetComponent(out Health health) && !health.IsDead)
 				{
 					_target = collider.transform;
 					_targetHealth = health;

@@ -48,7 +48,7 @@ namespace Quinn
 			Instance = this;
 
 			_activeWave = GetRandomWave();
-			GenerateToSpawnQueue(_activeWave);
+			GenerateSpawnQueue(_activeWave);
 		}
 
 		private void Start()
@@ -62,7 +62,7 @@ namespace Quinn
 
 			if (_inWave)
 			{
-				if (Time.time > _nextGroupSpawn && _toSpawn.Count >= _activeWave.GroupSize.x)
+				if (Time.time > _nextGroupSpawn && _toSpawn.Count > 0)
 				{
 					_nextGroupSpawn = Time.time + GroupSpawnInterval.GetRandom();
 					StartCoroutine(SpawnGroup());
@@ -73,7 +73,7 @@ namespace Quinn
 					_nextWaveTime = Time.time + WaveDowntime;
 
 					_activeWave = GetRandomWave();
-					GenerateToSpawnQueue(_activeWave);
+					GenerateSpawnQueue(_activeWave);
 
 					_inWave = false;
 				}
@@ -128,14 +128,14 @@ namespace Quinn
 			return waves.GetRandom();
 		}
 
-		private void GenerateToSpawnQueue(Wave wave)
+		private void GenerateSpawnQueue(Wave wave)
 		{
 			_toSpawn.Clear();
 
 			foreach (var entry in wave.Enemies)
 			{
 				int count = entry.Count.GetRandom(false);
-				count *= Mathf.RoundToInt(WaveNumber * (WaveSpawnCountFactor + 1f));
+				count *= Mathf.RoundToInt((WaveNumber * WaveSpawnCountFactor) + 1f);
 
 				for (int i = 0; i < count; i++)
 				{

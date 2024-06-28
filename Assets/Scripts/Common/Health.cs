@@ -84,10 +84,10 @@ namespace Quinn
 				Heal(Time.deltaTime * RegenRate);
 			}
 
-			if (HealthBar)
+			if (HealthBar != null)
 			{
 				HealthBar.value = Percent;
-				HealthBar.enabled = Percent < 1f && !IsDead;
+				HealthBar.enabled = Current != Max;
 			}
 		}
 
