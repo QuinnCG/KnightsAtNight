@@ -672,6 +672,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   AttackRange: 1
+  TowerAttackRange: 2
   EngageRadius: 3
   DisengageRange: 4
 --- !u!1 &7680094450770019764 stripped

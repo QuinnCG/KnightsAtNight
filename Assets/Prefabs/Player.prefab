@@ -78,6 +78,7 @@ MonoBehaviour:
   DeckPool:
   - {fileID: 11400000, guid: 0f9caad9a00bf1247a8b10b5dba5f5ee, type: 2}
   - {fileID: 11400000, guid: 0f9caad9a00bf1247a8b10b5dba5f5ee, type: 2}
+  - {fileID: 11400000, guid: 0f9caad9a00bf1247a8b10b5dba5f5ee, type: 2}
   - {fileID: 11400000, guid: 8eebcf393f89e124dbcc968b53505202, type: 2}
   - {fileID: 11400000, guid: 2ac4775d5f8130441983401083fd390c, type: 2}
   - {fileID: 11400000, guid: 2ac4775d5f8130441983401083fd390c, type: 2}
