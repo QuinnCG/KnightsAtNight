@@ -34,7 +34,6 @@ namespace Quinn.CardSystem
 		public event Action<Card> OnCardAdded, OnCardRemoved;
 
 		private readonly List<Card> _hand = new();
-		private float _deckPoolWeightSum;
 
 		private float _nextManaRegenTime;
 		private float _nextCardDraw;
@@ -43,8 +42,6 @@ namespace Quinn.CardSystem
 		{
 			Mana = MaxMana;
 			_nextCardDraw = CardDrawInterval;
-
-			_deckPoolWeightSum = DeckPool.Sum(x => x.Weight);
 		}
 
 		private IEnumerator Start()
@@ -112,10 +109,14 @@ namespace Quinn.CardSystem
 
 		private Card GetRandomCard()
 		{
-			foreach (var entry in DeckPool)
+			int wave = WaveManager.Instance.WaveNumber;
+			var pool = DeckPool.Where(x => x.Card.DebutWave <= wave);
+
+			float sum = pool.Sum(x => x.Weight);
+			foreach (var entry in pool)
 			{
 				float weight = entry.Weight;
-				float chance = weight / _deckPoolWeightSum;
+				float chance = weight / sum;
 
 				if (UnityEngine.Random.value <= chance)
 				{
@@ -123,7 +124,7 @@ namespace Quinn.CardSystem
 				}
 			}
 
-			return DeckPool.GetRandom().Card;
+			return pool.GetRandom().Card;
 		}
 	}
 }

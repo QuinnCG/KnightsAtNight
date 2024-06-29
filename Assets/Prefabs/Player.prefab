@@ -79,7 +79,7 @@ MonoBehaviour:
   - Card: {fileID: 11400000, guid: 0f9caad9a00bf1247a8b10b5dba5f5ee, type: 2}
     Weight: 1.5
   - Card: {fileID: 11400000, guid: 8ea1e22f75575bd4696a8ec64ddaebe5, type: 2}
-    Weight: 1.5
+    Weight: 1
   - Card: {fileID: 11400000, guid: 8eebcf393f89e124dbcc968b53505202, type: 2}
     Weight: 1
   - Card: {fileID: 11400000, guid: 2ac4775d5f8130441983401083fd390c, type: 2}
@@ -163,6 +163,7 @@ MonoBehaviour:
   LowManaScaleFactor: 1.1
   TutorialDisplayDuration: 30
   TutorialFadeDuration: 3
+  HUDFadeInDuration: 1
 --- !u!114 &7469785114729935636
 MonoBehaviour:
   m_ObjectHideFlags: 0

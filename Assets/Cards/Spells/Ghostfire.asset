@@ -329,6 +329,7 @@ MonoBehaviour:
   Description: Dead... fire?
   Art: {fileID: 3083048843646029594, guid: a0d95fff7957def4ca33887ce1b408b2, type: 3}
   Cost: 3
+  DebutWave: 3
   SpawnSound:
     Guid:
       Data1: -111256779

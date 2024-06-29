@@ -18,6 +18,8 @@ namespace Quinn.UI
 		private float TutorialDisplayDuration = 20f;
 		[SerializeField, Tooltip("Only used when timer expires.")]
 		private float TutorialFadeDuration = 3f;
+		[SerializeField]
+		private float HUDFadeInDuration = 2f;
 
 		private CardManager _manager;
 		private VisualElement _root;
@@ -47,6 +49,7 @@ namespace Quinn.UI
 			_tutorial = _root.Q<Label>("tutorial");
 
 			_tutorialExpireTime = Time.time + TutorialDisplayDuration;
+			HideHUD();
 		}
 
 		private void Update()
@@ -79,12 +82,14 @@ namespace Quinn.UI
 
 				_tutorial.style.opacity = 0f;
 				_animatingTutorial = false;
+				ShowHUD();
 			}
 
 			if (!_tutorialHidden && Time.time > _tutorialExpireTime)
 			{
 				_tutorialHidden = true;
 				_animatingTutorial = true;
+				ShowHUD();
 
 				_tutorialTween = DOTween.To(() => _tutorial.resolvedStyle.opacity, x => _tutorial.style.opacity = x, 0f, TutorialFadeDuration);
 				_tutorialTween.onComplete += () =>
@@ -93,6 +98,25 @@ namespace Quinn.UI
 					_tutorialHidden = true;
 					_tutorialTween = null;
 				};
+			}
+		}
+
+		private void HideHUD()
+		{
+			foreach (var child in _root.Children())
+			{
+				if (child == _tutorial) continue;
+				child.style.opacity = 0f;
+			}
+		}
+
+		private void ShowHUD()
+		{
+			foreach (var child in _root.Children())
+			{
+				if (child == _tutorial) continue;
+				DOTween.To(() => child.resolvedStyle.opacity, x => child.style.opacity = x, 1f, HUDFadeInDuration)
+					.SetEase(Ease.InCubic);
 			}
 		}
 	}
