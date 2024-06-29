@@ -1,4 +1,5 @@
-﻿using Sirenix.OdinInspector;
+﻿using FMODUnity;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,9 @@ namespace Quinn.AI
 	{
 		[field: SerializeField, Required]
 		protected Slider HealthBar { get; private set; }
+
+		[BoxGroup("Grunts")]
+		private EventReference AttackGrunt, DeathGrunt;
 
 		protected Health Health { get; private set; }
 		protected Movement Movement { get; private set; }
@@ -25,6 +29,9 @@ namespace Quinn.AI
 			Health = GetComponent<Health>();
 			Movement = GetComponent<Movement>();
 			Combat = GetComponent<Combat>();
+
+			Health.OnDeath += () => DeathGrunt.PlayOnce(transform.position);
+			Combat.OnAttack += _ => AttackGrunt.PlayOnce(transform.position);
 		}
 
 		protected virtual void Update()
