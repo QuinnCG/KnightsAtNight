@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Quinn.CardSystem
@@ -20,7 +21,10 @@ namespace Quinn.CardSystem
 		private float CardDrawInterval = 5f;
 
 		[SerializeField]
-		private Card[] StartingHand, DeckPool;
+		private Card[] StartingHand;
+
+		[SerializeField]
+		private CardEntry[] DeckPool;
 
 		public IEnumerable<Card> Hand => _hand;
 		public int HandSize => _hand.Count;
@@ -30,6 +34,7 @@ namespace Quinn.CardSystem
 		public event Action<Card> OnCardAdded, OnCardRemoved;
 
 		private readonly List<Card> _hand = new();
+		private float _deckPoolWeightSum;
 
 		private float _nextManaRegenTime;
 		private float _nextCardDraw;
@@ -38,6 +43,8 @@ namespace Quinn.CardSystem
 		{
 			Mana = MaxMana;
 			_nextCardDraw = CardDrawInterval;
+
+			_deckPoolWeightSum = DeckPool.Sum(x => x.Weight);
 		}
 
 		private IEnumerator Start()
@@ -62,7 +69,7 @@ namespace Quinn.CardSystem
 			if (Time.time > _nextCardDraw && HandSize < MaxHandSize)
 			{
 				_nextCardDraw = Time.time + CardDrawInterval;
-				AddCard(DeckPool[UnityEngine.Random.Range(0, DeckPool.Length)]);
+				AddCard(GetRandomCard());
 			}
 		}
 
@@ -101,6 +108,22 @@ namespace Quinn.CardSystem
 		public void ConsumeMana(int cost)
 		{
 			Mana = Mathf.Max(0, Mana - cost);
+		}
+
+		private Card GetRandomCard()
+		{
+			foreach (var entry in DeckPool)
+			{
+				float weight = entry.Weight;
+				float chance = weight / _deckPoolWeightSum;
+
+				if (UnityEngine.Random.value <= chance)
+				{
+					return entry.Card;
+				}
+			}
+
+			return DeckPool.GetRandom().Card;
 		}
 	}
 }

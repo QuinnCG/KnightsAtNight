@@ -84,7 +84,7 @@ namespace Quinn
 			if (HealthBar != null)
 			{
 				HealthBar.value = Percent;
-				HealthBar.enabled = Current != Max;
+				HealthBar.gameObject.SetActive(Current != Max);
 			}
 		}
 

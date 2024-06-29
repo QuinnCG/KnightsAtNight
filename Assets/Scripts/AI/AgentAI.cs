@@ -23,10 +23,6 @@ namespace Quinn.AI
 		protected virtual void Awake()
 		{
 			Health = GetComponent<Health>();
-			Health.OnDamaged += () => HealthBar.gameObject.SetActive(true);
-			Health.OnFullHealed += () => HealthBar.gameObject.SetActive(false);
-			HealthBar.enabled = false;
-
 			Movement = GetComponent<Movement>();
 			Combat = GetComponent<Combat>();
 		}

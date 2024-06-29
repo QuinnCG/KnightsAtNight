@@ -49,7 +49,7 @@ MonoBehaviour:
   InitialSegmentLength: {x: 5, y: 7}
   SegmentLength: {x: 3, y: 5}
   MaxPathGeneration: 50
-  PathTurnChance: 0.4
+  PathTurnChance: 0.3
   PathBranchChance: 0.1
   MaxGenerationToBranch: 5
   SpawnGeneration: 10
