@@ -70,10 +70,7 @@ namespace Quinn
 		{
 			TryGetComponent(out _movement);
 			TryGetComponent(out _animator);
-		}
 
-		private void Start()
-		{
 			Current = Max;
 		}
 
@@ -88,6 +85,8 @@ namespace Quinn
 			{
 				HealthBar.value = Percent;
 				HealthBar.enabled = Current != Max;
+
+				Debug.Log($"{gameObject.GetHashCode()}: current: {Current}, max: {Max}, equal: {Current == Max}");
 			}
 		}
 
