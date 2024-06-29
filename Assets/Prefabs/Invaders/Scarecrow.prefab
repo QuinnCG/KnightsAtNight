@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2101943539281072888, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
       propertyPath: <Max>k__BackingField
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3899298192764099856, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
       propertyPath: m_AnchorMax.x
