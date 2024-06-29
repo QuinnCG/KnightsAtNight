@@ -214,7 +214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7359221156798972691, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: <Max>k__BackingField
-      value: 35
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7520693569849789879, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: KnockbackDuration

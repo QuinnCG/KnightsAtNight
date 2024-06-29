@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 181102395320781486, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
+      propertyPath: SpawnSpeedBoostFactor
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1392862227735403612, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
       propertyPath: <Speed>k__BackingField
       value: 1.7

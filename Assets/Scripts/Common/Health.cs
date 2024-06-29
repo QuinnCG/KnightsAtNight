@@ -85,8 +85,6 @@ namespace Quinn
 			{
 				HealthBar.value = Percent;
 				HealthBar.enabled = Current != Max;
-
-				Debug.Log($"{gameObject.GetHashCode()}: current: {Current}, max: {Max}, equal: {Current == Max}");
 			}
 		}
 

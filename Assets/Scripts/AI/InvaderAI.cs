@@ -8,25 +8,27 @@ namespace Quinn.AI
 		[SerializeField]
 		private LayerMask TargetMask;
 
+		/* Attack ranges */
 		[SerializeField, Space]
-		private float AttackRange = 1f, TowerAttackRange = 2f;
-
+		private float AttackRange = 1f;
 		[SerializeField]
-		private float EngageRadius = 3f;
+		private float TowerAttackRange = 2f;
 
+		/* Sight ranges */
+		[SerializeField, Space]
+		private float EngageRadius = 3f;
 		[SerializeField]
 		private float DisengageRange = 5f;
 
+		/* Spawn speed boost. */
 		[SerializeField, Space]
 		private float SpawnSpeedBoostFactor = 3f;
-
 		[SerializeField]
-		private float SpawnSpeedBoostDuration = 5f;
+		private float SpawnSpeedBoostEndRadius = 40f;
 
 		private Collider2D _collider;
 
 		private float _defaultSpeed;
-		private float _resetSpeedTime;
 		private bool _hasReset;
 
 		private Transform _target;
@@ -42,19 +44,18 @@ namespace Quinn.AI
 
 			_defaultSpeed = Movement.Speed;
 			Movement.Speed *= SpawnSpeedBoostFactor;
-			_resetSpeedTime = Time.time + SpawnSpeedBoostDuration;
 		}
 
 		protected override void Update()
 		{
 			base.Update();
 
-            if (!_hasReset && Time.time > _resetSpeedTime)
-            {
+			if (!_hasReset && transform.position.DistanceTo(Tower.Instance.transform.position) < SpawnSpeedBoostEndRadius)
+			{
 				_hasReset = true;
 				Movement.Speed = _defaultSpeed;
-            }
-        }
+			}
+		}
 
 		public void SetStartingNode(PathNode node)
 		{
