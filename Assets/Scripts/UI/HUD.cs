@@ -14,6 +14,11 @@ namespace Quinn.UI
 		[SerializeField]
 		private float LowManaScaleFactor = 1.1f;
 
+		[SerializeField, Space]
+		private float TutorialDisplayDuration = 20f;
+		[SerializeField, Tooltip("Only used when timer expires.")]
+		private float TutorialFadeDuration = 3f;
+
 		private CardManager _manager;
 		private VisualElement _root;
 
@@ -21,8 +26,14 @@ namespace Quinn.UI
 		private Label _mana;
 		private Label _wave;
 		private Label _alive;
+		private Label _tutorial;
 
 		private Tween _manaLowTween;
+
+		private Tween _tutorialTween;
+		private bool _tutorialHidden;
+		private float _tutorialExpireTime;
+		private bool _animatingTutorial;
 
 		private void Awake()
 		{
@@ -33,6 +44,9 @@ namespace Quinn.UI
 			_mana = _root.Q<Label>("mana");
 			_wave = _root.Q<Label>("wave");
 			_alive = _root.Q<Label>("alive");
+			_tutorial = _root.Q<Label>("tutorial");
+
+			_tutorialExpireTime = Time.time + TutorialDisplayDuration;
 		}
 
 		private void Update()
@@ -56,6 +70,29 @@ namespace Quinn.UI
 			else if (manaPercent > 0.3f && _manaLowTween != null)
 			{
 				_manaLowTween.Kill(true);
+			}
+
+			if (Input.GetKeyDown(KeyCode.Escape) && (!_tutorialHidden || _animatingTutorial))
+			{
+				_tutorialHidden = true;
+				_tutorialTween?.Kill();
+
+				_tutorial.style.opacity = 0f;
+				_animatingTutorial = false;
+			}
+
+			if (!_tutorialHidden && Time.time > _tutorialExpireTime)
+			{
+				_tutorialHidden = true;
+				_animatingTutorial = true;
+
+				_tutorialTween = DOTween.To(() => _tutorial.resolvedStyle.opacity, x => _tutorial.style.opacity = x, 0f, TutorialFadeDuration);
+				_tutorialTween.onComplete += () =>
+				{
+					_animatingTutorial = false;
+					_tutorialHidden = true;
+					_tutorialTween = null;
+				};
 			}
 		}
 	}

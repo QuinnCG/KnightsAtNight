@@ -76,13 +76,14 @@ namespace Quinn.AI
 				var dir = transform.position.DirectionTo(_target.transform.position);
 
 				// Status effects.
-				var statusManager = _target.GetComponent<StatusEffectManager>();
-
-				if (ApplyStatuses != null)
+				if (_target.TryGetComponent(out StatusEffectManager statusManager))
 				{
-					foreach (var entry in ApplyStatuses)
+					if (ApplyStatuses != null)
 					{
-						statusManager.Apply(entry.Type, entry.Duration);
+						foreach (var entry in ApplyStatuses)
+						{
+							statusManager.Apply(entry.Type, entry.Duration);
+						}
 					}
 				}
 
