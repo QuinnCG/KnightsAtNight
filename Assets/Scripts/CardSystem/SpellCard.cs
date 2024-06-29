@@ -16,13 +16,15 @@ namespace Quinn.CardSystem
 
 		public override void Cast()
 		{
-			Tower.Instance.CastSpell();
-			SpawnSound.PlayOnce(Tower.Instance.SpellSpawnPoint);
-
-			foreach (var effect in OnCast)
+			Tower.Instance.CastSpell(() =>
 			{
-				effect.Activate(new(Player.MousePos, null, this, null));
-			}
+				SpawnSound.PlayOnce(Tower.Instance.SpellSpawnPoint);
+
+				foreach (var effect in OnCast)
+				{
+					effect.Activate(new(Player.MousePos, null, this, null));
+				}
+			});
 		}
 	}
 }

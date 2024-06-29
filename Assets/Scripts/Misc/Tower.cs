@@ -1,5 +1,6 @@
 using Quinn.AI;
 using Sirenix.OdinInspector;
+using System;
 using UnityEngine;
 
 namespace Quinn
@@ -35,9 +36,9 @@ namespace Quinn
 			return _collider.ClosestPoint(to);
 		}
 
-		public void CastSpell()
+		public void CastSpell(Action callback)
 		{
-			TowerWizard.PlayCast();
+			TowerWizard.PlayCast(callback);
 		}
 
 		private void OnDeath()

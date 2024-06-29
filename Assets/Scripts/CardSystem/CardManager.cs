@@ -55,6 +55,16 @@ namespace Quinn.CardSystem
 			}
 		}
 
+#if UNITY_EDITOR
+		private void Update()
+		{
+			if (Input.GetKeyDown(KeyCode.G))
+			{
+				AddCard(GetRandomCard());
+			}
+		}
+#endif
+
 		private void FixedUpdate()
 		{
 			if (Time.time > _nextManaRegenTime && Mana < MaxMana)

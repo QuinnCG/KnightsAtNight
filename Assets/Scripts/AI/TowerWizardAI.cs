@@ -1,18 +1,31 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Quinn.AI
 {
+	[RequireComponent(typeof(Animator))]
 	public class TowerWizardAI : MonoBehaviour
 	{
-		private void Update()
+		private Animator _animator;
+		private Action _callback;
+
+		private void Awake()
 		{
-			// Wander around tower randomly.
-			// Stop and play casting animation when player casts card.
+			_animator = GetComponent<Animator>();
 		}
 
-		public void PlayCast()
+		public void PlayCast(Action callback)
 		{
-			// TODO: Implement cast anim.
+			_callback = callback;
+
+			_animator.SetTrigger("Cast");
+			transform.localScale = new Vector3(Mathf.Sign(transform.position.DirectionTo(Player.MousePos).x), 1f, 1f);
+		}
+
+		public void TriggerSpell()
+		{
+			_callback?.Invoke();
+			_callback = null;
 		}
 	}
 }

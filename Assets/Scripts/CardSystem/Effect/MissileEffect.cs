@@ -39,7 +39,7 @@ namespace Quinn.CardSystem.Effect
 			GameObject trail = null;
 			if (Trail)
 			{
-				trail = Trail.Clone(new(), parent: missile.transform).gameObject;
+				trail = Trail.Clone(missile.transform).gameObject;
 			}
 
 			if (Prefab)
