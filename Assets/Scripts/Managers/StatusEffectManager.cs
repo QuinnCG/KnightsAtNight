@@ -88,6 +88,8 @@ namespace Quinn
 
 		public void Apply(StatusEffectType type, float duration = float.PositiveInfinity)
 		{
+			if (_health.IsDead) return;
+
 			if (Has(type))
 			{
 				_statuses[type] += duration;

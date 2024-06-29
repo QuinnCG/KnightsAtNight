@@ -67,7 +67,9 @@ MonoBehaviour:
     GroupSize: {x: 4, y: 5}
     Enemies:
     - Prefab: {fileID: 3957162170070279015, guid: 8e0f230de7aef204497d6e075fa0af2a, type: 3}
-      Count: {x: 2, y: 3}
+      Count: {x: 1, y: 2}
+    - Prefab: {fileID: 8045126949399064497, guid: c02a98161484a784eb1aa03d513a57e5, type: 3}
+      Count: {x: 1, y: 2}
   - DebutWave: 2
     SubwaveCount: {x: 1, y: 1}
     GroupSize: {x: 3, y: 5}
@@ -80,7 +82,7 @@ MonoBehaviour:
     SubwaveCount: {x: 1, y: 1}
     GroupSize: {x: 3, y: 7}
     Enemies:
-    - Prefab: {fileID: 3957162170070279015, guid: 8e0f230de7aef204497d6e075fa0af2a, type: 3}
+    - Prefab: {fileID: 8045126949399064497, guid: c02a98161484a784eb1aa03d513a57e5, type: 3}
       Count: {x: 3, y: 3}
     - Prefab: {fileID: 4748862935719454584, guid: 9a97fe0e94f78474fbb82aec1a47c2b6, type: 3}
       Count: {x: 1, y: 2}
@@ -92,3 +94,5 @@ MonoBehaviour:
     Enemies:
     - Prefab: {fileID: 5098774827456877030, guid: 11710b49bcfe6384289db0339aeb5ac2, type: 3}
       Count: {x: 2, y: 2}
+    - Prefab: {fileID: 3957162170070279015, guid: 8e0f230de7aef204497d6e075fa0af2a, type: 3}
+      Count: {x: 0, y: 1}

@@ -87,18 +87,6 @@ namespace Quinn
 			}
 		}
 
-		// TODO: Finish wave system.
-		/* Data:
-		 * Describes types of waves (enemies in wave and ranges of enemies and ratios).
-		 * Describes weight for a given wave to be chosen over others.
-		 * Describes after what wave count can this wave actually be put in the spawning pool.
-		 * 
-		 * Behavior:
-		 * Get all valid waves.
-		 * Select random by weights.
-		 * Spawn part of wave, when enough enemies are dead spawn another part. Continue until all are spawned.
-		 */
-
 		private GameObject Spawn(GameObject prefab, PathNode node)
 		{
 			var instance = prefab.Clone(node.Position);
@@ -124,7 +112,7 @@ namespace Quinn
 
 		private Wave GetRandomWave()
 		{
-			var waves = Waves.Where(x => x.DebutWave >= WaveNumber);
+			var waves = Waves.Where(x => x.DebutWave <= WaveNumber);
 			return waves.GetRandom();
 		}
 
