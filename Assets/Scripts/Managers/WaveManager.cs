@@ -27,16 +27,16 @@ namespace Quinn
 		[SerializeField]
 		private EventReference GroupSpawnSound;
 
-		[SerializeField, InlineProperty]
+		[SerializeField]
 		private Wave[] Waves;
 
-		public int WaveNumber { get; private set; } = 1;
+		public int WaveNumber { get; private set; }
 		public int AliveCount => _spawnedEnemies.Count;
 
 		private readonly Queue<GameObject> _toSpawn = new();
 		private readonly HashSet<GameObject> _spawnedEnemies = new();
 
-		private bool _inWave = true;
+		private bool _inWave;
 		private float _nextWaveTime;
 		private float _nextGroupSpawn;
 
@@ -46,9 +46,6 @@ namespace Quinn
 		private void Awake()
 		{
 			Instance = this;
-
-			_activeWave = GetRandomWave();
-			GenerateSpawnQueue(_activeWave);
 		}
 
 		private void Start()
@@ -71,19 +68,20 @@ namespace Quinn
 				if (_toSpawn.Count == 0 && _spawnedEnemies.Count == 0)
 				{
 					_nextWaveTime = Time.time + WaveDowntime;
-
-					_activeWave = GetRandomWave();
-					GenerateSpawnQueue(_activeWave);
-
 					_inWave = false;
 				}
 			}
 			else if (Time.time > _nextWaveTime)
 			{
-				_inWave = true;
 				WaveNumber++;
+				_activeWave = GetRandomWave();
+				_inWave = true;
 
-				Debug.Log($"New wave spawn factor: {WaveNumber * (WaveSpawnCountFactor + 1f):0.00}.");
+				Logger.LogGroup(
+					$"New Wave (#{WaveNumber})", "green",
+					$"Spawn Factor: {CalculateSpawnFactor():0.00}");
+
+				GenerateSpawnQueue();
 			}
 		}
 
@@ -116,20 +114,25 @@ namespace Quinn
 			return waves.GetRandom();
 		}
 
-		private void GenerateSpawnQueue(Wave wave)
+		private void GenerateSpawnQueue()
 		{
 			_toSpawn.Clear();
 
-			foreach (var entry in wave.Enemies)
+			foreach (var entry in _activeWave.Enemies)
 			{
 				int count = entry.Count.GetRandom(false);
-				count *= Mathf.RoundToInt((WaveNumber * WaveSpawnCountFactor) + 1f);
+				int countScaled = count * Mathf.RoundToInt(CalculateSpawnFactor());
 
-				for (int i = 0; i < count; i++)
+				for (int i = 0; i < countScaled; i++)
 				{
 					_toSpawn.Enqueue(entry.Prefab);
 				}
 			}
+
+			Logger.LogGroup(
+				"Generating Spawn Queue", "green",
+				$"ToSpawn: {_toSpawn.Count}x",
+				$"From Wave: {_activeWave.Title}");
 		}
 
 		private IEnumerator SpawnGroup()
@@ -144,6 +147,12 @@ namespace Quinn
 
 				// TODO: Will this function finished if its called again too soon?
 			}
+		}
+
+		private float CalculateSpawnFactor()
+		{
+			if (WaveNumber == 1) return 1f;
+			return ((WaveNumber - 1) * WaveSpawnCountFactor) + 1f;
 		}
 	}
 }

@@ -77,7 +77,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2ac4775d5f8130441983401083fd390c, type: 2}
   DeckPool:
   - Card: {fileID: 11400000, guid: 0f9caad9a00bf1247a8b10b5dba5f5ee, type: 2}
-    Weight: 1.5
+    Weight: 1.2
   - Card: {fileID: 11400000, guid: 8ea1e22f75575bd4696a8ec64ddaebe5, type: 2}
     Weight: 1
   - Card: {fileID: 11400000, guid: 8eebcf393f89e124dbcc968b53505202, type: 2}
@@ -85,6 +85,8 @@ MonoBehaviour:
   - Card: {fileID: 11400000, guid: 2ac4775d5f8130441983401083fd390c, type: 2}
     Weight: 1.2
   - Card: {fileID: 11400000, guid: 08eae8c5f1c50b3458d4f478c958de8d, type: 2}
+    Weight: 0.8
+  - Card: {fileID: 11400000, guid: c571cec78e3e6ac4d8b65e4310788ad9, type: 2}
     Weight: 0.8
 --- !u!114 &4732733328046194764
 MonoBehaviour:

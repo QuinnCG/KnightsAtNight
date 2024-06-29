@@ -58,11 +58,23 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: RemoveStatusEffects
-      Entry: 6
+      Entry: 7
+      Data: 4|Quinn.StatusEffectType[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: HealFull
       Entry: 5
-      Data: false
+      Data: true
     - Name: Health
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -86,7 +98,7 @@ MonoBehaviour:
       Data: 
     - Name: OnDeathEffects
       Entry: 7
-      Data: 4|Quinn.CardSystem.Effect.SpellEffect[], Assembly-CSharp
+      Data: 5|Quinn.CardSystem.Effect.SpellEffect[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 0
@@ -97,10 +109,10 @@ MonoBehaviour:
       Entry: 8
       Data: 
   Title: Axe Knights
-  Description: Knights can have axe's...
+  Description: Knghts can have axe's... These two heal on kill.
   Art: {fileID: 9095996558265092094, guid: d045549b060b2b3438780a18c3844d8e, type: 3}
   Cost: 7
-  DebutWave: 5
+  DebutWave: 10
   Prefab: {fileID: 1315797325642782718, guid: 658642e6e82588749ad1ddf2601aaa49, type: 3}
   Count: 2
   SpawnSound:

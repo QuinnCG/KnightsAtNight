@@ -16,11 +16,11 @@ namespace Quinn.CardSystem
 		public EventReference SpawnSound;
 
 		[InlineProperty]
-		public SpellEffect[] OnSpawnEffects = Array.Empty<SpellEffect>();
+		public SpellEffect[] OnSpawnEffects = new SpellEffect[0];
 		[InlineProperty]
-		public SpellEffect[] OnKillEffects = Array.Empty<SpellEffect>();
+		public SpellEffect[] OnKillEffects = new SpellEffect[0];
 		[InlineProperty]
-		public SpellEffect[] OnDeathEffects = Array.Empty<SpellEffect>();
+		public SpellEffect[] OnDeathEffects = new SpellEffect[0];
 
 		public override void Cast()
 		{

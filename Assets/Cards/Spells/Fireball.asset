@@ -147,10 +147,7 @@ MonoBehaviour:
       Data: 6|Quinn.StatusEffectType[], Assembly-CSharp
     - Name: 
       Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 3
-      Data: 4
+      Data: 0
     - Name: 
       Entry: 13
       Data: 
@@ -329,6 +326,7 @@ MonoBehaviour:
   Description: Hurl a small, but potent, ball of fire at your enemies.
   Art: {fileID: 3083048843646029594, guid: fa7e988655a1865479a2bfff05b78947, type: 3}
   Cost: 2
+  DebutWave: 1
   SpawnSound:
     Guid:
       Data1: 284535382

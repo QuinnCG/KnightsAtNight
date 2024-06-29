@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49fde2563b6683549b06f2defabc9e57, type: 3}
-  m_Name: Ghostfire
+  m_Name: GhostFire
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -147,9 +147,6 @@ MonoBehaviour:
       Data: 6|Quinn.StatusEffectType[], Assembly-CSharp
     - Name: 
       Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 3
       Data: 0
     - Name: 
       Entry: 13
@@ -325,11 +322,11 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  Title: Ghostfire
+  Title: Ghost Fire
   Description: Dead... fire?
   Art: {fileID: 3083048843646029594, guid: a0d95fff7957def4ca33887ce1b408b2, type: 3}
   Cost: 3
-  DebutWave: 3
+  DebutWave: 6
   SpawnSound:
     Guid:
       Data1: -111256779

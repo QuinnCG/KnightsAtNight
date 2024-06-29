@@ -5,7 +5,7 @@
 			<value>UnitSpawn</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{032d3441-9a0b-4555-be5d-e142bbc319f8}</destination>
@@ -96,7 +96,6 @@
 	<object class="MixerBusEffectChain" id="{a618410e-3c9d-4eb8-9e8e-e63b95d2cb92}">
 		<relationship name="effects">
 			<destination>{4319895c-c94c-4a58-b001-ec2519826bb1}</destination>
-			<destination>{ff8e6ef5-972a-4b04-81f5-d97f2285bbb5}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d130b1fa-c343-49bb-b2ef-f9247a9553d4}" />
@@ -111,7 +110,6 @@
 	</object>
 	<object class="MixerBusFader" id="{67702377-3272-4f42-a91e-21a1cd07172f}" />
 	<object class="MixerBusFader" id="{4319895c-c94c-4a58-b001-ec2519826bb1}" />
-	<object class="SpatialiserEffect" id="{ff8e6ef5-972a-4b04-81f5-d97f2285bbb5}" />
 	<object class="SingleSound" id="{7552a942-002f-42e6-a05f-754669ffca66}">
 		<relationship name="audioFile">
 			<destination>{184cd5d5-afcc-43ba-81a2-2eeabb0b330e}</destination>

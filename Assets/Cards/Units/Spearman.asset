@@ -60,6 +60,14 @@ MonoBehaviour:
   Title: Spearman
   Description: A fragile soldier that packs a punch.
   Art: {fileID: 4752718152341521191, guid: 40fa31ecfd0008a4c9bac79a1a788038, type: 3}
-  Cost: 6
+  Cost: 5
+  DebutWave: 1
   Prefab: {fileID: 8800178037729111955, guid: 91cc24ccd9691684b8c3a3a97987284f, type: 3}
   Count: 1
+  SpawnSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 

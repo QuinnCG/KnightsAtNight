@@ -6,8 +6,8 @@ namespace Quinn.CardSystem.Effect
 {
 	public class DamageEffect : SpellEffect
 	{
-		public StatusEffectEntry[] ApplyStatusEffects = Array.Empty<StatusEffectEntry>();
-		public StatusEffectType[] RemoveStatusEffects = Array.Empty<StatusEffectType>();
+		public StatusEffectEntry[] ApplyStatusEffects = new StatusEffectEntry[0];
+		public StatusEffectType[] RemoveStatusEffects = new StatusEffectType[0];
 
 		[Space]
 		public bool InstaKill = false;

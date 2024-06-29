@@ -7,7 +7,7 @@
 }
 
 .tower-health .unity-progress-bar__background {
-    background-color: rgba(72, 38, 38, 0.53);
+    background-color: rgba(80, 23, 23, 0.77);
     border-left-width: 0;
     border-right-width: 0;
     border-top-width: 0;

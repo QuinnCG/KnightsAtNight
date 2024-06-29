@@ -7,9 +7,9 @@ namespace Quinn.CardSystem.Effect
 	public class HealEffect : SpellEffect
 	{
 		[InlineProperty]
-		public StatusEffectEntry[] ApplyStatusEffects = Array.Empty<StatusEffectEntry>();
+		public StatusEffectEntry[] ApplyStatusEffects = new StatusEffectEntry[0];
 		[InlineProperty]
-		public StatusEffectType[] RemoveStatusEffects = Array.Empty<StatusEffectType>();
+		public StatusEffectType[] RemoveStatusEffects = new StatusEffectType[0];
 
 		[Space]
 		public bool HealFull = false;
