@@ -137,7 +137,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 128
+      m_SerializableObject: 256
     m_Space: -1
   m_Property:
     name: Count
@@ -377,7 +377,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.800000011920929,"y":1.0}'
+      m_SerializableObject: '{"x":1.5,"y":2.0}'
     m_Space: -1
   m_Property:
     name: Velocity

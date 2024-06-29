@@ -9,7 +9,7 @@ namespace Quinn.CardSystem.Effect
 		[InlineProperty]
 		public StatusEffectEntry[] ApplyStatusEffects = Array.Empty<StatusEffectEntry>();
 		[InlineProperty]
-		public StatusEffectEntry[] RemoveStatusEffects = Array.Empty<StatusEffectEntry>();
+		public StatusEffectType[] RemoveStatusEffects = Array.Empty<StatusEffectType>();
 
 		[Space]
 		public bool HealFull = false;
@@ -41,9 +41,9 @@ namespace Quinn.CardSystem.Effect
 
 				if (RemoveStatusEffects != null)
 				{
-					foreach (var entry in RemoveStatusEffects)
+					foreach (var type in RemoveStatusEffects)
 					{
-						manager.Remove(entry.Type);
+						manager.Remove(type);
 					}
 				}
 			}

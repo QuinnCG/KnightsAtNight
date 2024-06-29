@@ -904,6 +904,13 @@ MonoBehaviour:
   WeakenedStatusDamageFactor: 0.3
   KnockbackSpeed: 8
   AttackTrigger: Attack
+  SwingSound:
+    Guid:
+      Data1: 2095722505
+      Data2: 1285051879
+      Data3: -1354122077
+      Data4: 227158618
+    Path: event:/SFX/Attack
   ApplyStatuses: []
 --- !u!114 &5657732489058951385
 MonoBehaviour:

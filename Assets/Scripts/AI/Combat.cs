@@ -1,4 +1,5 @@
-﻿using Sirenix.OdinInspector;
+﻿using FMODUnity;
+using Sirenix.OdinInspector;
 using System;
 using UnityEngine;
 
@@ -20,6 +21,9 @@ namespace Quinn.AI
 
 		[SerializeField]
 		private string AttackTrigger = "Attack";
+
+		[SerializeField]
+		private EventReference SwingSound;
 
 		[SerializeField]
 		private StatusEffectEntry[] ApplyStatuses;
@@ -66,6 +70,8 @@ namespace Quinn.AI
 		{
 			if (_target != null)
 			{
+				SwingSound.PlayOnce(transform.position);
+
 				// Calculate damage.
 				float dmg = Damage
 					* (_statusManager.Has(StatusEffectType.Weakened)
@@ -93,9 +99,6 @@ namespace Quinn.AI
 				// Events.
 				OnDamage?.Invoke(_target);
 				if (_target.IsDead) OnKill?.Invoke(_target);
-
-				// Reset target.
-				_target = null;
 			}
 		}
 	}

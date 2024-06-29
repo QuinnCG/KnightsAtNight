@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 namespace Quinn.AI
@@ -192,18 +193,15 @@ namespace Quinn.AI
 			Vector2 origin = _collider.bounds.center;
 			var hits = Physics2D.OverlapCircleAll(origin, radius, TargetMask);
 
-			foreach (Collider2D hit in hits)
-			{
-				if (hit.gameObject == gameObject) continue;
-				if (hit.TryGetComponent(out Health health))
-				{
-					if (health.IsDead) continue;
-				}
+			var valid = hits.Where(x => 
+				x.gameObject != gameObject &&
+				x.TryGetComponent(out Health health) && 
+				!health.IsDead);
+			var closest = valid.Lowest(x => x.transform.position.DistanceTo(transform.position));
 
-				return hit.gameObject;
-			}
-
-			return null;
+			if (closest != null)
+				return closest.gameObject;
+			else return null;
 		}
 	}
 }

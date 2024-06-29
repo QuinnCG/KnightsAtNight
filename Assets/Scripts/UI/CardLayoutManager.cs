@@ -1,3 +1,4 @@
+using FMODUnity;
 using Quinn.CardSystem;
 using System.Collections.Generic;
 using TMPro;
@@ -41,6 +42,9 @@ namespace Quinn.UI
 
 		[SerializeField]
 		private float CardHoveredYOffset = 6f;
+
+		[Space, SerializeField]
+		private EventReference UnitSpawnSound;
 
 		public bool IsHoveringOnCard => _raiseCards;
 
@@ -91,6 +95,11 @@ namespace Quinn.UI
 						{
 							_manager.ConsumeMana(card.Cost);
 							card.Cast();
+
+							if (card is UnitCard)
+							{
+								UnitSpawnSound.PlayOnce(Player.MousePos);
+							}
 
 							// Handle removing the card element ourselves, instead of through the OnCardRemoved callback.
 							_manager.RemoveCard(card, true);

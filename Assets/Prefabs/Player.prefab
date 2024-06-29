@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2499e78b46e7200459859509a2ef3c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MaxHandSize>k__BackingField: 6
+  <MaxHandSize>k__BackingField: 7
   <MaxMana>k__BackingField: 10
   ManaRegenInterval: 3
   CardDrawInterval: 10
@@ -84,6 +84,8 @@ MonoBehaviour:
     Weight: 1
   - Card: {fileID: 11400000, guid: 2ac4775d5f8130441983401083fd390c, type: 2}
     Weight: 1.2
+  - Card: {fileID: 11400000, guid: 08eae8c5f1c50b3458d4f478c958de8d, type: 2}
+    Weight: 0.8
 --- !u!114 &4732733328046194764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +111,13 @@ MonoBehaviour:
   CardHoverScaleFactor: 1.2
   CardDrawSpawn: {x: -200, y: 500}
   CardHoveredYOffset: 35
+  UnitSpawnSound:
+    Guid:
+      Data1: 1186501932
+      Data2: 1295588054
+      Data3: 1684874423
+      Data4: 287562827
+    Path: event:/SFX/UnitSpawn
 --- !u!114 &1089358694419329463
 MonoBehaviour:
   m_ObjectHideFlags: 0

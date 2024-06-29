@@ -180,7 +180,7 @@ MonoBehaviour:
       Data: 
     - Name: Radius
       Entry: 4
-      Data: 4
+      Data: 3
     - Name: Mask
       Entry: 7
       Data: UnityEngine.LayerMask, UnityEngine.CoreModule
