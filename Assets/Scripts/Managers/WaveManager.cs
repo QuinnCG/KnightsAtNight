@@ -74,6 +74,8 @@ namespace Quinn
 			else if (Time.time > _nextWaveTime)
 			{
 				WaveNumber++;
+				GameManager.Instance.WavesSurvived = WaveNumber - 1;
+
 				_activeWave = GetRandomWave();
 				_inWave = true;
 

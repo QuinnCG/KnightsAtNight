@@ -1,3 +1,7 @@
+using Quinn.CardSystem;
+using System.Collections.Generic;
+using Unity.Services.Authentication;
+using Unity.Services.Core;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
@@ -10,6 +14,15 @@ namespace Quinn
 
 		public bool IsPaused { get; private set; }
 
+		public float AttemptStartTime { get; private set; }
+		public int WavesSurvived { get; set; }
+		public int EnemiesSlain { get; set; }
+		public int SoldiersSummoned { get; set; }
+		public int SpellsCast { get; set; }
+		public Dictionary<Card, int> CardUses { get; } = new();
+
+		
+
 		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 		private static void Bootstrap()
 		{
@@ -19,17 +32,24 @@ namespace Quinn
 			Instance = instance.GetComponent<GameManager>();
 		}
 
-		private void Update()
+		private async void Awake()
 		{
-			if (Input.GetKeyDown(KeyCode.Escape) && !SelectionManager.Instance.AnySelected)
-			{
-				// TODO: Add pause menu.
-			}
+			AttemptStartTime = Time.time;
+
+			await UnityServices.InitializeAsync();
+			await AuthenticationService.Instance.SignInAnonymouslyAsync();
 		}
 
-		public void RestartGame()
+		public async void RestartGame()
 		{
-			SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+			await SceneManager.LoadSceneAsync("GameScene");
+			AttemptStartTime = Time.time;
+
+			EnemiesSlain = 0;
+			SoldiersSummoned = 0;
+			SpellsCast = 0;
+
+			CardUses.Clear();
 		}
 	}
 }

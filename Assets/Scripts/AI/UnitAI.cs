@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -6,6 +7,9 @@ namespace Quinn.AI
 	[RequireComponent(typeof(Collider2D))]
 	public class UnitAI : AgentAI
 	{
+		public static HashSet<UnitAI> Instances { get; } = new();
+
+
 		[SerializeField]
 		private bool DebugLog;
 
@@ -50,6 +54,8 @@ namespace Quinn.AI
 				HealthBar.enabled = false;
 				SelectionManager.Instance.Deselect(this);
 			};
+
+			Instances.Add(this);
 		}
 
 		//private void Start()
@@ -66,6 +72,11 @@ namespace Quinn.AI
 			{
 				Debug.Log($"State ({name}): {ActiveState.Method.Name.Bold()}");
 			}
+		}
+
+		private void OnDestroy()
+		{
+			Instances.Remove(this);
 		}
 
 		public void Order(Vector2 target)
@@ -193,9 +204,9 @@ namespace Quinn.AI
 			Vector2 origin = _collider.bounds.center;
 			var hits = Physics2D.OverlapCircleAll(origin, radius, TargetMask);
 
-			var valid = hits.Where(x => 
+			var valid = hits.Where(x =>
 				x.gameObject != gameObject &&
-				x.TryGetComponent(out Health health) && 
+				x.TryGetComponent(out Health health) &&
 				!health.IsDead);
 			var closest = valid.Lowest(x => x.transform.position.DistanceTo(transform.position));
 

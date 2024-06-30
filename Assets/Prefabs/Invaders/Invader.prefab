@@ -676,7 +676,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   AttackRange: 1
-  TowerAttackRange: 2
+  TowerAttackRange: 3
   EngageRadius: 3
   DisengageRange: 4
   SpawnSpeedBoostFactor: 2

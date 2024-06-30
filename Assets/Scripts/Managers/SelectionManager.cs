@@ -41,6 +41,14 @@ namespace Quinn
 
 		private void Update()
 		{
+			if (Input.GetKeyDown(KeyCode.Tab))
+			{
+				foreach (var unit in UnitAI.Instances)
+				{
+					Select(unit);
+				}
+			}
+
 			if (_box == null)
 			{
 				if (Input.GetMouseButtonDown(0) && !CardLayoutManager.Instance.IsHoveringOnCard)

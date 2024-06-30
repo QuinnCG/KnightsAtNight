@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2101943539281072888, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
       propertyPath: DeathSound.Path
-      value: event:/SFX/DeathGrunt/DeathGrunt4
+      value: event:/SFX/Hurt
       objectReference: {fileID: 0}
     - target: {fileID: 2101943539281072888, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
       propertyPath: <Max>k__BackingField
@@ -26,19 +26,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2101943539281072888, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
       propertyPath: DeathSound.Guid.Data1
-      value: -185896151
+      value: -1722774768
       objectReference: {fileID: 0}
     - target: {fileID: 2101943539281072888, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
       propertyPath: DeathSound.Guid.Data2
-      value: 1285645455
+      value: 1321021552
       objectReference: {fileID: 0}
     - target: {fileID: 2101943539281072888, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
       propertyPath: DeathSound.Guid.Data3
-      value: -221437043
+      value: -492983371
       objectReference: {fileID: 0}
     - target: {fileID: 2101943539281072888, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
       propertyPath: DeathSound.Guid.Data4
-      value: 663843841
+      value: 1147357274
       objectReference: {fileID: 0}
     - target: {fileID: 3899298192764099856, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
       propertyPath: m_AnchorMax.x
@@ -102,23 +102,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7561027488951315680, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
       propertyPath: AttackGrunt.Path
-      value: event:/SFX/AttackGrunt/AttackGrunt3
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7561027488951315680, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
       propertyPath: AttackGrunt.Guid.Data1
-      value: 882991942
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7561027488951315680, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
       propertyPath: AttackGrunt.Guid.Data2
-      value: 1178937595
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7561027488951315680, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
       propertyPath: AttackGrunt.Guid.Data3
-      value: -587041129
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7561027488951315680, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
       propertyPath: AttackGrunt.Guid.Data4
-      value: -734279922
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7561027488951315680, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
       propertyPath: ApplyStatuses.Array.size

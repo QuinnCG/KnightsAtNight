@@ -99,6 +99,21 @@ namespace Quinn.UI
 							if (card is UnitCard)
 							{
 								UnitSpawnSound.PlayOnce(Player.MousePos);
+								GameManager.Instance.SoldiersSummoned++;
+							}
+							else if (card is SpellCard)
+							{
+								GameManager.Instance.SpellsCast++;
+							}
+
+							var cardUses = GameManager.Instance.CardUses;
+							if (cardUses.ContainsKey(card))
+							{
+								cardUses[card]++;
+							}
+							else
+							{
+								cardUses.Add(card, 1);
 							}
 
 							// Handle removing the card element ourselves, instead of through the OnCardRemoved callback.

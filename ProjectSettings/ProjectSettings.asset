@@ -289,7 +289,14 @@ PlayerSettings:
   AndroidAppBundleSizeToValidate: 150
   AndroidReportGooglePlayAppDependencies: 1
   androidSymbolsSizeThreshold: 800
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 4d206880860ee07488b8aded71cfb0ae, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
   m_BuildTargetPlatformIcons: []
   m_BuildTargetBatching: []
   m_BuildTargetShaderSettings: []
@@ -708,7 +715,7 @@ PlayerSettings:
   cloudProjectId: 7c8e4a93-1157-4850-961e-0cde07cac657
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: MGAM_June
+  projectName: Knights at Night
   organizationId: mrtwixlikesyou
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0

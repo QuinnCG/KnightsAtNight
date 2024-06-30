@@ -85,20 +85,20 @@ namespace Quinn.UI
 				ShowHUD();
 			}
 
-			if (!_tutorialHidden && Time.time > _tutorialExpireTime)
-			{
-				_tutorialHidden = true;
-				_animatingTutorial = true;
-				ShowHUD();
+			//if (!_tutorialHidden && Time.time > _tutorialExpireTime)
+			//{
+			//	_tutorialHidden = true;
+			//	_animatingTutorial = true;
+			//	ShowHUD();
 
-				_tutorialTween = DOTween.To(() => _tutorial.resolvedStyle.opacity, x => _tutorial.style.opacity = x, 0f, TutorialFadeDuration);
-				_tutorialTween.onComplete += () =>
-				{
-					_animatingTutorial = false;
-					_tutorialHidden = true;
-					_tutorialTween = null;
-				};
-			}
+			//	_tutorialTween = DOTween.To(() => _tutorial.resolvedStyle.opacity, x => _tutorial.style.opacity = x, 0f, TutorialFadeDuration);
+			//	_tutorialTween.onComplete += () =>
+			//	{
+			//		_animatingTutorial = false;
+			//		_tutorialHidden = true;
+			//		_tutorialTween = null;
+			//	};
+			//}
 		}
 
 		private void HideHUD()

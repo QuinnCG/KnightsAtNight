@@ -47,7 +47,7 @@ MonoBehaviour:
   GroupSpawnInterval: {x: 0.5, y: 3}
   PerInvaderSpawnInterval: 0.5
   WaveDowntime: 4
-  WaveSpawnCountFactor: 0.15
+  WaveSpawnCountFactor: 0.3
   GroupSpawnSound:
     Guid:
       Data1: 1138268099

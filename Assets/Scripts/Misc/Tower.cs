@@ -2,6 +2,7 @@ using Quinn.AI;
 using Sirenix.OdinInspector;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Quinn
 {
@@ -43,7 +44,7 @@ namespace Quinn
 
 		private void OnDeath()
 		{
-			GameManager.Instance.RestartGame();
+			SceneManager.LoadSceneAsync("DeathScene");
 		}
 	}
 }

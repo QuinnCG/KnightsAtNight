@@ -44,6 +44,8 @@ namespace Quinn.AI
 
 			_defaultSpeed = Movement.Speed;
 			Movement.Speed *= SpawnSpeedBoostFactor;
+
+			Health.OnDeath += () => GameManager.Instance.EnemiesSlain++;
 		}
 
 		protected override void Update()
@@ -98,15 +100,6 @@ namespace Quinn.AI
 
 			// Attack if close to tower.
 			float dstToTower = GetDistanceToTower();
-
-			// Artificially shrink distance to tower if vertical to avoid the hitbox of the character getting in the way.
-			Vector2 selfPos = transform.position;
-			Vector2 towerPos = Tower.Instance.transform.position;
-			Vector2 dir = selfPos.DirectionTo(towerPos);
-			if (Mathf.Abs(dir.y) > Mathf.Abs(dir.x))
-			{
-				dstToTower -= dstToTower * 0.3f;
-			}
 
 			if (dstToTower < TowerAttackRange)
 			{

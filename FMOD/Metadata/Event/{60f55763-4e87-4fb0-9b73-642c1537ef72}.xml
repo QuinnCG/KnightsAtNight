@@ -73,7 +73,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{57a8f0d2-990d-4d2d-a08e-5d9642d567ef}">
 		<property name="volume">
-			<value>7.5</value>
+			<value>1</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{fe614f31-66e2-4b97-828b-91cbff84efd2}</destination>
@@ -111,7 +111,14 @@
 	</object>
 	<object class="MixerBusFader" id="{c89ab668-7b20-4680-a242-75fb51e85ed6}" />
 	<object class="MixerBusFader" id="{9968c32e-3cec-42d6-abe9-f2c3576be616}" />
-	<object class="SpatialiserEffect" id="{41b8b2c9-7be0-48cb-8a47-c4339a5bea29}" />
+	<object class="SpatialiserEffect" id="{41b8b2c9-7be0-48cb-8a47-c4339a5bea29}">
+		<property name="distanceRolloffType">
+			<value>1</value>
+		</property>
+		<property name="panBlend">
+			<value>0.789999962</value>
+		</property>
+	</object>
 	<object class="SingleSound" id="{885db8c7-629b-4c81-b889-0d6eccbeebd9}">
 		<relationship name="audioFile">
 			<destination>{b08ec2ba-f2a8-43b8-93af-e7d6e29fd52a}</destination>

@@ -21,25 +21,26 @@ namespace Quinn
 		[Space, SerializeField]
 		private Vector2 BoundsSize = new(16, 12f);
 
-		private CinemachineCamera _vcam;
 		private float _zoomVel;
 		private float _targetZoomScale;
 		
 		private void Start()
 		{
-			_vcam = CinemachineBrain.GetActiveBrain(0).ActiveVirtualCamera as CinemachineCamera;
-			_targetZoomScale = _vcam.Lens.OrthographicSize;
+			var vcam = CinemachineBrain.GetActiveBrain(0).ActiveVirtualCamera as CinemachineCamera;
+			_targetZoomScale = vcam.Lens.OrthographicSize;
 		}
 
 		void Update()
 		{
+			var vcam = CinemachineBrain.GetActiveBrain(0).ActiveVirtualCamera as CinemachineCamera;
+
 			var inputDir = new Vector3()
 			{
 				x = Input.GetAxisRaw("Horizontal"),
 				y = Input.GetAxisRaw("Vertical")
 			}.normalized;
 
-			float zoomPercent = (_vcam.Lens.OrthographicSize - MinOrthoScale) / (MaxOrthoScale - MinOrthoScale);
+			float zoomPercent = (vcam.Lens.OrthographicSize - MinOrthoScale) / (MaxOrthoScale - MinOrthoScale);
 			zoomPercent = 1f - Mathf.Clamp01(zoomPercent);
 
 			RuntimeManager.StudioSystem.setParameterByName("zoom", zoomPercent);
@@ -58,7 +59,7 @@ namespace Quinn
 			float deltaScroll = Input.GetAxisRaw("Mouse ScrollWheel");
 			_targetZoomScale = Mathf.Clamp(_targetZoomScale - (deltaScroll * ZoomSpeed), MinOrthoScale, MaxOrthoScale);
 
-			_vcam.Lens.OrthographicSize = Mathf.SmoothDamp(_vcam.Lens.OrthographicSize, _targetZoomScale, ref _zoomVel, ZoomDamping);
+			vcam.Lens.OrthographicSize = Mathf.SmoothDamp(vcam.Lens.OrthographicSize, _targetZoomScale, ref _zoomVel, ZoomDamping);
 		}
 	}
 }

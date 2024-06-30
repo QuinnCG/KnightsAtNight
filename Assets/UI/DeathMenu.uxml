@@ -1,0 +1,26 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Style%20Sheets/HUDStyleSheet.uss?fileID=7433441132597879392&amp;guid=81a33ae2843cc4d4d907a2f1cfdd6aae&amp;type=3#HUDStyleSheet" />
+    <engine:VisualElement style="flex-grow: 1; background-color: rgb(0, 0, 0);">
+        <engine:VisualElement style="flex-grow: 1; align-self: center; margin-top: 14%; margin-bottom: 0;">
+            <engine:Label text="YOU DIED" style="color: rgb(255, 0, 0); font-size: 72px; -unity-font-definition: url(&quot;project://database/Assets/Font/PixelFont.TTF?fileID=12800000&amp;guid=53cfef4d882b6a144905a48a9ffda3f9&amp;type=3#PixelFont&quot;); -unity-text-align: middle-center; margin-bottom: 71px; padding-bottom: 0; margin-top: 0; margin-right: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-left: 0;" />
+            <engine:Label text="Survived for &lt;color=yellow&gt;8 Minutes&lt;/color&gt;" name="time" class="stat" />
+            <engine:Label text="Survived for &lt;color=yellow&gt;99x Waves&lt;/color&gt;" name="waves" class="stat" />
+            <engine:Label text="Killed &lt;color=yellow&gt;99x Enemies&lt;/color&gt;" name="slain" class="stat" />
+            <engine:Label text="Summoned &lt;color=yellow&gt;99x Soldiers&lt;/color&gt;" name="soldiers" class="stat" />
+            <engine:Label text="Cast &lt;color=yellow&gt;99x Spells&lt;/color&gt;" name="spells" class="stat" />
+            <engine:Label text="Favorite card &lt;color=yellow&gt;Fireball&lt;/color&gt;" name="favorite" class="stat" />
+            <engine:VisualElement style="flex-grow: 0; flex-direction: row; margin-top: 65px;">
+                <engine:Button text="Retry" name="retry" style="flex-grow: 1; color: rgb(0, 255, 38);" />
+                <engine:Button text="Quit" name="quit" style="flex-grow: 1; color: rgb(255, 0, 0);" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+    </engine:VisualElement>
+    <engine:VisualElement style="flex-grow: 1; position: absolute; top: 18%; left: auto; right: 338px; bottom: auto; height: 50%;">
+        <engine:Label text="Leaderboard" style="-unity-text-align: middle-center; -unity-font-style: bold; font-size: 30px; margin-bottom: 18px;" />
+        <engine:ListView name="leaderboard" show-bound-collection-size="false" selection-type="None" virtualization-method="DynamicHeight" fixed-item-height="30" show-border="true" reorderable="false" style="height: 937px; width: 561px; border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; font-size: 25px; -unity-paragraph-spacing: 200px;" />
+        <engine:VisualElement style="flex-grow: 1; flex-direction: row; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 8px; padding-bottom: 0;">
+            <engine:TextField max-length="16" auto-correction="true" placeholder-text="Enter name for leaderboard (max 16)" name="name" style="flex-grow: 1; height: 50px; margin-top: 0; margin-right: 10px; margin-bottom: 0; margin-left: 0;" />
+            <engine:Button text="Submit" name="submit" style="height: 50px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 15px; padding-bottom: 0; padding-left: 15px;" />
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>
