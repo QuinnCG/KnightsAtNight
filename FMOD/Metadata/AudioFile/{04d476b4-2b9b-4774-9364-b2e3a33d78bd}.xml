@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{04d476b4-2b9b-4774-9364-b2e3a33d78bd}">
 		<property name="assetPath">
-			<value>SFX/Unit Spawn/UnitSpawn_05.ogg</value>
+			<value>SFX/Unit Spawn Effect/UnitSpawn_05.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>32</value>

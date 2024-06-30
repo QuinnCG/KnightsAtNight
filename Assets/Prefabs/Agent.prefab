@@ -911,6 +911,13 @@ MonoBehaviour:
       Data3: -1354122077
       Data4: 227158618
     Path: event:/SFX/Attack
+  AttackGrunt:
+    Guid:
+      Data1: 725257182
+      Data2: 1127612284
+      Data3: -1044325736
+      Data4: 1013672980
+    Path: event:/SFX/AttackGrunt/AttackGrunt1
   ApplyStatuses: []
 --- !u!114 &5657732489058951385
 MonoBehaviour:

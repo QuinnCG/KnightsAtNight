@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{46b8952c-1ad6-4d39-b724-6d644bdc2311}">
 		<property name="name">
-			<value>UnitSpawn</value>
+			<value>UnitSpawnEffect</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>

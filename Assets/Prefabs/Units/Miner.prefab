@@ -13,6 +13,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 22100000, guid: 61ddc0d82a6f09f4b9183a0d21cee365, type: 2}
     - target: {fileID: 1433416084058569995, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
+      propertyPath: AttackGrunt.Path
+      value: event:/SFX/AttackGrunt/AttackGrunt2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433416084058569995, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
+      propertyPath: AttackGrunt.Guid.Data1
+      value: -1698551577
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433416084058569995, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
+      propertyPath: AttackGrunt.Guid.Data2
+      value: 1309613519
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433416084058569995, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
+      propertyPath: AttackGrunt.Guid.Data3
+      value: -1421637729
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433416084058569995, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
+      propertyPath: AttackGrunt.Guid.Data4
+      value: -1304779081
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433416084058569995, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: <Damage>k__BackingField
       value: 40
       objectReference: {fileID: 0}
@@ -129,8 +149,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7359221156798972691, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
+      propertyPath: DeathSound.Path
+      value: event:/SFX/DeathGrunt/DeathGrunt3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7359221156798972691, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: <Max>k__BackingField
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7359221156798972691, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
+      propertyPath: DeathSound.Guid.Data1
+      value: 1626691427
+      objectReference: {fileID: 0}
+    - target: {fileID: 7359221156798972691, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
+      propertyPath: DeathSound.Guid.Data2
+      value: 1336954503
+      objectReference: {fileID: 0}
+    - target: {fileID: 7359221156798972691, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
+      propertyPath: DeathSound.Guid.Data3
+      value: 744780699
+      objectReference: {fileID: 0}
+    - target: {fileID: 7359221156798972691, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
+      propertyPath: DeathSound.Guid.Data4
+      value: 1928279829
       objectReference: {fileID: 0}
     - target: {fileID: 7520693569849789879, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: KnockbackDuration

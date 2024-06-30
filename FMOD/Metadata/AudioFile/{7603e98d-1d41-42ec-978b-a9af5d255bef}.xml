@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{7603e98d-1d41-42ec-978b-a9af5d255bef}">
 		<property name="assetPath">
-			<value>SFX/breakable_wall_destroy.wav</value>
+			<value>SFX/Tower Destroy.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

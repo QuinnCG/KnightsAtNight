@@ -209,12 +209,32 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7359221156798972691, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
+      propertyPath: DeathSound.Path
+      value: event:/SFX/DeathGrunt/DeathGrunt1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7359221156798972691, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: RegenCombatDelay
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7359221156798972691, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: <Max>k__BackingField
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7359221156798972691, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
+      propertyPath: DeathSound.Guid.Data1
+      value: -1524747279
+      objectReference: {fileID: 0}
+    - target: {fileID: 7359221156798972691, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
+      propertyPath: DeathSound.Guid.Data2
+      value: 1074709514
+      objectReference: {fileID: 0}
+    - target: {fileID: 7359221156798972691, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
+      propertyPath: DeathSound.Guid.Data3
+      value: -553056089
+      objectReference: {fileID: 0}
+    - target: {fileID: 7359221156798972691, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
+      propertyPath: DeathSound.Guid.Data4
+      value: -1532974729
       objectReference: {fileID: 0}
     - target: {fileID: 7520693569849789879, guid: 28fff369073a64b4c92bce8ba0c38b56, type: 3}
       propertyPath: KnockbackDuration

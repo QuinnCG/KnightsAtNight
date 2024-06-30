@@ -13,8 +13,28 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2101943539281072888, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
+      propertyPath: DeathSound.Path
+      value: event:/SFX/DeathGrunt/DeathGrunt1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2101943539281072888, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
       propertyPath: <Max>k__BackingField
       value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2101943539281072888, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
+      propertyPath: DeathSound.Guid.Data1
+      value: -1524747279
+      objectReference: {fileID: 0}
+    - target: {fileID: 2101943539281072888, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
+      propertyPath: DeathSound.Guid.Data2
+      value: 1074709514
+      objectReference: {fileID: 0}
+    - target: {fileID: 2101943539281072888, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
+      propertyPath: DeathSound.Guid.Data3
+      value: -553056089
+      objectReference: {fileID: 0}
+    - target: {fileID: 2101943539281072888, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
+      propertyPath: DeathSound.Guid.Data4
+      value: -1532974729
       objectReference: {fileID: 0}
     - target: {fileID: 2101943539281072888, guid: 21068459a0b03e041968f86cde2eb9cc, type: 3}
       propertyPath: HideDuringFadeOut.Array.size

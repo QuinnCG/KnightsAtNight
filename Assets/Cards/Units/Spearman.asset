@@ -66,8 +66,8 @@ MonoBehaviour:
   Count: 1
   SpawnSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 423745801
+      Data2: 1266218570
+      Data3: -747115369
+      Data4: 2145517049
+    Path: event:/SFX/UnitSpawn/SpearmanSpawn

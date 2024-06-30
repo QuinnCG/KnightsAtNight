@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8964942638377367704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/DeathGrunt/DeathGrunt2
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/DeathGrunt/DeathGrunt2
+  Guid:
+    Data1: -1954583184
+    Data2: 1326724753
+    Data3: 214831235
+    Data4: 1471158248
+  Banks:
+  - {fileID: 28880121474852252}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-8081114680735564957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24,6 +51,33 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-8051881974557603440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/DeathGrunt/DeathGrunt1
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/DeathGrunt/DeathGrunt1
+  Guid:
+    Data1: -1524747279
+    Data2: 1074709514
+    Data3: -553056089
+    Data4: -1532974729
+  Banks:
+  - {fileID: 28880121474852252}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7819765674764486467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,11 +147,92 @@ MonoBehaviour:
   Path: FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638552181715810366
+  lastModified: 638552933471311625
   FileSizes:
   - Name: Desktop
-    Value: 1694
+    Value: 2202
   Exists: 1
+--- !u!114 &-7500811330321194296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/AttackGrunt/AttackGrunt2
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/AttackGrunt/AttackGrunt2
+  Guid:
+    Data1: -1698551577
+    Data2: 1309613519
+    Data3: -1421637729
+    Data4: -1304779081
+  Banks:
+  - {fileID: 28880121474852252}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6858792553510139787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UnitSpawn/SpearmanSpawn
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UnitSpawn/SpearmanSpawn
+  Guid:
+    Data1: 423745801
+    Data2: 1266218570
+    Data3: -747115369
+    Data4: 2145517049
+  Banks:
+  - {fileID: 28880121474852252}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5803773826994402299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/AttackGrunt/AttackGrunt3
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/AttackGrunt/AttackGrunt3
+  Guid:
+    Data1: 882991942
+    Data2: 1178937595
+    Data3: -587041129
+    Data4: -734279922
+  Banks:
+  - {fileID: 28880121474852252}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-5668839635777578663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +253,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 3372192
   Exists: 1
+--- !u!114 &-5553722370330881573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/DeathGrunt/DeathGrunt4
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/DeathGrunt/DeathGrunt4
+  Guid:
+    Data1: -185896151
+    Data2: 1285645455
+    Data3: -221437043
+    Data4: 663843841
+  Banks:
+  - {fileID: 28880121474852252}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-5538694703253440089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +322,7 @@ MonoBehaviour:
   Path: FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638552181715790437
+  lastModified: 638552933471301550
   FileSizes:
   - Name: Desktop
     Value: 1960
@@ -187,33 +349,6 @@ MonoBehaviour:
   - {fileID: 28880121474852252}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-3410278128458853401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UnitSpawn
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UnitSpawn
-  Guid:
-    Data1: 1186501932
-    Data2: 1295588054
-    Data3: 1684874423
-    Data4: 287562827
-  Banks:
-  - {fileID: 28880121474852252}
-  IsStream: 0
-  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -385,14 +520,25 @@ MonoBehaviour:
   - {fileID: -1395501732852232022}
   - {fileID: 4018410894163131707}
   - {fileID: -3760285394412569062}
-  - {fileID: -3410278128458853401}
+  - {fileID: -6858792553510139787}
+  - {fileID: 8775012828263712163}
+  - {fileID: 2455724544022706407}
+  - {fileID: 1259452222454282076}
+  - {fileID: 990490586424689875}
+  - {fileID: -5553722370330881573}
+  - {fileID: -5803773826994402299}
+  - {fileID: 7488675735913173516}
+  - {fileID: -8964942638377367704}
+  - {fileID: 504212023845211965}
+  - {fileID: -7500811330321194296}
+  - {fileID: -8051881974557603440}
   EditorParameters:
   - {fileID: -8081114680735564957}
   MasterBanks:
   - {fileID: -3912188668713540078}
   StringsBanks:
   - {fileID: -7544873920134070109}
-  cacheTime: 638552216087000688
+  cacheTime: 638552936892412732
   cacheVersion: 131618
 --- !u!114 &28880121474852252
 MonoBehaviour:
@@ -409,10 +555,10 @@ MonoBehaviour:
   Path: FMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638552216087000688
+  lastModified: 638552936892412732
   FileSizes:
   - Name: Desktop
-    Value: 769120
+    Value: 1267808
   Exists: 1
 --- !u!114 &349533043506541187
 MonoBehaviour:
@@ -441,6 +587,114 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1185
+--- !u!114 &504212023845211965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/AttackGrunt/AttackGrunt1
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/AttackGrunt/AttackGrunt1
+  Guid:
+    Data1: 725257182
+    Data2: 1127612284
+    Data3: -1044325736
+    Data4: 1013672980
+  Banks:
+  - {fileID: 28880121474852252}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &990490586424689875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UnitSpawn/AxeKnightsSpawn
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UnitSpawn/AxeKnightsSpawn
+  Guid:
+    Data1: 605743762
+    Data2: 1103432904
+    Data3: -1036561740
+    Data4: -1948889104
+  Banks:
+  - {fileID: 28880121474852252}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1259452222454282076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UnitSpawn/MinerSpawn
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UnitSpawn/MinerSpawn
+  Guid:
+    Data1: 302225757
+    Data2: 1271936597
+    Data3: 751072906
+    Data4: -1728624911
+  Banks:
+  - {fileID: 28880121474852252}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2455724544022706407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UnitSpawnEffect
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UnitSpawnEffect
+  Guid:
+    Data1: 1186501932
+    Data2: 1295588054
+    Data3: 1684874423
+    Data4: 287562827
+  Banks:
+  - {fileID: 28880121474852252}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2831837935212494322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,6 +848,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 66000
+--- !u!114 &7488675735913173516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/DeathGrunt/DeathGrunt3
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/DeathGrunt/DeathGrunt3
+  Guid:
+    Data1: 1626691427
+    Data2: 1336954503
+    Data3: 744780699
+    Data4: 1928279829
+  Banks:
+  - {fileID: 28880121474852252}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8775012828263712163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UnitSpawn/LesserKnightSpawn
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UnitSpawn/LesserKnightSpawn
+  Guid:
+    Data1: 678600220
+    Data2: 1119945895
+    Data3: -1452161869
+    Data4: -1127161316
+  Banks:
+  - {fileID: 28880121474852252}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &9107986349849056245
 MonoBehaviour:
   m_ObjectHideFlags: 0

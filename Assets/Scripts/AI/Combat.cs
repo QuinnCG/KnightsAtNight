@@ -23,7 +23,7 @@ namespace Quinn.AI
 		private string AttackTrigger = "Attack";
 
 		[SerializeField]
-		private EventReference SwingSound;
+		private EventReference SwingSound, AttackGrunt;
 
 		[SerializeField]
 		private StatusEffectEntry[] ApplyStatuses;
@@ -71,6 +71,7 @@ namespace Quinn.AI
 			if (_target != null)
 			{
 				SwingSound.PlayOnce(transform.position);
+				AttackGrunt.PlayOnce(transform.position);
 
 				// Calculate damage.
 				float dmg = Damage

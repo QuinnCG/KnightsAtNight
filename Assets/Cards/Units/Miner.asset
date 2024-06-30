@@ -67,8 +67,8 @@ MonoBehaviour:
   Count: 1
   SpawnSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 302225757
+      Data2: 1271936597
+      Data3: 751072906
+      Data4: -1728624911
+    Path: event:/SFX/UnitSpawn/MinerSpawn
